@@ -1,0 +1,139 @@
+# This code was adapted from code written by Josh Shapiro
+# for the Childhood Cancer Data Lab, an initiative of Alexs Lemonade Stand Foundation.
+# https://github.com/AlexsLemonade/exercise-notebook-answers
+
+# Adapted for this jhudsl repository by Candace Savonen Apr 2021
+
+name: Bookdown to Leanpub repo copy over
+# Copy rendered notebooks to Leanpub repo
+
+# This workflow will run when there are changes to docs/ files in THIS repo
+on:
+  workflow_dispatch:
+  # Only run after the render finishes running
+  workflow_run:
+    workflows: [ "Build, Render, and Push" ]
+    branches: [ main ]
+    types:
+      - completed
+
+jobs:
+  file-bookdown-pr:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Get repository name by dropping Bookdown if it exists but always append _Leanpub
+    steps:
+      - name: Run git repo check
+        id: git_repo_check
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          sudo apt-get install subversion
+          sudo Rscript -e "install.packages('optparse')"
+
+          # What's the LEANPUB repository's name?
+          LEANPUB_REPO=$(echo ${GITHUB_REPOSITORY} | sed "s/_Bookdown/ /g" | awk '{print $1"_Leanpub"}')
+          echo $LEANPUB_REPO
+
+          # Get repo check script
+          svn export --force https://github.com/${GITHUB_REPOSITORY}.git/branches/${GITHUB_REF#refs/heads/}/scripts/git_repo_check.R git_repo_check.R
+
+          # Run repo check script
+          results=$(Rscript --vanilla git_repo_check.R --repo "$GITHUB_REPOSITORY" --git_pat "$GH_PAT")
+          echo $LEANPUB_REPO exists: $results
+
+          echo "::set-output name=git_results::$results"
+          echo "::set-output name=leanpub_repo::$LEANPUB_REPO"
+
+      - name: Checkout code from Leanpub repo
+        if: ${{ steps.git_repo_check.outputs.git_results == 'TRUE' }}
+        uses: actions/checkout@v2
+        with:
+          repository: ${{ steps.git_repo_check.outputs.leanpub_repo }}
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Get files from Bookdown repo
+        if: ${{ steps.git_repo_check.outputs.git_results == 'TRUE' }}
+        shell: bash
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          sudo apt install r-base
+          sudo Rscript -e "install.packages('yaml')"
+
+          if [ -d "docs/" ]
+          then
+            # remove old docs/ files and folder
+            rm -r docs/*
+          fi
+          # Copy over docs folder
+          svn export --force https://github.com/${GITHUB_REPOSITORY}.git/branches/${GITHUB_REF#refs/heads/}/docs
+
+          if [ -d "docs/coursera" ]
+          then
+            rm -r docs/coursera/*
+          fi
+
+          # Copy over book.bib file
+          svn export --force https://github.com/${GITHUB_REPOSITORY}.git/branches/${GITHUB_REF#refs/heads/}/book.bib
+
+          # Get assets folder
+          svn export --force https://github.com/${GITHUB_REPOSITORY}.git/branches/${GITHUB_REF#refs/heads/}/assets
+
+          # Copy over _bookdown.yml
+          svn export --force https://github.com/${GITHUB_REPOSITORY}.git/branches/${GITHUB_REF#refs/heads/}/_bookdown.yml
+
+          # Copy over _output.ymls
+          svn export --force https://github.com/${GITHUB_REPOSITORY}.git/branches/${GITHUB_REF#refs/heads/}/_output.yml
+
+          # Copy over images folder
+          svn export --force https://github.com/${GITHUB_REPOSITORY}.git/branches/${GITHUB_REF#refs/heads/}/resources/ resources/
+
+          # Get list of Rmds needing to copy
+          Rscript --vanilla scripts/get_rmd_filenames.R
+
+          # the url from this repo where files will be downloaded from
+          base_url=https://${GH_PAT}@raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_REF#refs/heads/}
+
+          # remove old Rmd files
+          rm $(find . -name '*.Rmd'  | grep '.Rmd' )
+
+          input="resources/rmd_list.txt"
+          while IFS= read -r line
+          do
+            echo "$line"
+            curl --fail -s ${base_url}/${line} > ${line}
+          done < "$input"
+
+      - name: Create PR with rendered docs files
+        if: ${{ steps.git_repo_check.outputs.git_results == 'TRUE' }}
+        uses: peter-evans/create-pull-request@v3
+        id: cpr
+        with:
+          token: ${{ secrets.GH_PAT }}
+          commit-message: Copy files from Bookdown repository
+          signoff: false
+          branch: auto_copy_rendered_files
+          delete-branch: true
+          title: 'GHA: Automated transfer of leanbuild-needed files from Bookdown repository'
+          body: |
+            ### Description:
+             This PR was initiated by transfer-rendered.yml in the Bookdown repository.
+             It copies over the leanbuild-needed files from Bookdown repository:
+               - Rmds listed in the _bookdoown.yml
+               - _bookdown.yml
+               - docs/*
+               - book.bib
+               - resources/*
+               - _output.yml
+          labels: |
+            automated
+          reviewers: $GITHUB_ACTOR
+
+      # Write out PR info
+      - name: Check outputs
+        if: ${{ steps.git_repo_check.outputs.git_results == 'TRUE' }}
+        run: |
+          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"

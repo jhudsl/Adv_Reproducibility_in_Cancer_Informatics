@@ -1,0 +1,23 @@
+# Candace Savonen Apr 2021
+
+name: Delete Preview
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  build-all:
+    runs-on: ubuntu-latest
+    steps:
+      # This is because if a PR is closed before a render finishes it won't find it.
+      - name: Sleep for 5 minutes
+        run: sleep 300s
+        shell: bash
+
+      # Delete the branch!
+      - name: Delete branch
+        uses: dawidd6/action-delete-branch@v3
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          branches: preview-${{ github.event.pull_request.number }}
