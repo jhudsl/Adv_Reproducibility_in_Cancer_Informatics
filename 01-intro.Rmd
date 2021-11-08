@@ -5,8 +5,8 @@ leanbuild::set_knitr_image_path()
 
 # Introduction
 
-```{r, fig.alt="Title image: Reproducibility in Cancer Informatics", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1LMurysUhCjZb7DVF6KS9QmJ5NBjwWVjRn40MS9f2noE/edit#slide=id.gd422c5de97_0_0")
+```{r, fig.alt="Title image: Advanced Reproducibility in Cancer Informatics", out.width = "100%", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gd422c5de97_0_0")
 ```
 
 ## Motivation
@@ -21,12 +21,12 @@ This course introduces the concepts of reproducibility and replicability in the 
 
 ## Target Audience  
 
-The course is intended for students in the biomedical sciences and researchers who use informatics tools in their research.
+The course is intended for students in the biomedical sciences and researchers who use informatics tools in their research. It is the follow up course to the [Introduction to Reproducibility in Cancer Informatics course](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/)
 
 ## Curriculum  
 
-```{r, fig.alt = "This course will demonstrate how to: Understanding why usability and documentation is vital, Identifying your user community, Building documentation and tutorials to maximize the usability of developed tools, Obtaining feedback from your users", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1LMurysUhCjZb7DVF6KS9QmJ5NBjwWVjRn40MS9f2noE/edit#slide=id.gd422c5de97_0_10")
+```{r, fig.alt = "This course will demonstrate how to: Become familiar with using GitHub in as a part of a analysis project workflow. Engage in code review steps on GitHub. Pull and use an existing Docker image for running an analysis. Make data shareable. Write a simple Github Actions. Obtain confidence to learn and apply additional reproducibility tools to an analysis.", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gd422c5de97_0_10")
 ```
 
 The course includes hands-on exercises for how to apply reproducible code concepts to their code. Individuals who take this course are encouraged to complete these activities as they follow along with the course material to help increase the reproducibility of their analyses.
@@ -35,10 +35,10 @@ The course includes hands-on exercises for how to apply reproducible code concep
 Equip learners with reproducibility skills they can apply to their existing analyses scripts and projects. This course opts for an "ease into it" approach. We attempt to give learners doable, incremental steps to increase the reproducibility of their analyses.
 
 **What is not the goal**  
-This course is meant to introduce learners to the reproducibility tools, but _it does not necessarily represent the absolute end-all, be-all best practices for the use of these tools_. In other words, this course gives a starting point with these tools, but not an ending point. The advanced version of this course is the next step toward incrementally "better practices".
+This course is meant to have learners become further familiar with reproducibility tools. It does not necessarily represent the absolute end-all, be-all best practices for the use of these tools, but instead . In other words, this course gives a starting point with these tools, but not an ending point.
 
 ```{r, fig.alt="Reproducibility is on a continuum. Goal of the course is to move learner’s skills toward creating reproducible analyses. This graph shows a two sided arrow with a gradient. On the very left is a ‘not repeatable analysis’ it was ran once. To the right of that is an analysis that ‘re-runs sometimes’. To the right of this, is an analysis that ‘Re-runs reliably in most contexts’.  And all the way to the right is a ‘perfectly reproducible analysis’ that ‘Re-runs in every situation and gets the same result every time’. In red lettering we note that every analysis is started by being run once but no analysis is ‘perfectly reproducible’.", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1LMurysUhCjZb7DVF6KS9QmJ5NBjwWVjRn40MS9f2noE/edit#slide=id.g1006ff8e7e9_48_3")
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfc23e712f4_0_1")
 ```
 
 ## How to use the course
