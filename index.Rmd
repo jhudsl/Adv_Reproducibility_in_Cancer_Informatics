@@ -1,5 +1,5 @@
 ---
-title: "Reproducibility in Cancer Informatics"
+title: "Informatics Technology for Cancer Research (ITCR): Course Name "
 date: "`r format(Sys.time(), '%B, %Y')`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -8,9 +8,6 @@ biblio-style: apalike
 link-citations: yes
 description: "Description about Course/Book."
 favicon: assets/ITN_favicon.ico
-output:
-    bookdown::word_document2:
-      toc: true
 ---
 
 

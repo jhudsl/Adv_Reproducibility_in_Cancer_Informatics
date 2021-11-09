@@ -32,14 +32,7 @@ leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIA
 The course includes hands-on exercises for how to apply reproducible code concepts to their code. Individuals who take this course are encouraged to complete these activities as they follow along with the course material to help increase the reproducibility of their analyses.
 
 **Goal of this course:**  
-Equip learners with reproducibility skills they can apply to their existing analyses scripts and projects. This course opts for an "ease into it" approach. We attempt to give learners doable, incremental steps to increase the reproducibility of their analyses.
-
-**What is not the goal**  
-This course is meant to have learners become further familiar with reproducibility tools. It does not necessarily represent the absolute end-all, be-all best practices for the use of these tools, but instead . In other words, this course gives a starting point with these tools, but not an ending point.
-
-```{r, fig.alt="Reproducibility is on a continuum. Goal of the course is to move learner’s skills toward creating reproducible analyses. This graph shows a two sided arrow with a gradient. On the very left is a ‘not repeatable analysis’ it was ran once. To the right of that is an analysis that ‘re-runs sometimes’. To the right of this, is an analysis that ‘Re-runs reliably in most contexts’.  And all the way to the right is a ‘perfectly reproducible analysis’ that ‘Re-runs in every situation and gets the same result every time’. In red lettering we note that every analysis is started by being run once but no analysis is ‘perfectly reproducible’.", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfc23e712f4_0_1")
-```
+To equip learners with a deeper knowledge of the capabilities of reproducibility tools and how they can apply to their existing analyses scripts and projects.
 
 ## How to use the course
 
