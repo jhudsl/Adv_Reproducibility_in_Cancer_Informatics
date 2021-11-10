@@ -1,9 +1,9 @@
-book_filename: "Course_Name"
+book_filename: "Advanced Reproducibility"
 chapter_name: "Chapter "
-repo: https://github.com/jhudsl/DaSL_Course_Template_Bookdown/
+repo: https://github.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics
 rmd_files: ["index.Rmd",
             "01-intro.Rmd",
-            "02-chapter_of_course.Rmd",
+            "02-defining-reproducibility.Rmd",
             "About.Rmd",
             "References.Rmd"]
 new_session: yes
