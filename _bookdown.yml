@@ -4,6 +4,7 @@ repo: https://github.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics
 rmd_files: ["index.Rmd",
             "01-intro.Rmd",
             "02-defining-reproducibility.Rmd",
+            "03-version-control-with-github.Rmd",
             "About.Rmd",
             "References.Rmd"]
 new_session: yes
