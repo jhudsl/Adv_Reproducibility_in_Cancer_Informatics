@@ -132,3 +132,23 @@ In GitKraken we can create a new branch; this will be your working copy. First, 
 ```{r, fig.alt="Now that we’ve created this new branch, we can do what we like with a-new-branch, knowing that main will remain safe.", out.width = "100%", echo = FALSE}
 leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_618")
 ```
+
+Now we can edit our files and code however we normally would. Make an edit to any file in your new repository.
+
+```{r, fig.alt="Now that we are on our new branch, we will Edit a file as you normally would). Make any change to the README.md file in your local repository. Save the changes you make to that file. Now the changes you make to any files in this repository should show up here.", out.width = "100%", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_645")
+```
+
+We can check out the file changes while in GitKraken.
+
+```{r, fig.alt="To see how the file is different, click on the filename in the right side of the GitKraken screen. To add the file to the staged change, click on the Stage File button. ", out.width = "100%", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_652")
+```
+
+If we want to add these file changes to our current branch, we need to `commit` them.
+
+```{r, fig.alt="To commit files is to include your set of file changes to your current branch. Write a commit message that explains the changes. Now click on the button that says Commit changes to 1 file.", out.width = "100%", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_652")
+```
+
+Now that we have changes committed to our branch we are ready to also add them to the remote, internet copy!
