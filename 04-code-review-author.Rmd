@@ -97,9 +97,9 @@ In this scenario Ruby was able to save Avi time in getting into the code review 
 
 Add a [pull request template](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository) to your repository! This will help initiate consistent and clear communication around the pull requests in your repository.
 
-Pull request templates are a way to give yourself and other contributors prompts when starting a new pull request. See below for an example
+Pull request templates are a way to give yourself and other contributors prompts when starting a new pull request. See below for an example. The comments between `<!--` and `-->` are html comments that will not show up so you don't need to delete them if you don't want to. On the right side, it shows how this template looks when it's rendered. You can see this at any time by clicking `Preview` -- this is true in other places in GitHub.
 
-```{r, fig.alt="Pull request templates are a way to give yourself and other contributors prompts when starting a new pull request. For example, upon creating a pull request, this text will automatically appear in the text box for your pull request template. Now this helps you and others fill out the pull request more like a form and respond to the prompts.", out.width = "100%", echo = FALSE}
+```{r, fig.alt="Pull request templates are a way to give yourself and other contributors prompts when starting a new pull request. For example, upon creating a pull request, this text will automatically appear in the text box for your pull request template. Now this helps you and others fill out the pull request more like a form and respond to the prompts. On the right side, it shows how this template looks when it's rendered. You can see this at any time by clicking Preview. ", out.width = "100%", echo = FALSE}
 leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfa97af8537_0_0")
 ```
 
