@@ -5,6 +5,8 @@ rmd_files: ["index.Rmd",
             "01-intro.Rmd",
             "02-defining-reproducibility.Rmd",
             "03-version-control-with-github.Rmd",
+            "04-code-review-author.Rmd",
+            "05-code-review-reviewer.Rmd",
             "About.Rmd",
             "References.Rmd"]
 new_session: yes

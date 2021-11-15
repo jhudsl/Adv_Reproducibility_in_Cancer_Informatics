@@ -97,9 +97,6 @@ In this scenario Ruby was able to save Avi time in getting into the code review 
 
 Add a pull request template to your repository! This will help initiate consistent and clear communication around the pull requests in your repository.
 
-
-
-
 #### Recommended reading about code review
 
 - [Pull request descriptions](https://www.pullrequest.com/blog/writing-a-great-pull-request-description/)
