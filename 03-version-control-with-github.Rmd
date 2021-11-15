@@ -39,7 +39,7 @@ Follow their instructions to sign in with your GitHub account. It will ask you t
 
 You may find it helpful to watch GitKraken's own tutorial (linked below) about how to "git" started, but we will also guide you through each step!
 
-```{r}
+```{r, echo = FALSE}
 knitr::include_url("https://www.youtube.com/embed/ub9GfRziCtU")
 ```
 
@@ -208,7 +208,10 @@ leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIA
 
 One more note, if you do want to use command line or you want to know more about the specific git commands that GitKraken is doing for you (might be handy for troubleshooting), **the specific commands that can be used or Googled at each step are highlighted in red in the images**, you just need to add `git` before them! So for example you would type `git push` in your command line in order to push your code. Or if you'd like to know more about pushing code, you can google `git push`.
 
-## More reading about pull requests
+## More reading about GitHub
 
+- [Happy Git and GitHub for the useR](https://happygitwithr.com/)
+- [GitHub for data scientists](https://towardsdatascience.com/introduction-to-github-for-data-scientists-2cf8b9b25fba)
+- [Intro to GitHub](https://lab.github.com/githubtraining/introduction-to-github)
 - [GitHub docs about creating a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
 - [Making a Pull Request](https://www.atlassian.com/git/tutorials/making-a-pull-request)
