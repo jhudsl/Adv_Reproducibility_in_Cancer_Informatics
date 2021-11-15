@@ -19,13 +19,15 @@ In this chapter we're going to introduce you one by one to the basic git command
 
 ## Prerequisites for this chapter
 
-In order to complete this chapter you will need a GitHub account (it's free). If you do not currently have a GitHub account, we recommend you go through our [Intro to Github chapter from the Introduction to Reproducibility course](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/making-your-project-open-source-with-github.html) first and then return to this chapter.
+In order to complete this chapter **you will need a GitHub account (it's free)**. If you do not currently have a GitHub account, we recommend you go through our [Intro to Github chapter from the Introduction to Reproducibility course](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/making-your-project-open-source-with-github.html) first and then return to this chapter.
 
-## Exercise: Set up a Git Client (GitKraken)
+## Set up a Git Client (GitKraken)
 
-Interaction with git and GitHub can be done completely from command line, but sometimes this can be harder to keep track of. So to help us navigate this, we recommend using a git client. There's a lot of different clients out there, and they are generally free for most situations you will need. In this course we will take you through how to use [GitKraken](https://www.gitkraken.com/git-client), one such git client. But if you find this doesn't work for you, you can explore [other git clients](https://www.hostinger.com/tutorials/best-git-gui-clients/).
+Interaction with git and GitHub can be done completely from command line, but sometimes this can be harder to keep track of. So to help us navigate this, we recommend using a git client. There's a lot of different clients out there, and they are generally free for most situations you will need. In this course we will take you through how to use [GitKraken](https://www.gitkraken.com/git-client), one such git client.
 
-### Install Gitkraken
+GitKraken is nice because they have lots of nice tutorials, it works pretty well, and its free for most use cases. But if you find GitKraken doesn't work for you, you can explore [other git clients](https://www.hostinger.com/tutorials/best-git-gui-clients/). But for this course, we'll be using GitKraken.
+
+### Install GitKraken
 
 [Go here to install GitKraken](https://support.gitkraken.com/how-to-install/).
 
@@ -34,7 +36,7 @@ Follow their instructions to sign in with your GitHub account. It will ask you t
 You may find it helpful to watch GitKraken's own tutorial (linked below) about how to "git" started, but we will also guide you through each step!
 
 ```{r}
-knitr::include_url("https://youtu.be/ub9GfRziCtU")
+knitr::include_url("https://www.youtube.com/embed/ub9GfRziCtU")
 ```
 
 GitHub has a whole host of terms that can feel like a whole language at first, but we'll introduce them one at a time. To start, a lot of the GitHub workflow centers around handling copies of your code that are either stored on the internet (are _remote_) or are stored on your computer (are _local_).
@@ -50,6 +52,10 @@ leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIA
 ```
 
 ## Get the exercise project files
+
+In this course, you can work on the exercises from your own GitHub repository, but first we will need to set that up. Here we are providing you with the files you will want to upload to that repository.
+
+Depending on whether you prefer to use R or Python, you can choose to follow this course using one or the other.
 
 <details> <summary>**Get the Python project example files**</summary>
 [Click this link to download](https://raw.githubusercontent.com/jhudsl/Reproducibility_in_Cancer_Informatics/main/chapter-zips/reproducible-python-example.zip).
@@ -95,13 +101,16 @@ This new repository you created should look [something like this](https://github
 
 ### git clone
 
-To start working locally on a project that exists on GitHub, we'll need to `clone` it to our own computer. Cloning is just making a remote copy of the project local.
+Now you have a repository on GitHub online!
+
+
+But in our daily grind, we will work on this code from our own computer. So to set this up, we'll need to `clone` it to our own computer. Cloning is just making a remote copy of the project local.
 
 ```{r, fig.alt="To clone a repository means to copy a remote repository to your local computer", out.width = "100%", echo = FALSE}
 leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_90")
 ```
 
-So to get started, we will clone the GitHub repositories that we will be using during this course.
+So to get started, you will need to clone the GitHub repository you created that we will be using for the duration of this course.
 
 ```{r, fig.alt="To clone a GitHub repository, using GitKraken. First, Click Clone a repo. Then, choose where you’d like the repository to be on your computer using the ‘Browse’ button. Then Copy + Paste the url to the project you want to clone where it says ‘URL’. Then click `Clone the repository’.", out.width = "100%", echo = FALSE}
 leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_166")
@@ -190,8 +199,10 @@ In an upcoming chapter we will discuss what information you should put in this p
 To summarize, this is what this workflow looks like:
 
 ```{r, fig.alt="An overview of the GitHub workflow. Uploaded a project to GitHub. Clone that project to your computer. You will only have to do this cloning and set up step once per repository/project. Now let’s say you have an update in mind. Make a new branch to work off of. Edit code as you normally would. Add and commit the file changes to your branch. Push the changes to your remote branch. Repeat these steps until it you’ve addressed the update you had in mind Now, Create a pull request.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_713")
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_675")
 ```
+
+One more note, if you do want to use command line or you want to know more about the specific git commands that GitKraken is doing for you (might be handy for troubleshooting), **the specific commands that can be used or Googled at each step are highlighted in red in the images**, you just need to add `git` before them! So for example you would type `git push` in your command line in order to push your code. Or if you'd like to know more about pushing code, you can google `git push`. 
 
 ## More reading about pull requests
 
