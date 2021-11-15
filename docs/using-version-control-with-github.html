@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Using version control with GitHub | Reproducibility in Cancer Informatics</title>
+  <meta name="description" content="Description about Course/Book." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Using version control with GitHub | Reproducibility in Cancer Informatics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Description about Course/Book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Using version control with GitHub | Reproducibility in Cancer Informatics" />
+  
+  <meta name="twitter:description" content="Description about Course/Book." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/ITN_favicon.ico" type="image/x-icon" />
+<link rel="prev" href="defining-reproducibility.html"/>
+<link rel="next" href="about-the-authors.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.5.0/jquery-3.5.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="assets/style_ITN.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="https://www.itcrtraining.org/"><img src="assets/ITN_logo.png" style="padding-left: 15px; padding-top: 8px;"</a>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Course</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#motivation"><i class="fa fa-check"></i><b>1.1</b> Motivation</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#target-audience"><i class="fa fa-check"></i><b>1.2</b> Target Audience</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#curriculum"><i class="fa fa-check"></i><b>1.3</b> Curriculum</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#how-to-use-the-course"><i class="fa fa-check"></i><b>1.4</b> How to use the course</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="defining-reproducibility.html"><a href="defining-reproducibility.html"><i class="fa fa-check"></i><b>2</b> Defining reproducibility</a></li>
+<li class="chapter" data-level="3" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html"><i class="fa fa-check"></i><b>3</b> Using version control with GitHub</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#learning-objectives"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="3.2" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#prerequisites-for-this-chapter"><i class="fa fa-check"></i><b>3.2</b> Prerequisites for this chapter</a></li>
+<li class="chapter" data-level="3.3" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#set-up-a-git-client-gitkraken"><i class="fa fa-check"></i><b>3.3</b> Set up a Git Client (GitKraken)</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#install-gitkraken"><i class="fa fa-check"></i><b>3.3.1</b> Install GitKraken</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#get-the-exercise-project-files"><i class="fa fa-check"></i><b>3.4</b> Get the exercise project files</a></li>
+<li class="chapter" data-level="3.5" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#start-a-github-repository"><i class="fa fa-check"></i><b>3.5</b> Start a GitHub repository</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#git-clone"><i class="fa fa-check"></i><b>3.5.1</b> git clone</a></li>
+<li class="chapter" data-level="3.5.2" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#create-a-branch"><i class="fa fa-check"></i><b>3.5.2</b> Create a branch</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#more-reading-about-github"><i class="fa fa-check"></i><b>3.6</b> More reading about GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<p style="text-align:center;"> <a href="https://github.com/jhudsl/DaSL_Course_Template_Bookdown" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown by: </a> </p>
+<p style="text-align:center;"> <a href="http://jhudatascience.org/"> The Johns Hopkins Data Science Lab </a></p>
+<a href="http://jhudatascience.org/"><img src="https://jhudatascience.org/images/dasl.png" style=" width: 80%; filter: grayscale(100%); padding-left: 40px; padding-top: 8px; vertical-align: top "</a>
+<p style="text-align:center; font-size: 12px;"> <a href="https://github.com/rstudio4edu/rstudio4edu-book/"> Style adapted from: rstudio4edu-book </a> <a href ="https://creativecommons.org/licenses/by/2.0/"> (CC-BY 2.0) </a></p>
+<p style="padding-left: 40px;"><div class="trapezoid" style = "padding-left: 40px;"><span>  <a href="https://forms.gle/hc8Xt3Y2Znjb6M4Y7"> Click here to provide feedback</a> <img src="assets/itcr_arrow.png" style=" width: 10%" ></span></div></p>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Reproducibility in Cancer Informatics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<head>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+  <!--script src="https://kit.fontawesome.com/6a26f47516.js"></script-->
+  <!--<script src="assets/hideOutput.js"></script>-->
+  <link href="assets/style_ITN.css" rel="stylesheet">
+</head>
+        
+
+
+<div class="hero-image-container"> 
+  <img class= "hero-image" src="assets/itcr_main_image.png">
+</div>
+<div id="using-version-control-with-github" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Using version control with GitHub</h1>
+<div id="learning-objectives" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Learning Objectives</h2>
+<p><img src="resources/images/03-version-control-with-github_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1013f9881e2_0_132.png" title="This chapter will demonstrate how to: Understand that git and GitHub are tools that help your analyses be conducted reproducibly and in an open source manner. Create a GitHub account. Set up a GitHub repository for your analyses." alt="This chapter will demonstrate how to: Understand that git and GitHub are tools that help your analyses be conducted reproducibly and in an open source manner. Create a GitHub account. Set up a GitHub repository for your analyses." width="100%" /></p>
+<p>In the introductory part of this course, we discussed <a href="https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/making-your-project-open-source-with-github.html#github-and-git-allow-you-to">some of the reasons for using GitHub</a> but we didn’t get into version control or GitHub’s capabilities much beyond its capacity to store code in a place where others can find it.</p>
+<p>In this advanced course, we will dig deeper into Git and GitHub’s capabilities so you can really use this to your daily work’s advantage. But, to gain the benefit of these deeper GitHub skills it will require some new habits to be formed. Fully embracing the GitHub workflow will make your work more efficient and help you create more transparent and reproducible analyses!</p>
+<p>In this chapter we’re going to introduce you one by one to the basic git commands you’ll need as we do them!</p>
+</div>
+<div id="prerequisites-for-this-chapter" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Prerequisites for this chapter</h2>
+<p>In order to complete this chapter <strong>you will need a GitHub account (it’s free)</strong>. If you do not currently have a GitHub account, we recommend you go through our <a href="https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/making-your-project-open-source-with-github.html">Intro to Github chapter from the Introduction to Reproducibility course</a> first and then return to this chapter.</p>
+<p><img src="resources/images/03-version-control-with-github_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g101867ebdaa_18_0.png" title="This chapter has Prerequisites. Before working on this chapter you should: Have a basic understanding of the motivation for using git and GitHub and Have a GitHub account. If you are lacking either of these, you can scan this QR code, or go to bit.ly/github-rationale" alt="This chapter has Prerequisites. Before working on this chapter you should: Have a basic understanding of the motivation for using git and GitHub and Have a GitHub account. If you are lacking either of these, you can scan this QR code, or go to bit.ly/github-rationale" width="100%" /></p>
+</div>
+<div id="set-up-a-git-client-gitkraken" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Set up a Git Client (GitKraken)</h2>
+<p>Interaction with git and GitHub can be done completely from command line, but sometimes this can be harder to keep track of. So to help us navigate this, we recommend using a git client. There’s a lot of different clients out there, and they are generally free for most situations you will need. In this course we will take you through how to use <a href="https://www.gitkraken.com/git-client">GitKraken</a>, one such git client.</p>
+<p>GitKraken is nice because they have lots of nice tutorials, it works pretty well, and its free for most use cases. But if you find GitKraken doesn’t work for you, you can explore <a href="https://www.hostinger.com/tutorials/best-git-gui-clients/">other git clients</a>. But for this course, we’ll be using GitKraken.</p>
+<div id="install-gitkraken" class="section level3" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Install GitKraken</h3>
+<p><a href="https://support.gitkraken.com/how-to-install/">Go here to install GitKraken</a>.</p>
+<p>Follow their instructions to sign in with your GitHub account. It will ask you to authorize your GitHub account to connect to GitKraken. Click <code>Authorize</code>.</p>
+<p>You may find it helpful to watch GitKraken’s own tutorial (linked below) about how to “git” started, but we will also guide you through each step!</p>
+<iframe src="https://www.youtube.com/embed/ub9GfRziCtU" width="672" height="400px">
+</iframe>
+<p>GitHub has a whole host of terms that can feel like a whole language at first, but we’ll introduce them one at a time. To start, a lot of the GitHub workflow centers around handling copies of your code that are either stored on the internet (are <em>remote</em>) or are stored on your computer (are <em>local</em>).</p>
+<p><img src="resources/images/03-version-control-with-github_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_120.png" title="GitHub has a whole host of terms that can feel like a whole language at first, but we'll introduce them one at a time. To start a lot of the GitHub workflow centers around handling copies of your code that are either stored on the internet (are _remote_) or are stored on your computer (are _local_)." alt="GitHub has a whole host of terms that can feel like a whole language at first, but we'll introduce them one at a time. To start a lot of the GitHub workflow centers around handling copies of your code that are either stored on the internet (are _remote_) or are stored on your computer (are _local_)." width="100%" /></p>
+<p>A repository, in the case of a data science project, is mostly synonymous with the word “project”. So using GitHub, a project will exist both as a remote repository and a local repository. (It will be on the internet on GitHub and on your computer).</p>
+<p><img src="resources/images/03-version-control-with-github_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_149.png" title="A remote repository is project that is stored on the internet for example, a URL to jhudsl/reproducible-R-example. A local repository is a project copy that lives on your computer. For example, a file path to reproducible-R-example. So using GitHub, a project will exist both as a remote repository and a local repository. (It will be on the internet on GitHub and on your computer). " alt="A remote repository is project that is stored on the internet for example, a URL to jhudsl/reproducible-R-example. A local repository is a project copy that lives on your computer. For example, a file path to reproducible-R-example. So using GitHub, a project will exist both as a remote repository and a local repository. (It will be on the internet on GitHub and on your computer). " width="100%" /></p>
+</div>
+</div>
+<div id="get-the-exercise-project-files" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Get the exercise project files</h2>
+<p>In this course, you can work on the exercises from your own GitHub repository, but first we will need to set that up. Here we are providing you with the files you will want to upload to that repository.</p>
+<p>Depending on whether you prefer to use R or Python, you can choose to follow this course using one or the other.</p>
+<details>
+<summary>
+<strong>Get the Python project example files</strong>
+</summary>
+<p><a href="https://raw.githubusercontent.com/jhudsl/Reproducibility_in_Cancer_Informatics/main/chapter-zips/reproducible-python-example.zip">Click this link to download</a>.</p>
+<p>Now double click your chapter zip file to unzip. For Windows you may have to <a href="https://support.microsoft.com/en-us/windows/zip-and-unzip-files-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc">follow these instructions</a>).</p>
+</details>
+<details>
+<summary>
+<strong>Get the R project example files</strong>
+</summary>
+<p><a href="https://raw.githubusercontent.com/jhudsl/Reproducibility_in_Cancer_Informatics/main/chapter-zips/reproducible-R-example.zip">Click this link to download</a>.</p>
+<p>Now double click your chapter zip file to unzip. For Windows you may have to <a href="https://support.microsoft.com/en-us/windows/zip-and-unzip-files-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc">follow these instructions</a>).</p>
+</details>
+</div>
+<div id="start-a-github-repository" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Start a GitHub repository</h2>
+<p>With the project files you’ve downloaded in the location you would like them to be, <a href="https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955#:~:text=Opening%20Command%20Line.&amp;text=There%20are%20varying%20ways%20of,and%20press%20the%20return%20key.">open up your command line</a> and navigate to that being your current directory using the <a href="https://www.geeksforgeeks.org/cd-command-in-linux-with-examples/"><code>cd</code></a> and <a href="https://linuxize.com/post/how-to-list-files-in-linux-using-the-ls-command/"><code>ls</code></a> commands.</p>
+<ul>
+<li>Go to <a href="https://github.com/">Github’s main page</a> and click Sign Up if you don’t have an account.</li>
+<li>Follow <a href="https://docs.github.com/en/get-started/quickstart/create-a-repo">these instructions to create a repository</a>. As a general, but not absolute rule, you will want to keep one GitHub repository for one analysis project.
+<ul>
+<li>Name the repository something that reminds you what its related to. For these examples, we’re calling using <code>repository-name</code> as our placeholder.</li>
+<li>Choose <code>Public</code>.</li>
+</ul></li>
+<li>Follow <a href="https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository#adding-a-file-to-a-repository-on-github">these instructions</a> to add all the files that are inside the <code>reproducible-R-example.zip</code> or <code>reproducible-python-example.zip</code> file you downloaded to this new repository.</li>
+</ul>
+<p>This new repository you created should look <a href="https://github.com/cansavvy/repository-name">something like this</a>.</p>
+<div id="git-clone" class="section level3" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> git clone</h3>
+<p>Now you have a repository on GitHub online!</p>
+<p>But in our daily grind, we will work on this code from our own computer. So to set this up, we’ll need to <code>clone</code> it to our own computer. Cloning is just making a remote copy of the project local.</p>
+<p><img src="resources/images/03-version-control-with-github_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_90.png" title="To clone a repository means to copy a remote repository to your local computer" alt="To clone a repository means to copy a remote repository to your local computer" width="100%" /></p>
+<p>So to get started, you will need to clone the GitHub repository you created that we will be using for the duration of this course.</p>
+<p><img src="resources/images/03-version-control-with-github_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_166.png" title="To clone a GitHub repository, using GitKraken. First, Click Clone a repo. Then, choose where you’d like the repository to be on your computer using the ‘Browse’ button. Then Copy + Paste the url to the project you want to clone where it says ‘URL’. Then click `Clone the repository’." alt="To clone a GitHub repository, using GitKraken. First, Click Clone a repo. Then, choose where you’d like the repository to be on your computer using the ‘Browse’ button. Then Copy + Paste the url to the project you want to clone where it says ‘URL’. Then click `Clone the repository’." width="100%" /></p>
+<p>To clone a GitHub repository, using GitKraken. First, click <code>Clone a repo</code>. Then, choose where you’d like the repository to be on your computer using the <code>Browse</code> button. You will need to <code>Copy + Paste</code> your new repository’s url to where it says <code>URL</code>.</p>
+<p>Navigate to your repository on GitHub to copy the URL. Copying and pasting is advisable because any little typo will inhibit cloning.</p>
+<p>Now you are ready to click <code>Clone the repository</code>! It will ask you if you’d like to <code>Open Now</code>, click that.</p>
+</div>
+<div id="create-a-branch" class="section level3" number="3.5.2">
+<h3><span class="header-section-number">3.5.2</span> Create a branch</h3>
+<p>Handling branches is where you unleash the real benefit of GitHub, but it’s also the confusing part to get a hang of.</p>
+<p><img src="resources/images/03-version-control-with-github_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_266.png" title="Using branches is where you unleash the real benefit of GitHub, but it's also the confusing part to get a hang of. Currently, the repository we just made has a main branch. The main branch is the default branch and is The main branch is what you want most curated, working, and always ready for others to use!" alt="Using branches is where you unleash the real benefit of GitHub, but it's also the confusing part to get a hang of. Currently, the repository we just made has a main branch. The main branch is the default branch and is The main branch is what you want most curated, working, and always ready for others to use!" width="100%" /></p>
+<p>The best way to get a grasp on what the branches represent is to create one and start using it.</p>
+<p><img src="resources/images/03-version-control-with-github_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_632.png" title="In GitKraken we can create a new branch; this will be your working copy. First, click the Branch button. Next, type in a branch name in the box that the cursor is blinking in. In our example, we are calling it a-new-branch. Then click Enter! Now you have a new branch!" alt="In GitKraken we can create a new branch; this will be your working copy. First, click the Branch button. Next, type in a branch name in the box that the cursor is blinking in. In our example, we are calling it a-new-branch. Then click Enter! Now you have a new branch!" width="100%" /></p>
+<p>In GitKraken we can create a new branch; this will be your working copy. First, click the Branch button. Next, type in a branch name in the box that the cursor is blinking in. In our example, we are calling it <code>a-new-branch</code>. Now click <code>Enter</code>! Now you have a new branch!</p>
+<p><img src="resources/images/03-version-control-with-github_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_618.png" title="Now that we’ve created this new branch, we can do what we like with a-new-branch, knowing that main will remain safe." alt="Now that we’ve created this new branch, we can do what we like with a-new-branch, knowing that main will remain safe." width="100%" /></p>
+<p>Now we can edit our files and code however we normally would. Go ahead and make an edit to any file in your new repository.</p>
+<p><img src="resources/images/03-version-control-with-github_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_645.png" title="Now that we are on our new branch, we will Edit a file as you normally would). Make any change to the README.md file in your local repository. Save the changes you make to that file. Now the changes you make to any files in this repository should show up here." alt="Now that we are on our new branch, we will Edit a file as you normally would). Make any change to the README.md file in your local repository. Save the changes you make to that file. Now the changes you make to any files in this repository should show up here." width="100%" /></p>
+<p>If you’ve made a change to any file in your repository, it will appear in GitKraken and you can click on it to see the differences.</p>
+<p><img src="resources/images/03-version-control-with-github_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_652.png" title="To see how the file is different, click on the filename in the right side of the GitKraken screen. To add the file to the staged change, click on the Stage File button. " alt="To see how the file is different, click on the filename in the right side of the GitKraken screen. To add the file to the staged change, click on the Stage File button. " width="100%" /></p>
+<p>If we want to add these file changes to our current branch, we need to <code>commit</code> them.</p>
+<p><img src="resources/images/03-version-control-with-github_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_664.png" title="To commit files is to include your set of file changes to your current branch. Write a commit message that explains the changes. Now click on the button that says Commit changes to 1 file." alt="To commit files is to include your set of file changes to your current branch. Write a commit message that explains the changes. Now click on the button that says Commit changes to 1 file." width="100%" /></p>
+<p>Now that we have changes committed to our branch we are ready to also add them to the remote, internet copy! To do this, we will need to <code>push</code> our branch.</p>
+<p><img src="resources/images/03-version-control-with-github_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_686.png" title="To push changes on GitHub means to add changes to the remote repository on GitHub." alt="To push changes on GitHub means to add changes to the remote repository on GitHub." width="100%" /></p>
+<p>To push means to add changes that are on your new branch to the remote branch (internet version). The word origin just refers to where your branch is stored on the internet. Choose your origin in the dropdown menu and click Submit.</p>
+<p><img src="resources/images/03-version-control-with-github_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_786.png" title="To push means to add changes that are on your new branch to the remote branch (internet version). The word origin just refers to where your branch is stored on the internet. Choose your origin in the dropdown menu and click Submit. " alt="To push means to add changes that are on your new branch to the remote branch (internet version). The word origin just refers to where your branch is stored on the internet. Choose your origin in the dropdown menu and click Submit. " width="100%" /></p>
+<p>After a variable number of commits, your branch, called a-new-branch is a different version of the original code base that may have a nifty improvement to it. But our main goal is to add that nifty improvement to the main branch. To start this process of bringing in new changes to the main curated repository, we will create a pull request.</p>
+<p>From GitHub:</p>
+<blockquote>
+<p>Pull requests let you tell others about changes you’ve pushed to a GitHub repository. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.</p>
+</blockquote>
+<p>Pull Requests are the meat of how code changes and improvements get reviewed and incorporated! A vast majority of the benefits of incorporating GitHub into your workflow centers around fully utilizing the power of pull requests!</p>
+<p><img src="resources/images/03-version-control-with-github_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_751.png" title="After a variable number of commits, your branch, called a-new-branch is a different version of the original code base that may have a nifty improvement to it. But our main goal is to add that nifty improvement to the main branch. To start this process of bringing in new changes to the main curated repository, we will create a pull request. A pull request will show us the difference between main and a-new-branch so you scrutinize this feature before adding it to the main branch." alt="After a variable number of commits, your branch, called a-new-branch is a different version of the original code base that may have a nifty improvement to it. But our main goal is to add that nifty improvement to the main branch. To start this process of bringing in new changes to the main curated repository, we will create a pull request. A pull request will show us the difference between main and a-new-branch so you scrutinize this feature before adding it to the main branch." width="100%" /></p>
+<p>Now we can open up a pull request if we go to our GitHub repository on GitHub.</p>
+<p><img src="resources/images/03-version-control-with-github_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_713.png" title="If we’ve recently pushed our changes, we can go to our repository on GitHub and a yellow banner will prompt us to start a new pull request. " alt="If we’ve recently pushed our changes, we can go to our repository on GitHub and a yellow banner will prompt us to start a new pull request. " width="100%" /></p>
+<p>After you click on <code>Compare &amp; pull request</code> you’ll be taken to a screen where you can add information about your changes. After you are done writing your description, click <code>Create Pull Request</code>!</p>
+<p>Congrats! You’ve just opened a pull request!</p>
+<p>In an upcoming chapter we will discuss what information you should put in this pull request description to make it pertinent for yourself and whoever reviews your pull request.</p>
+<p>To summarize, this is what this workflow looks like:</p>
+<p><img src="resources/images/03-version-control-with-github_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_675.png" title="An overview of the GitHub workflow. Uploaded a project to GitHub. Clone that project to your computer. You will only have to do this cloning and set up step once per repository/project. Now let’s say you have an update in mind. Make a new branch to work off of. Edit code as you normally would. Add and commit the file changes to your branch. Push the changes to your remote branch. Repeat these steps until it you’ve addressed the update you had in mind Now, Create a pull request." alt="An overview of the GitHub workflow. Uploaded a project to GitHub. Clone that project to your computer. You will only have to do this cloning and set up step once per repository/project. Now let’s say you have an update in mind. Make a new branch to work off of. Edit code as you normally would. Add and commit the file changes to your branch. Push the changes to your remote branch. Repeat these steps until it you’ve addressed the update you had in mind Now, Create a pull request." width="100%" /></p>
+<p>One more note, if you do want to use command line or you want to know more about the specific git commands that GitKraken is doing for you (might be handy for troubleshooting), <strong>the specific commands that can be used or Googled at each step are highlighted in red in the images</strong>, you just need to add <code>git</code> before them! So for example you would type <code>git push</code> in your command line in order to push your code. Or if you’d like to know more about pushing code, you can google <code>git push</code>.</p>
+</div>
+</div>
+<div id="more-reading-about-github" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> More reading about GitHub</h2>
+<ul>
+<li><a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a></li>
+<li><a href="https://towardsdatascience.com/introduction-to-github-for-data-scientists-2cf8b9b25fba">GitHub for data scientists</a></li>
+<li><a href="https://lab.github.com/githubtraining/introduction-to-github">Intro to GitHub</a></li>
+<li><a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">GitHub docs about creating a Pull Request</a></li>
+<li><a href="https://www.atlassian.com/git/tutorials/making-a-pull-request">Making a Pull Request</a></li>
+</ul>
+
+</div>
+</div>
+<hr>
+<center> 
+  <div class="footer">
+      All illustrations <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY. </a>
+      <br>
+      All other materials <a href= "https://creativecommons.org/licenses/by/4.0/"> CC-BY </a> unless noted otherwise.
+  </div>
+</center>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="defining-reproducibility.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="about-the-authors.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

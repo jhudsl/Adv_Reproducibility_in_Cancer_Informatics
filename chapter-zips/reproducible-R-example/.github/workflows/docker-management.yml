@@ -1,0 +1,71 @@
+# Candace Savonen Oct 2021
+
+name: Docker management
+
+on:
+  pull_request:
+    branches:
+      - 'main'
+    paths: [ docker/Dockerfile ]
+  # This makes it so you can run your github action manually if you choose
+  workflow_dispatch:
+    inputs:
+      dockerhubpush:
+        # We can provide an option to set (we will use this later)
+        description: 'Push to Dockerhub?'
+        required: true
+        default: 'false'
+jobs:
+  docker-management:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # Set up Docker build
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      # Setup layer cache
+      - name: Cache Docker layers
+        uses: actions/cache@v2
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+
+      # Set up Docker build
+      - name: Set up Docker Build
+        uses: docker/setup-buildx-action@v1
+
+      # Build the image based on the Dockerfile
+      - name: Build Python Docker image
+        uses: docker/build-push-action@v2
+        with:
+          push: false
+          load: true
+          # What directory should this be building from?
+          context: docker
+          # Where's the Dockerfile to build this image from?
+          file: docker/Dockerfile
+          # What should this docker image be called once we are done?
+          tags: jhudsl/reproducible-r
+
+      # Login to Dockerhub
+      - name: Login to DockerHub
+        if: ${{ github.event.inputs.dockerhubpush != 'false' }}
+        uses: docker/login-action@v1
+        with:
+          # You will need to set up GitHub secrets with your Docker login info
+          # for this to work.
+          # https://docs.github.com/en/actions/security-guides/encrypted-secrets
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      # Push the Docker image if set to true from a manual trigger
+      - name: Push Docker image if manual trigger set to true
+      # This has an if statement so it will only run it we set dockerhubpush to
+      # something not `false` which is the default
+        if: ${{ github.event.inputs.dockerhubpush != 'false' }}
+        run: docker push jhudsl/reproducible-r

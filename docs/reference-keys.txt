@@ -4,3 +4,13 @@ target-audience
 curriculum
 how-to-use-the-course
 defining-reproducibility
+using-version-control-with-github
+learning-objectives
+prerequisites-for-this-chapter
+set-up-a-git-client-gitkraken
+install-gitkraken
+get-the-exercise-project-files
+start-a-github-repository
+git-clone
+create-a-branch
+more-reading-about-github

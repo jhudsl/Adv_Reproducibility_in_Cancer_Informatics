@@ -1,0 +1,48 @@
+# Candace Savonen Oct 2021
+
+name: Render R Example
+
+# Controls when the action will run. Triggers the workflow on push
+# events only for the master branch
+on:
+  # This makes it so you can run your github action manually if you choose
+  workflow_dispatch:
+  # This is set to run when any pull request is opened to main
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  render-notebooks:
+    # This specifies the docker image it should run on
+    runs-on: ubuntu-latest
+
+    steps:
+      # We need to tell github actions to use the code on the branch we are on
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          # How deep should it fetch?
+          fetch-depth: 0
+          # Need to provide permissions for it to do so
+          token: ${{ secrets.GH_PAT }}
+
+      # Run R analysis
+      - name: Run R analysis example
+      # Here we are telling Docker to run a single command and providing our files
+      # with the --mount argument. We are telling it to run on the jhudsl/reproducible-r
+      # docker image, and then the command we would like to run is `bash run_analysis.sh`
+        run: |
+          docker run \
+          --mount type=bind,target=/home/rstudio,source=$PWD \
+          jhudsl/reproducible-r \
+          bash run_analysis.sh
+
+      - name: Commit rendered R example files
+      # After it runs the analysis, we are having any changed files to be directly
+      # committed to the branch we are working from
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add -A
+          git commit -m 'Render R example' || echo "No changes to commit"
+          git push origin || echo "No changes to push"
