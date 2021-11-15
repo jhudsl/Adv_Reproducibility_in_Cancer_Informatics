@@ -194,7 +194,7 @@ Now we can open up a pull request if we go to our GitHub repository on GitHub.
 leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_713")
 ```
 
-After you click on `Compare & pull request` you'll be taken to a screen where you can add information about your changes. After you are done writing your description, click `Create Pull Request`!
+After you click on `Compare & pull request` you'll be taken to a screen where you can add information about your changes. After you are done writing your description, click `Create Pull Request`! (If you don't have your pull request description _perfect_ don't worry about it, you can always edit it later).
 
 Congrats! You've just opened a pull request!
 
