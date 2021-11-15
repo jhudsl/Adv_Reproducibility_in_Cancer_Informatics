@@ -95,7 +95,28 @@ In this scenario Ruby was able to save Avi time in getting into the code review 
 
 ## Exercise: Create your pull request description
 
-Add a pull request template to your repository! This will help initiate consistent and clear communication around the pull requests in your repository.
+Add a [pull request template](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository) to your repository! This will help initiate consistent and clear communication around the pull requests in your repository.
+
+Pull request templates are a way to give yourself and other contributors prompts when starting a new pull request. See below for an example
+
+```{r, fig.alt="Pull request templates are a way to give yourself and other contributors prompts when starting a new pull request. For example, upon creating a pull request, this text will automatically appear in the text box for your pull request template. Now this helps you and others fill out the pull request more like a form and respond to the prompts.", out.width = "100%", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfa97af8537_0_0")
+```
+
+#### Set up a pull request template
+
+1. Create a new branch as we described in the previous chapter.
+1. In your local repository, create a folder called `.github`
+1. Download this [pull request template file](https://raw.githubusercontent.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics/main/resources/PULL_REQUEST_TEMPLATE.md) to get you started.
+1. Feel free to edit this file to your own needs and add it to the `.github` folder.
+1. Use GitKraken to `add` and `commit` this new file.
+1. Push this commit.
+1. Open up a pull request.
+1. Craft your pull request description based on what we discussed in this chapter.
+1. Click on the `Files Changed` tab and make sure it includes the `.github/PULL_REQUEST_TEMPLATE.md` file.
+1. Walk away from your pull request and then return later and review it yourself.
+1. Make any necessary changes.
+1. When you are ready, [request a reviewer](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review) by choosing someone underneath `Reviewer` on the right side!
 
 #### Recommended reading about code review
 
