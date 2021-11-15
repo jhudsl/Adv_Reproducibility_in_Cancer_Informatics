@@ -1,5 +1,5 @@
 AML
-Browse
+Browse’
 Azacytidine
 Decitabine
 dropdown
@@ -10,7 +10,10 @@ ITCR
 itcrtraining
 ITN
 github
+Github's
 GitKraken
+Gitkraken
+GitKraken's
 leanbuild
 NCI
 Markua
@@ -18,11 +21,11 @@ myeloid
 pre
 quartile
 replicability
-repository
+repository'
 repo
 reproducibility
 TSV
-UE5
-URL
+UE
+URL’
 www
 vivo
