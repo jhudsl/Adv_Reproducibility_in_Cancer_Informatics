@@ -124,6 +124,19 @@ leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIA
 1. Make any necessary changes.
 1. When you are ready, [request a reviewer](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review) by choosing someone underneath `Reviewer` on the right side!
 
+### Preparing for the return of your review
+
+As you wait for your reviewer to get back to you, it can be helpful to remind yourself the purpose of code reviews get yourself in a positive mindset. You've given your reviewer information to help them help you and now is the time to wait.
+
+```{r, fig.alt="Main goals of an pull request author Set up your reviewer for success by erring toward overcommunicating Interpret reviews positively! Determine solutions collaboratively.
+", out.width = "100%", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g102298f211a_0_49")
+```
+
+First of all, you should pat yourself on the back for engaging in code review! It does require more time and sometimes that can feel scary with looming deadlines, but you've prioritized your commitment to creating increasingly reproducibility analyses! You could have chosen to keep your code's problems buried under a rug, but you are putting your code out there and making your analyses transparent! Remember that hidden problems don't get solved, but known problems are opportunities for reaching an even better end result than you imagined!
+
+When you receive a review back remember that you and the reviewer are on the same team and both want the best end result feasible for this project! They may suggest ideas that you love and can't wait to implement. They also might suggest ideas you don't agree with. Do your best to take all their comments as positive learning opportunities and look for ways to compromise and determine solutions collaboratively.
+
 #### Recommended reading about code review
 
 - [Why code reviews matter (and actually save time!)](https://www.atlassian.com/agile/software-development/code-reviews) by @Radigan2021.
