@@ -1,6 +1,3 @@
----
-title: "Reproducibility in Cancer Informatics"
----
 
 # About the Authors {-}
 
