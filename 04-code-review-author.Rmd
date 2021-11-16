@@ -128,12 +128,17 @@ leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIA
 
 As you wait for your reviewer to get back to you, it can be helpful to remind yourself the purpose of code reviews get yourself in a positive mindset. You've given your reviewer information to help them help you and now is the time to wait.
 
-```{r, fig.alt="Main goals of an pull request author Set up your reviewer for success by erring toward overcommunicating Interpret reviews positively! Determine solutions collaboratively.
-", out.width = "100%", echo = FALSE}
+```{r, fig.alt="Main goals of an pull request author Set up your reviewer for success by erring toward overcommunicating Interpret reviews positively! Determine solutions collaboratively.", out.width = "100%", echo = FALSE}
 leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g102298f211a_0_49")
 ```
 
 First of all, you should pat yourself on the back for engaging in code review! It does require more time and sometimes that can feel scary with looming deadlines, but you've prioritized your commitment to creating increasingly reproducibility analyses! You could have chosen to keep your code's problems buried under a rug, but you are putting your code out there and making your analyses transparent! Remember that hidden problems don't get solved, but known problems are opportunities for reaching an even better end result than you imagined!
+
+Remember that you are not your code and mistakes are all a part of the process!
+
+```{r, fig.alt="Remember that you are not your code and mistakes are all a part of the process! The cartoon shows you with exclamation point and equal sign with a fake bit of code to illustrate you are not your code.", out.width = "100%", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfa97af8537_0_86")
+```
 
 When you receive a review back remember that you and the reviewer are on the same team and both want the best end result feasible for this project! They may suggest ideas that you love and can't wait to implement. They also might suggest ideas you don't agree with. Do your best to take all their comments as positive learning opportunities and look for ways to compromise and determine solutions collaboratively.
 
