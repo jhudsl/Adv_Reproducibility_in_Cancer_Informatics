@@ -12,7 +12,7 @@ These credits are based on our [course contributors table guidelines](https://gi
 |Lead Content Instructor(s)|[Candace Savonen]|
 |Lecturer(s)|[Candace Savonen]|
 |Content Directors|[Jeff Leek], [Sarah Wheelan]|
-|Content Consultants| Gave high level advice on content|
+|Content Consultants||
 |Acknowledgments| |
 |**Production**||
 |Content Publisher|[Ira Gooding]|
