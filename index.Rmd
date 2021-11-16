@@ -1,5 +1,5 @@
 ---
-title: "Informatics Technology for Cancer Research (ITCR): Advanced Reproducibility "
+title: "Advanced Reproducibility in Cancer Informatics"
 date: "`r format(Sys.time(), '%B, %Y')`"
 site: bookdown::bookdown_site
 documentclass: book
