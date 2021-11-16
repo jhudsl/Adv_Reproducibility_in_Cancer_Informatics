@@ -48,7 +48,7 @@ Tell a short story to explain what lead to you making these changes including at
 - What inspired you to take this approach -- are there other things you tried?
 - Are there other pull requests related to this change?
 
-### Have an explicit request for what kind of feedback is needed
+### have an explicit request for what kind of feedback is needed
 
 What would you like your reviewer to do with this pull request? Stating this explicitly can save both of you time in this code review.
 
@@ -57,23 +57,23 @@ What would you like your reviewer to do with this pull request? Stating this exp
 - Are you looking for feedback on the results or methods?
 
 
-### Points out questionable areas
+### point out questionable areas
 
 Are there specific areas of the code you are having trouble with or are unsure about? Send a link to the [specific lines in GitHub](https://stackoverflow.com/questions/23821235/how-to-link-to-specific-line-number-on-github) you are asking about. Are there results that are surprising, confusing, or [smell wrong](https://github.com/jennybc/code-smells-and-feels#code-smells-and-feels)?  
 
 Be sure to detail what you have dug into and tried at this point for any problematic points.   
 
-### Is relatively small and focused
+### are relatively small and focused
 
 Try to make sure your pull requests aren't too long! Code reviewing fatigue is very real. If you send a reviewer thousands of lines of code to review it will be very overwhelming to review or understand.
 
 Alternatively, when you create a new branch try to set a very intentional (and relatively small) goal you would like to achieve with your upcoming pull request. Keeping your pull requests small and focused on one task at a time will not only help your reviewers but also will help yourself feel more accomplished and organized.
 
-Also recall that incremental changes are good! Perhaps you do have a very large restructuring of your repository you are trying to accomplish, but finding smaller reasonable sets of changes (which would each have their own PRs) to reach that goal incrementally can help keep things more manageable.
+Also recall that incremental changes are good! Perhaps you do have a very large restructuring of your repository you are trying to accomplish, but finding smaller reasonable sets of changes (which would each have their own pull requests) to reach that goal incrementally can help keep things more manageable.
 
 [Using Stacked Pull Requests in GitHub](https://blog.logrocket.com/using-stacked-pull-requests-in-github/)
 
-### Doesn't ask a reviewer for help too soon
+### don't ask a reviewer for help too soon
 
 The first reviewer of your code should always be yourself! Take time to review your own changes by clicking on the `Files Changed` tab and going over that section carefully.
 
@@ -83,7 +83,11 @@ The first reviewer of your code should always be yourself! Take time to review y
 
 Additional tip, if you don't want others to look at your pull request yet because you are still working on reviewing it, you can change it to [a draft pull request](https://github.blog/2019-02-14-introducing-draft-pull-requests/) so no one reviews it before you are ready.
 
-***
+#### In summary:
+
+```{r, fig.alt="Great pull requests … provide plenty of context, have an explicit request for what kind of feedback is needed, point out questionable areas, are relatively small and focused, don't ask a reviewer for help too soon", out.width = "100%", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfa97af8537_0_8")
+```
 
 Let's revisit our scenario with Avi and Ruby and see how Ruby could better prepare her changes for review:
 
@@ -120,8 +124,6 @@ leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIA
 
 #### Recommended reading about code review
 
-- [Pull request descriptions](https://www.pullrequest.com/blog/writing-a-great-pull-request-description/)
-- [Code Review Guidelines for Humans](https://phauer.com/2018/code-review-guidelines/) by @Hauer2018.
-- [Your Code Sucks! – Code Review Best Practices](https://quickbirdstudios.com/blog/code-review-best-practices-guidelines/) by @Hildebr2020.
-- [Best practices for Code Review](https://smartbear.com/en/learn/code-review/best-practices-for-peer-code-review/) by @Smartbear2021.
 - [Why code reviews matter (and actually save time!)](https://www.atlassian.com/agile/software-development/code-reviews) by @Radigan2021.
+- [Pull request descriptions](https://www.pullrequest.com/blog/writing-a-great-pull-request-description/) by @Banuelos2020.
+- [Best practices for Code Review](https://smartbear.com/en/learn/code-review/best-practices-for-peer-code-review/) by @Smartbear2021.
