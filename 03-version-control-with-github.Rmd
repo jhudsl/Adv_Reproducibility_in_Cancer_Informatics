@@ -210,8 +210,8 @@ One more note, if you do want to use command line or you want to know more about
 
 ## More reading about GitHub
 
-- [Happy Git and GitHub for the useR](https://happygitwithr.com/)
-- [GitHub for data scientists](https://towardsdatascience.com/introduction-to-github-for-data-scientists-2cf8b9b25fba)
-- [Intro to GitHub](https://lab.github.com/githubtraining/introduction-to-github)
-- [GitHub docs about creating a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
-- [Making a Pull Request](https://www.atlassian.com/git/tutorials/making-a-pull-request)
+- [Happy Git and GitHub for the useR](https://happygitwithr.com/) by @Bryan2021.
+- [GitHub for data scientists](https://towardsdatascience.com/introduction-to-github-for-data-scientists-2cf8b9b25fba) by @Vickery2019.
+- [Intro to GitHub](https://lab.github.com/githubtraining/introduction-to-github) by @GitHub2021.
+- [GitHub docs about creating a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) by @GitHub2021b.
+- [Making a Pull Request](https://www.atlassian.com/git/tutorials/making-a-pull-request) by @Radigan2021.

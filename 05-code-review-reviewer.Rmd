@@ -18,8 +18,8 @@ When reviewing a pull request, you take on responsibility to ensure that the pul
 There are three aspects to reviewing we will focus on:  
 
 1. Identify areas in the code and documentation that are opportunities for improvement.
-1. Communicate your questions and concerns effectively and in a way that creates a positive atmosphere.
-1. Determine solutions collaboratively in a way that allows for a learning as well as a long term improved product.
+2. Communicate your questions and concerns effectively and in a way that creates a positive atmosphere.
+3. Determine solutions collaboratively in a way that allows for a learning as well as a long term improved product.
 
 ### What to look for!
 
@@ -28,10 +28,10 @@ Depending on the goals of the project, and pull request there can be a lot to ke
 Here's some general points:
 
 1. Does the analysis answer the question it's asking? Are the methods it uses to do so appropriate?
-1. Is the code clear and readable? Does it contain a healthy amount of comments and documentation for individuals not familiar with the project to understand generally what is going on?
-1. Is the code efficient with computational resources? (Are there areas it's a bit too greedy with memory usage?)
-1. Does the code stick to the style and conventions of this project?
-1. Are there alternate scenarios where the current strategy might fail? (depending on the likelihood of this use case, this may be an instance for a new issue and for it to be addressed in a different pull request).
+2. Is the code clear and readable? Does it contain a healthy amount of comments and documentation for individuals not familiar with the project to understand generally what is going on?
+3. Is the code efficient with computational resources? (Are there areas it's a bit too greedy with memory usage?)
+4. Does the code stick to the style and conventions of this project?
+5. Are there alternate scenarios where the current strategy might fail? (depending on the likelihood of this use case, this may be an instance for a new issue and for it to be addressed in a different pull request).
 
 ### How to communicate it
 

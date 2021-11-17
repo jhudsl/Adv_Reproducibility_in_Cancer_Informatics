@@ -19,13 +19,13 @@ We've previously discussed that the only way to know if your analysis is truly r
 
 Not only does code review help boost the accuracy and reproducibility of the analysis, it also helps everyone involved in the process learn something new!
 
-An effective code review atmosphere is something that individuals and their team have to commit to (pun intended). Effective code review and a great team atmosphere around it brings so many benefits not only to your project quality but also your communication skills, and individual skill building!
+An effective code review atmosphere is something that individuals and their team have to _commit_ to (pun intended). Effective code review brings so many benefits not only to your project quality but also your communication skills through fostering a learning atmosphere!
 
-In this chapter and the next we will discuss the two sides of code review Code review ideally includes at least two people: the author of the pull request and the reviewer of the pull request. Although depending on your job context, we realize that sometimes authors have to become their own reviewers if code review is not something prioritized by your institution or team.
+In this chapter and the next we will discuss the two sides of code review. Code review ideally includes at least two people: the author of the pull request and the reviewer of the pull request. Depending on your job context, we realize that sometimes authors have to become their own reviewers if code review is not something that can be prioritized by your institution or team.
 
 ## Author responsibilities in code review
 
-The code review process begins with the creation pull request. Successful and efficient code review is born out of quality communication, which is a skill set on its own. You can set up your reviewers (and yourself) up for success by knowing what basic information can help get the code review conversation going.
+The code review process begins with the creation of a pull request (which we practiced in the previous chapter). Successful and efficient code review is born out of quality communication, which is a skill set on its own. You can set up your reviewers (and yourself) up for success by knowing what basic information can help get the code review conversation going.
 
 ```{r, fig.alt="Ruby has filed a very large pull request with a very short PR description:  I updated the project and added new files. She then requested Avi to review this PR. This leaves Avi with very little information to go on and he is very confused. Avi comments: Ummm… I’m a bit confused. Can you explain the context of these changes? This is a lot for me to try to follow.  I’m also unsure what kind of feedback you are looking for. ", out.width = "100%", echo = FALSE}
 leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfc3e8b194d_0_46")
@@ -33,9 +33,9 @@ leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIA
 
 Even if you end up being the only person who will review your own code, writing these things out is still very helpful and highly recommended. It can help you spot problems you might not have otherwise seen and generally help you document better for future you!
 
-## Great pull requests ...
+## Characteristics of great pull requests
 
-### Provide context!
+### there's plenty of context!
 
 What's the story behind around the changes you are proposing? Sometimes when we are in the thick of a project we can make the mistake of assuming everyone knows what we know. This can unfortunately leave a huge burden on your reviewer to try to follow a paper trail to try to understand what you are doing.
 
@@ -48,7 +48,7 @@ Tell a short story to explain what lead to you making these changes including at
 - What inspired you to take this approach -- are there other things you tried?
 - Are there other pull requests related to this change?
 
-### have an explicit request for what kind of feedback is needed
+### includes an explicit request for what kind of feedback is needed
 
 What would you like your reviewer to do with this pull request? Stating this explicitly can save both of you time in this code review.
 
@@ -57,7 +57,7 @@ What would you like your reviewer to do with this pull request? Stating this exp
 - Are you looking for feedback on the results or methods?
 
 
-### point out questionable areas
+### points out questionable areas that need extra attention
 
 Are there specific areas of the code you are having trouble with or are unsure about? Send a link to the [specific lines in GitHub](https://stackoverflow.com/questions/23821235/how-to-link-to-specific-line-number-on-github) you are asking about. Are there results that are surprising, confusing, or [smell wrong](https://github.com/jennybc/code-smells-and-feels#code-smells-and-feels)?  
 
@@ -77,13 +77,15 @@ Also recall that incremental changes are good! Perhaps you do have a very large 
 
 ### don't ask a reviewer for help too soon
 
-The first reviewer of your code should always be yourself! Take time to review your own changes by clicking on the `Files Changed` tab and going over that section carefully.
+Determining when a pull request is ready for review is a skill in itself. Pull requests that haven't had enough time to be polished can put an unnecessarily larger burden on the reviewer. On the other hand, pull requests that have been hashed and rehashed in a silo might have benefitted from big picture feedback at an earlier stage of the code. This is something that you and your team can figure out a balance for in time using lots of communication!
+
+This being said, the first reviewer of your code should always be yourself! Take time to review your own changes by clicking on the `Files Changed` tab and going over that section carefully.
 
 - Are all the changes included that you were expecting?
 - Are there any changes you didn't expect that are showing up? These can be symptomatic of a deeper problem. Definitely dig into anything that is not what you expected.
 - Set aside your changes and return them in a few hours, or the next day. Looking at your changes with fresh eyes may also allow you to find things you didn't notice before.
 
-Additional tip, if you don't want others to look at your pull request yet because you are still working on reviewing it, you can change it to [a draft pull request](https://github.blog/2019-02-14-introducing-draft-pull-requests/) so no one reviews it before you are ready.
+Additional tip, if you don't want others to look at your pull request yet because you are still working on reviewing it, you can change it to [a draft pull request](https://github.blog/2019-02-14-introducing-draft-pull-requests/) so no one reviews it before you are ready. This can also be a handy tactic to use if you just want to ask for big picture feedback someone but want to make it clear that it is not anywhere near ready for merging to main. 
 
 #### In summary:
 
