@@ -27,29 +27,27 @@ Depending on the goals of the project, and pull request there can be a lot to ke
 
 Here's some general points:
 
-1. Does the analysis answer the question it's asking? Are the methods it uses to do so appropriate?
-2. Is the code clear and readable? Does it contain a healthy amount of comments and documentation for individuals not familiar with the project to understand generally what is going on?
-3. Is the code efficient with computational resources? (Are there areas it's a bit too greedy with memory usage?)
-4. Does the code stick to the style and conventions of this project?
-5. Are there alternate scenarios where the current strategy might fail? (depending on the likelihood of this use case, this may be an instance for a new issue and for it to be addressed in a different pull request).
+- Does the analysis answer the question it's asking? Are the methods it uses to do so appropriate?
+- Is the code clear and readable? Does it contain a healthy amount of comments and documentation for individuals not familiar with the project to understand generally what is going on?
+- Is the code efficient with computational resources? (Are there areas it's a bit too greedy with memory usage?)
+- Does the code stick to the style and conventions of this project?
+- Are there alternate scenarios where the current strategy might fail? (depending on the likelihood of this use case, this may be an instance for a new issue and for it to be addressed in a different pull request).
 
 ### How to communicate it
 
 The pull request may be the author’s precious bundle. Try to be empathetic to the learning process! You are both working on this project together -- assume you both want the best out of this project. If something seems wrong, work together to find a solution, don't ever waste time on placing blame.
 
-```{r, fig.alt="Remember the author of the pull request has been putting time and effort into this! This cartoon shows a stick person cradling a computer with code on it with lots of hearts and love swirling around. The pull request may be the author’s precious bundle. Try to be empathetic to the learning process!
-", out.width = "100%", echo = FALSE}
+```{r, fig.alt="Remember the author of the pull request has been putting time and effort into this! This cartoon shows a stick person cradling a computer with code on it with lots of hearts and love swirling around. The pull request may be the author’s precious bundle. Try to be empathetic to the learning process!", out.width = "100%", echo = FALSE}
 leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g102298f211a_0_20")
 ```
 
 Remember that everything sounds harsher when you don't have in-person cues! In this example, Avi may be stating factual things, but without his pleasant and reassuring disposition, it can feel super harsh.
 
 ```{r, fig.alt="Ruby requested a code review from Avi who has responded: This code needs work. Don’t use the formattR package it’s inefficient and takes forever to run. You didn’t style the last chunk of code. This feels very harsh to Ruby who has a single tear.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g102298f211a_0_20")
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfc3e8b194d_0_177")
 ```
 
-If Avi had reframed his comments, they might be more effective in this collaboration. means
-@Babatunde2018 suggests framing review comments in three ways to help communication: questions, suggestions, and appreciations.  
+If Avi had reframed his comments, they might be more effective in this collaboration. @Babatunde2018 suggests framing review comments in three ways to help communication: questions, suggestions, and appreciations.  
 
 [Comments during Code Reviews](https://medium.com/@otarutunde/comments-during-code-reviews-2cb7791e1ac7)
 
@@ -69,11 +67,14 @@ _For example:_
 You could even go further by giving an example:
 $a = $b[‘key’]; would raise an error if key is not set but $a = ArrayHelper::getValue($b, ‘key’); would return a null value if key is not set.
 
+Giving suggestions and explain not only how to implement it but why it might be preferred in this scenario is a great learning process both for the author and yourself.
+
 #### Appreciations
 
-Start every review comment with an appreciation for the hard work completed!
+Start every review comment with an appreciation for the hard work completed! This goes a long way for creating a positive atmosphere.
 
 _For example:_  
+
 > Nice Job! Alice. I suggest we create an interface for this service so other substitute services can implement the interface as well, this would enable us change to a different service with very minimal efforts when the need arises. What do you think?
 
 Let's see how Avi's message could have been reworked to give a more effective review:  

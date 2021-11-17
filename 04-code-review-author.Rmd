@@ -85,7 +85,7 @@ This being said, the first reviewer of your code should always be yourself! Take
 - Are there any changes you didn't expect that are showing up? These can be symptomatic of a deeper problem. Definitely dig into anything that is not what you expected.
 - Set aside your changes and return them in a few hours, or the next day. Looking at your changes with fresh eyes may also allow you to find things you didn't notice before.
 
-Additional tip, if you don't want others to look at your pull request yet because you are still working on reviewing it, you can change it to [a draft pull request](https://github.blog/2019-02-14-introducing-draft-pull-requests/) so no one reviews it before you are ready. This can also be a handy tactic to use if you just want to ask for big picture feedback someone but want to make it clear that it is not anywhere near ready for merging to main. 
+Additional tip, if you don't want others to look at your pull request yet because you are still working on reviewing it, you can change it to [a draft pull request](https://github.blog/2019-02-14-introducing-draft-pull-requests/) so no one reviews it before you are ready. This can also be a handy tactic to use if you just want to ask for big picture feedback someone but want to make it clear that it is not anywhere near ready for merging to main.
 
 #### In summary:
 
@@ -114,17 +114,17 @@ leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIA
 #### Set up a pull request template
 
 1. Create a new branch as we described in the previous chapter.
-1. In your local repository, create a folder called `.github`
-1. Download this [pull request template file](https://raw.githubusercontent.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics/main/resources/PULL_REQUEST_TEMPLATE.md) to get you started.
-1. Feel free to edit this file to your own needs and add it to the `.github` folder.
-1. Use GitKraken to `add` and `commit` this new file.
-1. Push this commit.
-1. Open up a pull request.
-1. Craft your pull request description based on what we discussed in this chapter.
-1. Click on the `Files Changed` tab and make sure it includes the `.github/PULL_REQUEST_TEMPLATE.md` file.
-1. Walk away from your pull request and then return later and review it yourself.
-1. Make any necessary changes.
-1. When you are ready, [request a reviewer](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review) by choosing someone underneath `Reviewer` on the right side!
+2. In your local repository, create a folder called `.github`
+3. Download this [pull request template file](https://raw.githubusercontent.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics/main/resources/PULL_REQUEST_TEMPLATE.md) to get you started.
+4. Feel free to edit this file to your own needs and add it to the `.github` folder.
+5. Use GitKraken to `add` and `commit` this new file.
+6. Push this commit.
+7. Open up a pull request.
+8. Craft your pull request description based on what we discussed in this chapter.
+9. Click on the `Files Changed` tab and make sure it includes the `.github/PULL_REQUEST_TEMPLATE.md` file.
+10. Walk away from your pull request and then return later and review it yourself.
+11. Make any necessary changes.
+12. When you are ready, [request a reviewer](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review) by choosing someone underneath `Reviewer` on the right side!
 
 ### Preparing for the return of your review
 
@@ -134,9 +134,9 @@ As you wait for your reviewer to get back to you, it can be helpful to remind yo
 leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g102298f211a_0_49")
 ```
 
-First of all, you should pat yourself on the back for engaging in code review! It does require more time and sometimes that can feel scary with looming deadlines, but you've prioritized your commitment to creating increasingly reproducibility analyses! You could have chosen to keep your code's problems buried under a rug, but you are putting your code out there and making your analyses transparent! Remember that hidden problems don't get solved, but known problems are opportunities for reaching an even better end result than you imagined!
+First of all, you should pat yourself on the back for engaging in code review. It does require more time and sometimes that can feel scary with looming deadlines, but kudos for being able to prioritize your commitment to creating increasingly reproducibility analyses!
 
-Remember that you are not your code and mistakes are all a part of the process!
+Remember that you are not your code and mistakes are all a part of the process! Putting your project out there can feel a tad vulnerable even. You may have felt the impulse to keep your code's problems buried under a rug, but you pushed past that and are making your analyses transparent! Remember that hidden problems don't get solved, but known problems are opportunities for reaching an even better end result than you imagined!
 
 ```{r, fig.alt="Remember that you are not your code and mistakes are all a part of the process! The cartoon shows you with exclamation point and equal sign with a fake bit of code to illustrate you are not your code.", out.width = "100%", echo = FALSE}
 leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfa97af8537_0_86")
