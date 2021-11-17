@@ -1,5 +1,5 @@
 ---
-title: "Informatics Technology for Cancer Research (ITCR): Course Name "
+title: "Advanced Reproducibility in Cancer Informatics"
 date: "November, 2021"
 site: bookdown::bookdown_site
 documentclass: book

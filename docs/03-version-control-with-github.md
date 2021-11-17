@@ -148,7 +148,7 @@ Now we can open up a pull request if we go to our GitHub repository on GitHub.
 
 <img src="resources/images/03-version-control-with-github_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_713.png" title="If we’ve recently pushed our changes, we can go to our repository on GitHub and a yellow banner will prompt us to start a new pull request. " alt="If we’ve recently pushed our changes, we can go to our repository on GitHub and a yellow banner will prompt us to start a new pull request. " width="100%" />
 
-After you click on `Compare & pull request` you'll be taken to a screen where you can add information about your changes. After you are done writing your description, click `Create Pull Request`!
+After you click on `Compare & pull request` you'll be taken to a screen where you can add information about your changes. After you are done writing your description, click `Create Pull Request`! (If you don't have your pull request description _perfect_ don't worry about it, you can always edit it later).
 
 Congrats! You've just opened a pull request!
 
@@ -162,8 +162,8 @@ One more note, if you do want to use command line or you want to know more about
 
 ## More reading about GitHub
 
-- [Happy Git and GitHub for the useR](https://happygitwithr.com/)
-- [GitHub for data scientists](https://towardsdatascience.com/introduction-to-github-for-data-scientists-2cf8b9b25fba)
-- [Intro to GitHub](https://lab.github.com/githubtraining/introduction-to-github)
-- [GitHub docs about creating a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
-- [Making a Pull Request](https://www.atlassian.com/git/tutorials/making-a-pull-request)
+- [Happy Git and GitHub for the useR](https://happygitwithr.com/) by @Bryan2021.
+- [GitHub for data scientists](https://towardsdatascience.com/introduction-to-github-for-data-scientists-2cf8b9b25fba) by @Vickery2019.
+- [Intro to GitHub](https://lab.github.com/githubtraining/introduction-to-github) by @GitHub2021.
+- [GitHub docs about creating a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) by @GitHub2021b.
+- [Making a Pull Request](https://www.atlassian.com/git/tutorials/making-a-pull-request) by @Radigan2021.

@@ -1,6 +1,3 @@
----
-title: "Reproducibility in Cancer Informatics"
----
 
 # About the Authors {-}
 
@@ -12,33 +9,28 @@ These credits are based on our [course contributors table guidelines](https://gi
 |Credits|Names|
 |-------|-----|
 |**Pedagogy**||
-|Lead Content Instructor(s)|[Candace Savonen](https://www.cansavvy.com/)|
-|Lecturer(s) (include chapter name/link in parentheses if only for specific chapters) - make new line if more than one chapter involved| Delivered the course in some way - video or audio|
-|Content Author(s) (include chapter name/link in parentheses if only for specific chapters) - make new line if more than one chapter involved | If any other authors besides lead instructor|
-|Content Contributor(s) (include section name/link in parentheses) - make new line if more than one section involved|  Wrote less than a chapter|
-|Content Editor(s)/Reviewer(s) | Checked your content|
-|Content Director(s) | Helped guide the content direction|
-|Content Consultants (include chapter name/link in parentheses or word "General") - make new line if more than one chapter involved | Gave high level advice on content|
-|Acknowledgments| Gave small assistance to content but not to the level of consulting |
+|Lead Content Instructor(s)|[Candace Savonen]|
+|Lecturer(s)|[Candace Savonen]|
+|Content Directors|[Jeff Leek], [Sarah Wheelan]|
+|Content Consultants||
+|Acknowledgments| |
 |**Production**||
-|Content Publisher|[Ira Gooding](https://publichealth.jhu.edu/faculty/4130/ira-gooding)|
-|Content Publishing Reviewer(s)| Reviewed overall content and aesthetics on publishing platform|
+|Content Publisher|[Ira Gooding]|
+|Content Publishing Reviewers|[Ira Gooding]|
 |**Technical**||
-|Course Publishing Engineer(s)| Helped with the code for the technical aspects related to the specific course generation|
-|Template Publishing Engineers|[Candace Savonen](https://www.cansavvy.com/), [Carrie Wright](https://carriewright11.github.io/)|
-|Publishing Maintenance Engineer|[Candace Savonen](https://www.cansavvy.com/)|
-|Technical Publishing Stylists|[Carrie Wright](https://carriewright11.github.io/), [Candace Savonen](https://www.cansavvy.com/)|
-|Package Developers ([Leanbuild](https://github.com/jhudsl/leanbuild))|[John Muschelli](https://johnmuschelli.com/), [Candace Savonen](https://www.cansavvy.com/), [Carrie Wright](https://carriewright11.github.io/)|
+|Course Publishing Engineer|[Candace Savonen]|
+|Template Publishing Engineers|[Candace Savonen], [Carrie Wright]|
+|Publishing Maintenance Engineer|[Candace Savonen]|
+|Technical Publishing Stylists|[Carrie Wright], [Candace Savonen]|
+|Package Developers ([Leanbuild])[John Muschelli], [Candace Savonen], [Carrie Wright]|
 |**Art and Design**||
-|Illustrator(s)| Created graphics for the course|
-|Figure Artist(s)| Created figures/plots for course|
-|Videographer(s)| Filmed videos|
-|Videography Editor(s)| Edited film|
-|Audiographer(s)| Recorded audio|
-|Audiography Editor(s)| Edited audio recordings|
+|Illustrator| [Candace Savonen]|
+|Figure Artist| [Candace Savonen]|
+|Videographer|[Candace Savonen]|
+|Videography Editor| [Candace Savonen]|
 |**Funding**||
-|Funder(s)| Institution/individual who funded course including grant number|
-|Funding Staff| Staff members who help with funding|
+|Funder|[National Cancer Institute (NCI)](https://www.cancer.gov/) UE5 CA254170|
+|Funding Staff| Emily Voeglein, Fallon Bachman|
 
 &nbsp;
 
@@ -54,7 +46,7 @@ These credits are based on our [course contributors table guidelines](https://gi
 ##  collate  en_US.UTF-8                 
 ##  ctype    en_US.UTF-8                 
 ##  tz       Etc/UTC                     
-##  date     2021-11-15                  
+##  date     2021-11-17                  
 ## 
 ## ─ Packages ───────────────────────────────────────────────────────────────────
 ##  package     * version    date       lib source                            
@@ -102,10 +94,15 @@ These credits are based on our [course contributors table guidelines](https://gi
 ## [2] /usr/local/lib/R/library
 ```
 
-<!-- Fill out this table using these instructions: https://github.com/jhudsl/DaSL_Course_Template_Bookdown/wiki/How-to-give-credits
+<!-- Author information -->
 
-For JHU courses, You will need to add Ira as a credit:
+[Candace Savonen]: https://www.cansavvy.com/
+[Carrie Wright]: https://carriewright11.github.io/
+[Ira Gooding]: https://publichealth.jhu.edu/faculty/4130/ira-gooding
+[Jeff Leek]: https://jtleek.com/
+[John Muschelli]: https://johnmuschelli.com/
+[Sarah Wheelan]: https://www.hopkinsmedicine.org/profiles/details/sarah-wheelan
 
-|Content Publisher|[Ira Gooding](https://publichealth.jhu.edu/faculty/4130/ira-gooding)|
+<!-- Links -->
 
--->
+[Leanbuild]: https://github.com/jhudsl/leanbuild
