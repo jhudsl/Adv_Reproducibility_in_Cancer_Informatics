@@ -34,7 +34,7 @@ One way to ensure that her collaborators have the same computing environment is 
 @Radecic2020
 
 ```{r, fig.alt="Ruby has a particular computing environment she has developed her code from but this time Ruby has this computing environment wrapped up in a Docker container. Avi the Associate is able to download the exact computing environment Ruby used for her analysis.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfbb8cb91d5_0_50")
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfd7f4e514e_0_5")
 ```
 
 Ruby can create a Docker image that Avi can use to run the analysis. This way Ruby and Avi know they are using the same computing environment. Now if Ruby and Avi obtain different results, it won't be because of version differences.
