@@ -3,210 +3,42 @@
 leanbuild::set_knitr_image_path()
 ```
 
-# Using version control with GitHub
+# Using Docker to control your computing environment
 
 ## Learning Objectives
 
-```{r, fig.alt="This chapter will demonstrate how to: Understand that git and GitHub are tools that help your analyses be conducted reproducibly and in an open source manner. Create a GitHub account. Set up a GitHub repository for your analyses.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1013f9881e2_0_132")
+```{r, fig.alt="This chapter will demonstrate how to: Understand the goals and motivation of using Docker. Install Docker. Use basic docker commands as a part of a daily usage. Pull and use a docker image for writing code.", out.width = "100%", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfa97af8537_0_81")
 ```
 
-In the introductory part of this course, we discussed [some of the reasons for using GitHub](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/making-your-project-open-source-with-github.html#github-and-git-allow-you-to) but we didn't get into version control or GitHub's capabilities much beyond its capacity to store code in a place where others can find it.
+***
 
-In this advanced course, we will dig deeper into Git and GitHub's capabilities so you can really use this to your daily work's advantage. But, to gain the benefit of these deeper GitHub skills it will require some new habits to be formed. Fully embracing the GitHub workflow will make your work more efficient and help you create more transparent and reproducible analyses!
+In the introductory part of this course, we discussed [package management using language specific package managers](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/managing-package-versions.html) like renv or conda. Recall that even if you have the same packages installed between two computers, you can still get different results!
 
-In this chapter we're going to introduce you one by one to the basic git commands you'll need as we do them!
-
-## Prerequisites for this chapter
-
-In order to complete this chapter **you will need a GitHub account (it's free)**. If you do not currently have a GitHub account, we recommend you go through our [Intro to Github chapter from the Introduction to Reproducibility course](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/making-your-project-open-source-with-github.html) first and then return to this chapter.
-
-```{r, fig.alt="This chapter has Prerequisites. Before working on this chapter you should: Have a basic understanding of the motivation for using git and GitHub and Have a GitHub account. If you are lacking either of these, you can scan this QR code, or go to bit.ly/github-rationale", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g101867ebdaa_18_0")
+```{r, fig.alt="Ruby has a particular computing environment she has developed her code from. This computing environment is represented as a bubble above her computer with various hexagons with version numbers as well as Rstudio and R installed on her computer. Her code ran just fine on her particular computing environment. Avi attempted to run Ruby’s code on his very different local computing environment and got an error. His computer runs the same code but came up with a different result!
+", out.width = "100%", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfd7f4e514e_0_256")
 ```
 
-## Set up a Git Client (GitKraken)
+This is because package versions _do_ influence results as demonstrated by @BeaulieuJones2017.
+One approach around this problem that is a bit more thorough than package managers, is using a docker container.
 
-Interaction with git and GitHub can be done completely from command line, but sometimes this can be harder to keep track of. So to help us navigate this, we recommend using a git client. There's a lot of different clients out there, and they are generally free for most situations you will need. In this course we will take you through how to use [GitKraken](https://www.gitkraken.com/git-client), one such git client.
+```{r, fig.alt="From Beaulieu-Jones and Casey S. Greene, 2017 A.) The status quo requires a reader or reviewer to find and install specific versions of dependencies. These dependencies can become difficult to find and may become incompatible with newer versions of other software packages. Different versions of packages identify different numbers of significantly differentially expressed genes from the same source code and data. B.) Containers define a computing environment that captures dependencies. In container-based systems, the results are the same regardless of the host system.", out.width = "100%", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfd7f4e514e_0_0")
+```
+## What's Docker?
 
-GitKraken is nice because they have lots of nice tutorials, it works pretty well, and its free for most use cases. But if you find GitKraken doesn't work for you, you can explore [other git clients](https://www.hostinger.com/tutorials/best-git-gui-clients/). But for this course, we'll be using GitKraken.
-
-### Install GitKraken
-
-[Go here to install GitKraken](https://support.gitkraken.com/how-to-install/).
-
-Follow their instructions to sign in with your GitHub account. It will ask you to authorize your GitHub account to connect to GitKraken. Click `Authorize`.
-
-You may find it helpful to watch GitKraken's own tutorial (linked below) about how to "git" started, but we will also guide you through each step!
-
-```{r, echo = FALSE}
-knitr::include_url("https://www.youtube.com/embed/ub9GfRziCtU")
+```{r, fig.alt="Ruby has a particular computing environment she has developed her code from but this time Ruby has this computing environment wrapped up in a Docker container. Avi the Associate is able to download the exact computing environment Ruby used for her analysis.
+", out.width = "100%", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfd7f4e514e_0_5")
 ```
 
-GitHub has a whole host of terms that can feel like a whole language at first, but we'll introduce them one at a time. To start, a lot of the GitHub workflow centers around handling copies of your code that are either stored on the internet (are _remote_) or are stored on your computer (are _local_).
-
-```{r, fig.alt="GitHub has a whole host of terms that can feel like a whole language at first, but we'll introduce them one at a time. To start a lot of the GitHub workflow centers around handling copies of your code that are either stored on the internet (are _remote_) or are stored on your computer (are _local_).", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_120")
+```{r, fig.alt="Ruby and Avi are using Docker and can ensure that they are using the exact same computing environment as they are working on Ruby’s analysis.", out.width = "100%", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfd7f4e514e_0_55")
 ```
 
-A repository, in the case of a data science project, is mostly synonymous with the word "project". So using GitHub, a project will exist both as a remote repository and a local repository. (It will be on the internet on GitHub and on your computer).
+## Install Docker
 
-```{r, fig.alt="A remote repository is project that is stored on the internet for example, a URL to jhudsl/reproducible-R-example. A local repository is a project copy that lives on your computer. For example, a file path to reproducible-R-example. So using GitHub, a project will exist both as a remote repository and a local repository. (It will be on the internet on GitHub and on your computer). ", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_149")
-```
-
-## Get the exercise project files
-
-In this course, you can work on the exercises from your own GitHub repository, but first we will need to set that up. Here we are providing you with the files you will want to upload to that repository.
-
-Depending on whether you prefer to use R or Python, you can choose to follow this course using one or the other.
-
-<details> <summary>**Get the Python project example files**</summary>
-[Click this link to download](https://raw.githubusercontent.com/jhudsl/Reproducibility_in_Cancer_Informatics/main/chapter-zips/reproducible-python-example.zip).
-
-```{bash, include = FALSE}
-mkdir -p chapter-zips
-wget -O chapter-zips/reproducible-python-example.zip https://raw.githubusercontent.com/jhudsl/Reproducibility_in_Cancer_Informatics/main/chapter-zips/reproducible-python-example.zip
-```
-
-Now double click your chapter zip file to unzip. For Windows you may have to [follow these instructions](https://support.microsoft.com/en-us/windows/zip-and-unzip-files-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc)).
-
-```{bash, include = FALSE}
-unzip -o chapter-zips/reproducible-python-example.zip -d chapter-zips/
-```
-</details>
-
-<details> <summary>**Get the R project example files**</summary>
-[Click this link to download](https://raw.githubusercontent.com/jhudsl/Reproducibility_in_Cancer_Informatics/main/chapter-zips/reproducible-R-example.zip).
-
-```{bash, include = FALSE}
-mkdir -p chapter-zips
-wget -O chapter-zips/reproducible-R-example.zip https://raw.githubusercontent.com/jhudsl/Reproducibility_in_Cancer_Informatics/main/chapter-zips/reproducible-R-example.zip
-```
-
-Now double click your chapter zip file to unzip. For Windows you may have to [follow these instructions](https://support.microsoft.com/en-us/windows/zip-and-unzip-files-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc)).
-
-```{bash, include = FALSE}
-unzip -o chapter-zips/reproducible-R-example.zip -d chapter-zips/
-```
-</details>
-
-## Start a GitHub repository
-
-With the project files you've downloaded in the location you would like them to be, [open up your command line](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955#:~:text=Opening%20Command%20Line.&text=There%20are%20varying%20ways%20of,and%20press%20the%20return%20key.) and navigate to that being your current directory using the [`cd`](https://www.geeksforgeeks.org/cd-command-in-linux-with-examples/) and [`ls`](https://linuxize.com/post/how-to-list-files-in-linux-using-the-ls-command/) commands.
-
-- Go to [Github's main page](https://github.com/) and click Sign Up if you don't have an account.
-- Follow [these instructions to create a repository](https://docs.github.com/en/get-started/quickstart/create-a-repo). As a general, but not absolute rule, you will want to keep one GitHub repository for one analysis project.
-  - Name the repository something that reminds you what its related to. For these examples, we're calling using `repository-name` as our placeholder.
-  - Choose `Public`.
-- Follow [these instructions](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository#adding-a-file-to-a-repository-on-github) to add all the files that are inside the `reproducible-R-example.zip` or `reproducible-python-example.zip` file you downloaded to this new repository.
-
-This new repository you created should look [something like this](https://github.com/cansavvy/repository-name).
-
-### git clone
-
-Now you have a repository on GitHub online!
-
-
-But in our daily grind, we will work on this code from our own computer. So to set this up, we'll need to `clone` it to our own computer. Cloning is just making a remote copy of the project local.
-
-```{r, fig.alt="To clone a repository means to copy a remote repository to your local computer", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_90")
-```
-
-So to get started, you will need to clone the GitHub repository you created that we will be using for the duration of this course.
-
-```{r, fig.alt="To clone a GitHub repository, using GitKraken. First, Click Clone a repo. Then, choose where you’d like the repository to be on your computer using the ‘Browse’ button. Then Copy + Paste the url to the project you want to clone where it says ‘URL’. Then click `Clone the repository’.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_166")
-```
-
-To clone a GitHub repository, using GitKraken. First, click `Clone a repo`. Then, choose where you’d like the repository to be on your computer using the `Browse` button. You will need to `Copy + Paste` your new repository's url to  where it says `URL`.
-
-Navigate to your repository on GitHub to copy the URL. Copying and pasting is advisable because any little typo will inhibit cloning.
-
-Now you are ready to click `Clone the repository`! It will ask you if you'd like to `Open Now`, click that.
-
-### Create a branch
-
-Handling branches is where you unleash the real benefit of GitHub, but it's also the confusing part to get a hang of.
-
-```{r, fig.alt="Using branches is where you unleash the real benefit of GitHub, but it's also the confusing part to get a hang of. Currently, the repository we just made has a main branch. The main branch is the default branch and is The main branch is what you want most curated, working, and always ready for others to use!", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_266")
-```
-
-The best way to get a grasp on what the branches represent is to create one and start using it.
-
-```{r, fig.alt="In GitKraken we can create a new branch; this will be your working copy. First, click the Branch button. Next, type in a branch name in the box that the cursor is blinking in. In our example, we are calling it a-new-branch. Then click Enter! Now you have a new branch!", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_632")
-```
-
-In GitKraken we can create a new branch; this will be your working copy. First, click the Branch button. Next, type in a branch name in the box that the cursor is blinking in. In our example, we are calling it `a-new-branch`. Now click `Enter`! Now you have a new branch!
-
-```{r, fig.alt="Now that we’ve created this new branch, we can do what we like with a-new-branch, knowing that main will remain safe.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_618")
-```
-
-Now we can edit our files and code however we normally would. Go ahead and make an edit to any file in your new repository.
-
-```{r, fig.alt="Now that we are on our new branch, we will Edit a file as you normally would). Make any change to the README.md file in your local repository. Save the changes you make to that file. Now the changes you make to any files in this repository should show up here.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_645")
-```
-
-If you've made a change to any file in your repository, it will appear in GitKraken and you can click on it to see the differences.
-
-```{r, fig.alt="To see how the file is different, click on the filename in the right side of the GitKraken screen. To add the file to the staged change, click on the Stage File button. ", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_652")
-```
-
-If we want to add these file changes to our current branch, we need to `commit` them.
-
-```{r, fig.alt="To commit files is to include your set of file changes to your current branch. Write a commit message that explains the changes. Now click on the button that says Commit changes to 1 file.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_664")
-```
-
-Now that we have changes committed to our branch we are ready to also add them to the remote, internet copy! To do this, we will need to `push` our branch.
-
-```{r, fig.alt="To push changes on GitHub means to add changes to the remote repository on GitHub.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_686")
-```
-
-To push means to add changes that are on your new branch to the remote branch (internet version). The word origin just refers to where your branch is stored on the internet. Choose your origin in the dropdown menu and click Submit.
-
-```{r, fig.alt="To push means to add changes that are on your new branch to the remote branch (internet version). The word origin just refers to where your branch is stored on the internet. Choose your origin in the dropdown menu and click Submit. ", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_786")
-```
-
-After a variable number of commits, your branch, called a-new-branch is a different version of the original code base that may have a nifty improvement to it. But our main goal is to add that nifty improvement to the main branch. To start this process of bringing in new changes to the main curated repository, we will create a pull request.
-
-From GitHub:
-
-> Pull requests let you tell others about changes you've pushed to a GitHub repository. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.
-
-Pull Requests are the meat of how code changes and improvements get reviewed and incorporated! A vast majority of the benefits of incorporating GitHub into your workflow centers around fully utilizing the power of pull requests!
-
-```{r, fig.alt="After a variable number of commits, your branch, called a-new-branch is a different version of the original code base that may have a nifty improvement to it. But our main goal is to add that nifty improvement to the main branch. To start this process of bringing in new changes to the main curated repository, we will create a pull request. A pull request will show us the difference between main and a-new-branch so you scrutinize this feature before adding it to the main branch.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_751")
-```
-
-Now we can open up a pull request if we go to our GitHub repository on GitHub.
-
-```{r, fig.alt="If we’ve recently pushed our changes, we can go to our repository on GitHub and a yellow banner will prompt us to start a new pull request. ", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_713")
-```
-
-After you click on `Compare & pull request` you'll be taken to a screen where you can add information about your changes. After you are done writing your description, click `Create Pull Request`!
-
-Congrats! You've just opened a pull request!
-
-In an upcoming chapter we will discuss what information you should put in this pull request description to make it pertinent for yourself and whoever reviews your pull request.
-
-To summarize, this is what this workflow looks like:
-
-```{r, fig.alt="An overview of the GitHub workflow. Uploaded a project to GitHub. Clone that project to your computer. You will only have to do this cloning and set up step once per repository/project. Now let’s say you have an update in mind. Make a new branch to work off of. Edit code as you normally would. Add and commit the file changes to your branch. Push the changes to your remote branch. Repeat these steps until it you’ve addressed the update you had in mind Now, Create a pull request.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_675")
-```
-
-One more note, if you do want to use command line or you want to know more about the specific git commands that GitKraken is doing for you (might be handy for troubleshooting), **the specific commands that can be used or Googled at each step are highlighted in red in the images**, you just need to add `git` before them! So for example you would type `git push` in your command line in order to push your code. Or if you'd like to know more about pushing code, you can google `git push`.
 
 ## More reading about GitHub
 
