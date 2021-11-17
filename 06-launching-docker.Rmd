@@ -3,7 +3,7 @@
 leanbuild::set_knitr_image_path()
 ```
 
-# Using Docker to control your computing environment
+# Launching a Docker image
 
 ## Learning Objectives
 

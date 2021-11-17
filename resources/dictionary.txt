@@ -41,3 +41,10 @@ URL’
 useR
 www
 vivo
+benefitted
+conda
+jhudsl
+Jupyter
+pwd
+renv
+RStudio
