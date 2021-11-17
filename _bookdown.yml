@@ -1,10 +1,12 @@
-book_filename: "Advanced Reproducibility"
+book_filename: "Advanced Reproducibility in Cancer Informatics"
 chapter_name: "Chapter "
 repo: https://github.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics
 rmd_files: ["index.Rmd",
             "01-intro.Rmd",
             "02-defining-reproducibility.Rmd",
             "03-version-control-with-github.Rmd",
+            "04-code-review-author.Rmd",
+            "05-code-review-reviewer.Rmd",
             "06-docker.Rmd",
             "About.Rmd",
             "References.Rmd"]
