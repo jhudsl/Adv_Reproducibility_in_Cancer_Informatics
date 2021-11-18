@@ -3,7 +3,7 @@
 
 # Introduction
 
-<img src="resources/images/01-intro_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gd422c5de97_0_0.png" title="Title image: Advanced Reproducibility in Cancer Informatics" alt="Title image: Advanced Reproducibility in Cancer Informatics" width="100%" />
+![](resources/images/01-intro_files/figure-docx//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gd422c5de97_0_0.png){width=100%}
 
 ## Motivation
 
@@ -21,7 +21,7 @@ The course is intended for students in the biomedical sciences and researchers w
 
 ## Curriculum  
 
-<img src="resources/images/01-intro_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gd422c5de97_0_10.png" title="This course will demonstrate how to: Become familiar with using GitHub in as a part of a analysis project workflow. Engage in code review steps on GitHub. Pull and use an existing Docker image for running an analysis. Make data shareable. Write a simple Github Actions. Obtain confidence to learn and apply additional reproducibility tools to an analysis." alt="This course will demonstrate how to: Become familiar with using GitHub in as a part of a analysis project workflow. Engage in code review steps on GitHub. Pull and use an existing Docker image for running an analysis. Make data shareable. Write a simple Github Actions. Obtain confidence to learn and apply additional reproducibility tools to an analysis."  />
+![](resources/images/01-intro_files/figure-docx//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gd422c5de97_0_10.png)
 
 The course includes hands-on exercises for how to apply reproducible code concepts to their code. Individuals who take this course are encouraged to complete these activities as they follow along with the course material to help increase the reproducibility of their analyses.
 

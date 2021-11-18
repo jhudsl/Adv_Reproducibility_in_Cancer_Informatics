@@ -22,7 +22,7 @@ theres-plenty-of-context
 includes-an-explicit-request-for-what-kind-of-feedback-is-needed
 points-out-questionable-areas-that-need-extra-attention
 are-relatively-small-and-focused
-dont-ask-a-reviewer-for-help-too-soon
+dont-ask-a-reviewer-to-dig-through-dirty-code
 in-summary
 exercise-create-your-pull-request-description
 set-up-a-pull-request-template
@@ -38,3 +38,12 @@ suggestions
 appreciations
 exercise-review-past-yous-code
 recommended-reading-about-code-review-1
+launching-a-docker-image
+learning-objectives-3
+whats-docker
+install-docker
+getting-started-with-docker
+a-breakdown-what-these-docker-run-options-are
+more-about-docker
+python-specific
+r-specific

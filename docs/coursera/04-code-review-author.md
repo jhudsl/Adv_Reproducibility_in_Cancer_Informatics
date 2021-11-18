@@ -29,7 +29,7 @@ Even if you end up being the only person who will review your own code, writing 
 
 ## Characteristics of great pull requests
 
-### there's plenty of context!
+### There's plenty of context!
 
 What's the story behind around the changes you are proposing? Sometimes when we are in the thick of a project we can make the mistake of assuming everyone knows what we know. This can unfortunately leave a huge burden on your reviewer to try to follow a paper trail to try to understand what you are doing.
 
@@ -42,7 +42,7 @@ Tell a short story to explain what lead to you making these changes including at
 - What inspired you to take this approach -- are there other things you tried?
 - Are there other pull requests related to this change?
 
-### includes an explicit request for what kind of feedback is needed
+### Includes an explicit request for what kind of feedback is needed
 
 What would you like your reviewer to do with this pull request? Stating this explicitly can save both of you time in this code review.
 
@@ -51,13 +51,13 @@ What would you like your reviewer to do with this pull request? Stating this exp
 - Are you looking for feedback on the results or methods?
 
 
-### points out questionable areas that need extra attention
+### Points out questionable areas that need extra attention
 
 Are there specific areas of the code you are having trouble with or are unsure about? Send a link to the [specific lines in GitHub](https://stackoverflow.com/questions/23821235/how-to-link-to-specific-line-number-on-github) you are asking about. Are there results that are surprising, confusing, or [smell wrong](https://github.com/jennybc/code-smells-and-feels#code-smells-and-feels)?  
 
 Be sure to detail what you have dug into and tried at this point for any problematic points.   
 
-### are relatively small and focused
+### Are relatively small and focused
 
 Try to make sure your pull requests aren't too long! Code reviewing fatigue is very real. If you send a reviewer thousands of lines of code to review it will be very overwhelming to review or understand.
 
@@ -69,9 +69,9 @@ Also recall that incremental changes are good! Perhaps you do have a very large 
 
 [Using Stacked Pull Requests in GitHub](https://blog.logrocket.com/using-stacked-pull-requests-in-github/)
 
-### don't ask a reviewer for help too soon
+### Don't ask a reviewer to dig through dirty code
 
-Determining when a pull request is ready for review is a skill in itself. Pull requests that haven't had enough time to be polished can put an unnecessarily larger burden on the reviewer. On the other hand, pull requests that have been hashed and rehashed in a silo might have benefitted from big picture feedback at an earlier stage of the code. This is something that you and your team can figure out a balance for in time using lots of communication!
+Determining when a pull request fully cooked and ready for review is a skill in itself. Pull requests that haven't had enough time to be polished can put an unnecessarily larger burden on the reviewer. On the other hand, pull requests that have been hashed and rehashed in a silo might have benefitted from big picture feedback at an earlier stage of the code. This is something that you and your team can figure out a balance for in time using lots of communication!
 
 This being said, the first reviewer of your code should always be yourself! Take time to review your own changes by clicking on the `Files Changed` tab and going over that section carefully.
 
