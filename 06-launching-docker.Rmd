@@ -13,25 +13,28 @@ leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIA
 
 ***
 
-In the introductory part of this course, we discussed [package management using language specific package managers](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/managing-package-versions.html) like renv or conda. Recall that even if you have the same packages installed between two computers, you can still get different results!
+In the introductory part of this course, we discussed [package managers](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/managing-package-versions.html) like renv or conda. Recall that even if you have the same packages installed between two computers, you can still get different results!
 
 ```{r, fig.alt="Ruby has a particular computing environment she has developed her code from. This computing environment is represented as a bubble above her computer with various hexagons with version numbers as well as Rstudio and R installed on her computer. Her code ran just fine on her particular computing environment. Avi attempted to run Ruby’s code on his very different local computing environment and got an error. His computer runs the same code but came up with a different result!", out.width = "100%", echo = FALSE}
 leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfd7f4e514e_0_256")
 ```
 
 This is because package versions _do_ influence results as demonstrated by @BeaulieuJones2017.
-One approach around this problem that is a bit more thorough than package managers, is using a docker container.
+Package managers address part of this problem, however their limitation is that generally only can help with certain sets of packages. `conda` really only manages `conda` installed packages and `renv` doesn't help with package management outside of R. Both of these have limited capabilities for cross platform shipping.
 
-```{r, fig.alt="From Beaulieu-Jones and Casey S. Greene, 2017 A.) The status quo requires a reader or reviewer to find and install specific versions of dependencies. These dependencies can become difficult to find and may become incompatible with newer versions of other software packages. Different versions of packages identify different numbers of significantly differentially expressed genes from the same source code and data. B.) Containers define a computing environment that captures dependencies. In container-based systems, the results are the same regardless of the host system.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfd7f4e514e_0_0")
-```
-## What's Docker?
-
-One way to ensure that her collaborators have the same computing environment is Ruby could ship her computer to each of her collaborators and have them run the analysis on her computer. But before you buy hundreds of laptops for your projects, we'll show you how Docker will allow you to send your computing environment to your collaborators in a practical manner.
+This is where Docker can help fill in the gaps.
 
 > I don’t even count anymore how many times did my code break when someone else run it. The strange part was — it worked on my machine. That’s where Docker saves the day. If it works on your machine, it will work on any.
 
 @Radecic2020
+
+```{r, fig.alt="From Beaulieu-Jones and Casey S. Greene, 2017 A.) The status quo requires a reader or reviewer to find and install specific versions of dependencies. These dependencies can become difficult to find and may become incompatible with newer versions of other software packages. Different versions of packages identify different numbers of significantly differentially expressed genes from the same source code and data. B.) Containers define a computing environment that captures dependencies. In container-based systems, the results are the same regardless of the host system.", out.width = "100%", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfd7f4e514e_0_0")
+```
+
+## What's Docker?
+
+One way to ensure that her collaborators have the same computing environment is Ruby could ship her computer to each of her collaborators and have them run the analysis on her computer. But before you buy hundreds of laptops for your projects, we'll show you how Docker will allow you to send your computing environment to your collaborators in a practical manner.
 
 ```{r, fig.alt="Ruby has a particular computing environment she has developed her code from but this time Ruby has this computing environment wrapped up in a Docker container. Avi the Associate is able to download the exact computing environment Ruby used for her analysis.", out.width = "100%", echo = FALSE}
 leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfd7f4e514e_0_5")
@@ -48,7 +51,6 @@ leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIA
 Go here to [install Docker](https://www.docker.com/get-started), following the instructions for your particular operating system.
 
 If you don't have a Docker account create an account when prompted, or [go here](https://hub.docker.com/).
-
 After you install Docker, start up Docker desktop by double clicking on the app. It may take some time to start up.
 
 ## Getting started with Docker
@@ -74,13 +76,16 @@ docker pull jhudsl/reproducible-R
 ```
 </details>
 
+
 3. Open up the Docker Desktop app. Click on 'images' on the left. This shows the images you currently have available on your computer.
+
 
 ```{r, fig.alt="Open up Docker desktop. Click on ‘images’ on the left. This shows the images you have available on your computer. If you hover your mouse over one of these images, you will see a Run button appear. Click the Run button to start a container with this image.", out.width = "100%", echo = FALSE}
 leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfbb8cb91d5_0_237")
 ```
 
 4. Return to your command line. Using [`cd`](https://www.geeksforgeeks.org/cd-command-in-linux-with-examples/) and [`ls`](https://linuxize.com/post/how-to-list-files-in-linux-using-the-ls-command/) navigate to your project repository (or whatever files you'd like to be accessible in your development environment) and we can start up a docker container using `docker run`.
+
 
 <details> <summary> To run the **Python docker image** </summary>
 ```
