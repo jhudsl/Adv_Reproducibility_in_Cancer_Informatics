@@ -66,27 +66,27 @@ You can practice building a docker image by downloading the dockerfiles we have 
 
 <details> <summary> Get the Python Dockerfile </summary>
 
-Download the Dockerfile for the `jhudsl/reproducible-python` image.
+Download the example Dockerfile for Python analyses.
 
 ```
-wget https://raw.githubusercontent.com/jhudsl/reproducible-python-example/main/docker/Dockerfile
+wget https://raw.githubusercontent.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics/main/resources/python-docker/Dockerfile
 ```
 If you get a message like `command not found` that means you will need to install [`wget`](https://www.jcchouinard.com/wget/).
 
-Altervatively, you can navigate to the [Dockerfile's page on GitHub](https://raw.githubusercontent.com/jhudsl/reproducible-python-example/main/docker/Dockerfile) and use `File` > `Save as` but do not add any suffix to the end of the file (no `.txt` or anything). Just save it as `Dockerfile`.
+Altervatively, you can navigate to the [Dockerfile's page on GitHub](https://raw.githubusercontent.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics/main/resources/python-docker/Dockerfile) and use `File` > `Save as` but do not add any suffix to the end of the file (no `.txt` or anything). Just save it as `Dockerfile`.
 
 </details>
 
 <details> <summary> Get the R Dockerfile </summary>
 
-Download the Dockerfile for the `jhudsl/reproducible-python` image.
+Download the example Dockerfile for R analyses.
 
 ```
-wget https://raw.githubusercontent.com/jhudsl/reproducible-r-example/main/docker/Dockerfile
+wget https://raw.githubusercontent.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics/main/resources/r-docker/Dockerfile
 ```
 If you get a message like `command not found` that means you will need to install [`wget`](https://www.jcchouinard.com/wget/).
 
-Altervatively, you can navigate to the [Dockerfile's page on GitHub](https://raw.githubusercontent.com/jhudsl/reproducible-r-example/main/docker/Dockerfile) and use `File` > `Save as` but do not add any suffix to the end of the file (no `.txt` or anything). Just save it as `Dockerfile`.
+Altervatively, you can navigate to the [Dockerfile's page on GitHub](https://raw.githubusercontent.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics/main/resources/r-docker/Dockerfile) and use `File` > `Save as` but do not add any suffix to the end of the file (no `.txt` or anything). Just save it as `Dockerfile`.
 
 </details>
 
@@ -102,16 +102,102 @@ docker build -f Dockerfile . -t image_name
 
 Navigate back to your Docker desktop and the `images` window. If your image built successfully, you should see a new image in your list!
 
-
 ### Modify a Docker image
 
 If you want add or remove a package from a Docker image, you'll need to modify the Dockerfile.
-
 Using your preferred text editor (or RStudio or Jupyter Lab), open up the Dockerfile.
 
-Dockerfiles have [these main commands as described by the Docker documentation](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/):
+You will see the first line in the Docker image is a `FROM` command. This is a command that will take another docker image to start from.
+- For our **R example**, we are starting off with an image that already has R and the tidyverse. - For our **Python example** we are starting off with an image that already has Python and Jupyter Lab.
 
-> FROM creates a layer from the ubuntu:18.04 Docker image.
-COPY adds files from your Docker client’s current directory.
-RUN builds your application with make.
-CMD specifies what command to run within the container.
+There are so many Docker images out there, that it might be that someone has already created a docker image with most of the functionality you need for your project.
+
+`FROM` is one of the [main commands that a Dockerfile can take as described by their documentation](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/):
+
+> **FROM** creates a layer from the another Docker image.
+> **COPY** adds files from your Docker client’s current directory.
+> **RUN** builds your application with make.
+> **CMD** specifies what command to run within the container.
+
+### Add to the Dockerfile
+
+To get a feel for how these work, let's add a line to the your example Dockerfile.
+
+Using your preferred text editor (or RStudio or Jupyter Lab), open up the Dockerfile and add this line at the very end of the file.
+
+```
+CMD ["echo","Yay! I added to this Docker image"]
+```
+
+Now re-run `docker build` as you did in the previous section. (Use the command below but replace `image_name` with whatever your image is called).
+
+```
+docker build -f Dockerfile . -t image_name
+```
+
+If all built successfully, you should see a message like:
+```
+=> exporting to image                                                     0.0s
+=> => exporting layers                                                    0.0s
+=> => writing image sha256:ayuahgfuiseohfauwheufhauwihefuahweufhawfbuibe  0.0s
+=> => naming to docker.io/library/image_name
+```
+
+Now to run the image we can use the docker run command we used in the previous chapter and we should have a message: `Yay! I added to this Docker image` pop up upon building.
+
+<details> <summary> To run your new **Python docker image** </summary>
+But replace `image_name` with whatever you have called your image.
+```
+docker run --rm -v $PWD:/home/jovyan/work -e JUPYTER_ENABLE_LAB=yes -p 8787:8787 image_name
+```
+</details>
+
+<details> <summary> To run the **R docker image** </summary>
+But replace `image_name` with whatever you have called your image.
+```
+docker run --rm -v $PWD:/home/rstudio -e PASSWORD=password -p 8787:8787 image_name
+```
+</details>
+
+Stop and remove these containers before moving on. You can do this by going to Docker desktop and clicking on the trash can button next to each container and image; or you can use these commands:
+
+_How to stop an individual container:_  
+```
+docker container ls
+docker stop <containerID>
+```
+_Get rid of all non-running containers:_  
+```
+docker container prune
+```
+_Stop all containers:_  
+```
+docker stop $(docker ps -a -q)
+```
+_Remove all containers:_  
+```
+docker rm -f $(docker ps -a -q)
+```
+
+#### Add another package!
+
+Starting off with your example Dockerfile, we will practice adding another package and re-build the docker image with a new package.
+
+<details> <summary> Add an Python package </summary>
+
+</details>
+
+<details> <summary> Add an R package </summary>
+
+
+</details>
+
+
+There are so many things you can add to your docker image. (Picture whatever software and packages you are using on your computer). We can only get you started for the feel of how to build a Dockerfile, and what you put on your Docker image will be up to you.
+
+But your most important goal should be to include absolutely everything that your analysis project uses. This way your project can be re-run using the docker image you've created; making it more reproducible!
+
+### More about Docker next steps
+
+- [Dockerfile Tutorial by Example](https://takacsmark.com/dockerfile-tutorial-by-example-dockerfile-best-practices-2018/#lets-create-your-first-image).
+- [Dockerfile examples](https://linuxtechlab.com/learn-create-dockerfile-example/)
