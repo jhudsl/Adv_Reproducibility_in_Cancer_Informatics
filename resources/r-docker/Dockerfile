@@ -14,5 +14,3 @@ RUN Rscript -e  "BiocManager::install( \
 
 # Set password default
 ENV USER="rstudio" PASSWORD="rstudio" ROOT="TRUE"
-
-CMD ["echo","Yay! I added to this Docker image"]
