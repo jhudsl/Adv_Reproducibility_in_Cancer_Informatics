@@ -54,14 +54,60 @@ Go to your [local command line]((https://towardsdatascience.com/a-quick-guide-to
 
 Now you will be able to test pulling your image using `docker pull <image name>` like we did in the previous chapter.
 
-## Modifying images
-
 Docker images can be pulled from being stored online but these images are built originally from a `Dockerfile`.
 
-A Dockerfile is a recipe for how to build a docker image. You can take a look at our docker images for these examples:  
+## Exercise: Build a Docker image
 
-- The [Dockerfile for `jhudsl/reproducible-r`](https://raw.githubusercontent.com/jhudsl/reproducible-R-example/main/docker/Dockerfile)
-- The [Dockerfile for `jhudsl/reproducible-python`](https://raw.githubusercontent.com/jhudsl/reproducible-python-example/main/docker/Dockerfile)
+A Dockerfile is a recipe for how to build a docker image. The best way to learn to write Dockerfiles is to start off with one that is already written and modify it for your needs.
+
+You can practice building a docker image by downloading the dockerfiles we have started and changing it slightly.
+
+### Download an example Dockerfile
+
+<details> <summary> Get the Python Dockerfile </summary>
+
+Download the Dockerfile for the `jhudsl/reproducible-python` image.
+
+```
+wget https://raw.githubusercontent.com/jhudsl/reproducible-python-example/main/docker/Dockerfile
+```
+If you get a message like `command not found` that means you will need to install [`wget`](https://www.jcchouinard.com/wget/).
+
+Altervatively, you can navigate to the [Dockerfile's page on GitHub](https://raw.githubusercontent.com/jhudsl/reproducible-python-example/main/docker/Dockerfile) and use `File` > `Save as` but do not add any suffix to the end of the file (no `.txt` or anything). Just save it as `Dockerfile`.
+
+</details>
+
+<details> <summary> Get the R Dockerfile </summary>
+
+Download the Dockerfile for the `jhudsl/reproducible-python` image.
+
+```
+wget https://raw.githubusercontent.com/jhudsl/reproducible-r-example/main/docker/Dockerfile
+```
+If you get a message like `command not found` that means you will need to install [`wget`](https://www.jcchouinard.com/wget/).
+
+Altervatively, you can navigate to the [Dockerfile's page on GitHub](https://raw.githubusercontent.com/jhudsl/reproducible-r-example/main/docker/Dockerfile) and use `File` > `Save as` but do not add any suffix to the end of the file (no `.txt` or anything). Just save it as `Dockerfile`.
+
+</details>
+
+### Build a Docker image from a Dockerfile
+
+Place this newly downloaded Dockerfile with the rest of your project files.
+
+Build a docker image from this Dockerfile using the command below, but replace `image_name` with what you would like your modified image to be called.   
+
+```
+docker build -f Dockerfile . -t image_name
+```
+
+Navigate back to your Docker desktop and the `images` window. If your image built successfully, you should see a new image in your list!
+
+
+### Modify a Docker image
+
+If you want add or remove a package from a Docker image, you'll need to modify the Dockerfile.
+
+Using your preferred text editor (or RStudio or Jupyter Lab), open up the Dockerfile.
 
 Dockerfiles have [these main commands as described by the Docker documentation](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/):
 
@@ -69,15 +115,3 @@ Dockerfiles have [these main commands as described by the Docker documentation](
 COPY adds files from your Docker client’s current directory.
 RUN builds your application with make.
 CMD specifies what command to run within the container.
-
-
-The best way to learn to write Dockerfiles is to start off with one that is already written and modify it for your needs.
-
-You can practice building a docker image by downloading the dockerfiles we have started.
-[Dockerfile for `jhudsl/reproducible-python`](https://raw.githubusercontent.com/jhudsl/reproducible-python-example/main/docker/Dockerfile)
-
-As you modify that Dockerfile, you can build it with a command like such. Where `docker/Dockerfile` is the path to a dockerfile, and `-t` is is what you'd like the image to be called.
-
-```
-docker build -f docker/Dockerfile . -t jhudsl/reproducible-python
-```
