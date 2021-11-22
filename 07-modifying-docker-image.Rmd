@@ -159,7 +159,54 @@ docker run --rm -v $PWD:/home/rstudio -e PASSWORD=password -p 8787:8787 image_na
 ```
 </details>
 
-Stop and remove these containers before moving on. You can do this by going to Docker desktop and clicking on the trash can button next to each container and image; or you can use these commands:
+**Stop and remove these containers before moving on.** You can do this by going to Docker desktop and clicking on the trash can button next to each container. For images click `Clean up` to check off the images you'd like to remove and then hit `Remove`.
+
+### Add another package!
+
+Starting off with your example Dockerfile, we will practice adding another package and re-build the docker image with a new package.
+
+**Note** that spacing is important as well as having a `\` at the end of each line if the command is continuing.
+
+#### Adding an R package  
+
+To add R packages from CRAN, you can use this kind of format:
+```
+RUN Rscript -e  "install.packages( \
+    c('BiocManager', \
+      'R.utils', \
+      'newpackagename'))"
+```
+
+To add an R package from Bioconductor, you can follow this kind of format:
+
+```
+RUN Rscript -e "options(warn = 2); BiocManager::install( \
+  c('limma', \
+    'newpackagename')
+
+```
+
+To add a **Python package using pip**, you will need to add pip3 to install Python packages using this format:
+```  
+RUN pip3 install \
+    "somepackage==0.1.0"
+```
+
+There are so many things you can add to your Docker image. (Picture whatever software and packages you are using on your computer). We can only get you started for the feel of how to build a Dockerfile, and what you put on your Docker image will be up to you.
+
+To figure out how to add something, a good strategy is to look for other Dockerfiles that might have the package you want installed and borrow their `RUN` command. Then try to re-build your Docker image with that added `RUN` command and see if it builds successfully.
+
+### More about Docker next steps
+
+- [Dockerfile Tutorial by Example](https://takacsmark.com/dockerfile-tutorial-by-example-dockerfile-best-practices-2018/#lets-create-your-first-image).
+- [Dockerfile examples](https://linuxtechlab.com/learn-create-dockerfile-example/)
+
+### A list of handy Docker commands:
+
+_Get info on current containers:_  
+```
+docker ps
+```
 
 _How to stop an individual container:_  
 ```
@@ -178,26 +225,3 @@ _Remove all containers:_
 ```
 docker rm -f $(docker ps -a -q)
 ```
-
-#### Add another package!
-
-Starting off with your example Dockerfile, we will practice adding another package and re-build the docker image with a new package.
-
-<details> <summary> Add an Python package </summary>
-
-</details>
-
-<details> <summary> Add an R package </summary>
-
-
-</details>
-
-
-There are so many things you can add to your docker image. (Picture whatever software and packages you are using on your computer). We can only get you started for the feel of how to build a Dockerfile, and what you put on your Docker image will be up to you.
-
-But your most important goal should be to include absolutely everything that your analysis project uses. This way your project can be re-run using the docker image you've created; making it more reproducible!
-
-### More about Docker next steps
-
-- [Dockerfile Tutorial by Example](https://takacsmark.com/dockerfile-tutorial-by-example-dockerfile-best-practices-2018/#lets-create-your-first-image).
-- [Dockerfile examples](https://linuxtechlab.com/learn-create-dockerfile-example/)
