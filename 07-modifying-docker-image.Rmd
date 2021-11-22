@@ -12,3 +12,42 @@ leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIA
 ```
 
 ***
+
+The docker image you are using from the last chapter was pre-made for you, but you will find depending on the needs of your project, that you may need different packages installed. In this chapter we will introduce you to the basics of how to manage your own Docker image.
+
+## Managing images
+
+Images can be on your own computer or on dockerhub.
+To see your list of images on your computer, you can go to Docker desktop. From here you will want to delete images and containers periodically because they do take up room on your computer.
+
+```{r, fig.alt="A reminder of where to find your current local images. Open up Docker desktop. Click on ‘images’ on the left. This shows the images you have available on your computer. If you hover your mouse over one of these images, you will see a Run button appear. Click the Run button to start a container with this image.", out.width = "100%", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfc8849fa4d_0_17")
+```
+
+To see what images you have on your internet repository, you can log on to dockerhub.
+[Go here to login (or create a username if you have not yet)](https://hub.docker.com/).
+
+```{r, fig.alt="The dockerhub login page.", out.width = "100%", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfc8849fa4d_0_38")
+```
+
+After you sign into dockerhub, you can see the list of repositories you have stored online. At this point, you won’t have any if you just created your dockerhub account. To create a new repository, click the ‘Create Repository’ button.
+
+```{r, fig.alt="In your dockerhub main page, you can see the list of repositories you have stored online. At this point, you won’t have any if you just created your dockerhub account. To create a new repository, click the ‘Create Repository’ button.", out.width = "100%", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfc8849fa4d_0_10")
+```
+
+Upon adding the new repository to dockerhub, you will need name it the same as whatever you are calling it locally. You can put a description and name and click create. On the right it shows how you can interact with this from your local command line.
+
+```{r, fig.alt="Upon adding the new repository to dockerhub, you will need name it the same as whatever you are calling it locally. You can put a description and name and click create. On the right it shows how you can interact with this from your local command line.", out.width = "100%", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfc8849fa4d_0_48")
+```
+
+After you've created the image repository, you will be brought to the image repository page.
+It will tell you `Last pushed: never`. On the right it will tell you the command you will need in order to push the image to dockerhub.
+
+```{r, fig.alt="After you've created the image repository, you will be brought to the image repository page. It will tell you `Last pushed: never`. On the right it will tell you the command you will need in order to push the image to dockerhub.", out.width = "100%", echo = FALSE}
+leanbuild::include_slide(https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfc8849fa4d_0_56")
+```
+
+Go to your local command line and use the command specified. You don't have to specify a tagname if you don't want to.  
