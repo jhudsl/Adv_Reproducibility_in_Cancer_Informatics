@@ -1,0 +1,14 @@
+
+```{r, include = FALSE}
+leanbuild::set_knitr_image_path()
+```
+
+# Modifying a Docker image
+
+## Learning Objectives
+
+```{r, fig.alt="Learning Objectives. This chapter will demonstrate how to: Modify an existing Docker image. Store a Docker image on dockerhub. Incorporate Docker image use into a project.", out.width = "100%", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfbc11e6ab0_0_149")
+```
+
+***

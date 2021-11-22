@@ -8,6 +8,7 @@ rmd_files: ["index.Rmd",
             "04-code-review-author.Rmd",
             "05-code-review-reviewer.Rmd",
             "06-launching-docker.Rmd",
+            "07-modifying-docker-image.Rmd",
             "About.Rmd",
             "References.Rmd"]
 new_session: yes
