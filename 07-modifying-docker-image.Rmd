@@ -213,14 +213,17 @@ _How to stop an individual container:_
 docker container ls
 docker stop <containerID>
 ```
+
 _Get rid of all non-running containers:_  
 ```
 docker container prune
 ```
+
 _Stop all containers:_  
 ```
 docker stop $(docker ps -a -q)
 ```
+
 _Remove all containers:_  
 ```
 docker rm -f $(docker ps -a -q)
