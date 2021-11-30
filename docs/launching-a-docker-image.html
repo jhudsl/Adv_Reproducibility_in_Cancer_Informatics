@@ -30,7 +30,7 @@
   
   <link rel="shortcut icon" href="assets/dasl_favicon.ico" type="image/x-icon" />
 <link rel="prev" href="engaging-in-code-review---as-a-reviewer.html"/>
-<link rel="next" href="about-the-authors.html"/>
+<link rel="next" href="modifying-a-docker-image.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.5.0/jquery-3.5.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -156,6 +156,21 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="6.5" data-path="launching-a-docker-image.html"><a href="launching-a-docker-image.html#more-about-docker"><i class="fa fa-check"></i><b>6.5</b> More about Docker</a></li>
 </ul></li>
+<li class="chapter" data-level="7" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html"><i class="fa fa-check"></i><b>7</b> Modifying a Docker image</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#learning-objectives-4"><i class="fa fa-check"></i><b>7.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="7.2" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#managing-images"><i class="fa fa-check"></i><b>7.2</b> Managing images</a></li>
+<li class="chapter" data-level="7.3" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#exercise-build-a-docker-image"><i class="fa fa-check"></i><b>7.3</b> Exercise: Build a Docker image</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#download-an-example-dockerfile"><i class="fa fa-check"></i><b>7.3.1</b> Download an example Dockerfile</a></li>
+<li class="chapter" data-level="7.3.2" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#build-a-docker-image-from-a-dockerfile"><i class="fa fa-check"></i><b>7.3.2</b> Build a Docker image from a Dockerfile</a></li>
+<li class="chapter" data-level="7.3.3" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#modify-a-docker-image"><i class="fa fa-check"></i><b>7.3.3</b> Modify a Docker image</a></li>
+<li class="chapter" data-level="7.3.4" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#add-to-the-dockerfile"><i class="fa fa-check"></i><b>7.3.4</b> Add to the Dockerfile</a></li>
+<li class="chapter" data-level="7.3.5" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#add-another-package"><i class="fa fa-check"></i><b>7.3.5</b> Add another package!</a></li>
+<li class="chapter" data-level="7.3.6" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#more-about-docker-next-steps"><i class="fa fa-check"></i><b>7.3.6</b> More about Docker next steps</a></li>
+<li class="chapter" data-level="7.3.7" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#a-list-of-handy-docker-commands"><i class="fa fa-check"></i><b>7.3.7</b> A list of handy Docker commands:</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -268,9 +283,12 @@ To run the <strong>R docker image</strong>
 <p>Login to RStudio. Your username will be <code>rstudio</code> and your password, will be whatever you set your password to be.</p>
 <p>Now you are ready to develop inside a Docker container!</p>
 </details>
+<p>To see what containers you have running or to clear out old containers, in Docker Desktop you can go to the <code>Containers/Apps</code> page.</p>
+<p><img src="resources/images/06-launching-docker_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc8849fa4d_0_10.png" title="If you navigate to the Containers/Apps page in Docker Desktop, you should see a container in the list. It will be named something randomly (in this case ‘zen_merkle’). From this page you can stop or remove old containers as well as navigate to their browser page. " alt="If you navigate to the Containers/Apps page in Docker Desktop, you should see a container in the list. It will be named something randomly (in this case ‘zen_merkle’). From this page you can stop or remove old containers as well as navigate to their browser page. " width="100%" /></p>
 <div id="a-breakdown-what-these-docker-run-options-are" class="section level3" number="6.4.1">
 <h3><span class="header-section-number">6.4.1</span> A Breakdown what these Docker run options are</h3>
-<p><a href="https://docs.docker.com/">Docker has super extensive documentation</a>! But to get you started, here’s the highlights:</p>
+<p><a href="https://docs.docker.com/">Docker has super extensive documentation</a>! But to get you started, here’s the highlights for this <code>docker run</code> command:</p>
+<p><img src="resources/images/06-launching-docker_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfbc11e6ab0_0_18.png" title="A breakdown of the docker run command. The remove option (`--rm`) automatically removes the container when docker run exits. Dash v, the volume option is how you specify what files you’d like available in the container and where to find them. In this instance we are using the output of the pwd command (print working directory) so that wherever you run this command, the files in that directory will be available in the container. The part after the colon specifies where these files will be found in the container. Dash e, the environment option is how you can specify any environment variables you will need. In this instance for the rocker image we need to specify a password. Dash p, the port option is how you specify What port you can connect to this on using your internet browser. The last part of the docker run command says what image to run, so in this instance, we are running a container using the jhudsl/reproducible-r image." alt="A breakdown of the docker run command. The remove option (`--rm`) automatically removes the container when docker run exits. Dash v, the volume option is how you specify what files you’d like available in the container and where to find them. In this instance we are using the output of the pwd command (print working directory) so that wherever you run this command, the files in that directory will be available in the container. The part after the colon specifies where these files will be found in the container. Dash e, the environment option is how you can specify any environment variables you will need. In this instance for the rocker image we need to specify a password. Dash p, the port option is how you specify What port you can connect to this on using your internet browser. The last part of the docker run command says what image to run, so in this instance, we are running a container using the jhudsl/reproducible-r image." width="100%" /></p>
 <ul>
 <li><strong>The remove option (<code>--rm</code>)</strong> Automatically removes the container when docker run exits.</li>
 <li><strong>The volume option (<code>-v</code>)</strong> is how you specify what files you’d like available in the container and where to find them. In this instance we are using the output of the pwd command (print working directory) so that wherever you run this command, the files in that directory will be available in the container. The part after the colon specifies where these files will be found in the container.</li>
@@ -279,7 +297,6 @@ To run the <strong>R docker image</strong>
 <li><strong>The port option (<code>-p</code>)</strong> is how you specify what port you can connect to this on using your internet browser.</li>
 <li><strong>The image</strong> to use is specified in the last part of the <code>docker run</code> command says what image to run, so in these instances, we are running a container using the <code>jhudsl/reproducible-r</code> or <code>jhudsl/reproducible-python</code> images.</li>
 </ul>
-<p><img src="resources/images/06-launching-docker_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfbc11e6ab0_0_18.png" title="A breakdown of the docker run command. The remove option (`--rm`) automatically removes the container when docker run exits. Dash v, the volume option is how you specify what files you’d like available in the container and where to find them. In this instance we are using the output of the pwd command (print working directory) so that wherever you run this command, the files in that directory will be available in the container. The part after the colon specifies where these files will be found in the container. Dash e, the environment option is how you can specify any environment variables you will need. In this instance for the rocker image we need to specify a password. Dash p, the port option is how you specify What port you can connect to this on using your internet browser. The last part of the docker run command says what image to run, so in this instance, we are running a container using the jhudsl/reproducible-r image." alt="A breakdown of the docker run command. The remove option (`--rm`) automatically removes the container when docker run exits. Dash v, the volume option is how you specify what files you’d like available in the container and where to find them. In this instance we are using the output of the pwd command (print working directory) so that wherever you run this command, the files in that directory will be available in the container. The part after the colon specifies where these files will be found in the container. Dash e, the environment option is how you can specify any environment variables you will need. In this instance for the rocker image we need to specify a password. Dash p, the port option is how you specify What port you can connect to this on using your internet browser. The last part of the docker run command says what image to run, so in this instance, we are running a container using the jhudsl/reproducible-r image." width="100%" /></p>
 </div>
 </div>
 <div id="more-about-docker" class="section level2" number="6.5">
@@ -342,7 +359,7 @@ Srivastav, Prakhar. 2018. <span>“A <span>Docker</span> <span>Tutorial</span> f
         </div>
       </div>
 <a href="engaging-in-code-review---as-a-reviewer.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="about-the-authors.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="modifying-a-docker-image.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

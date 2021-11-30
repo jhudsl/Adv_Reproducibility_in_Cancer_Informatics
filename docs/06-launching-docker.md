@@ -93,17 +93,21 @@ Now you are ready to develop inside a Docker container!
 
 </details>
 
+To see what containers you have running or to clear out old containers, in Docker Desktop you can go to the `Containers/Apps` page.
+
+![](resources/images/06-launching-docker_files/figure-docx//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc8849fa4d_0_10.png){width=100%}
+
 ### A Breakdown what these Docker run options are
 
-[Docker has super extensive documentation](https://docs.docker.com/)! But to get you started, here's the highlights:  
+[Docker has super extensive documentation](https://docs.docker.com/)! But to get you started, here's the highlights for this `docker run` command: 
+
+![](resources/images/06-launching-docker_files/figure-docx//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfbc11e6ab0_0_18.png){width=100%}
 
 - **The remove option (`--rm`)**	Automatically removes the container when docker run exits.
 - **The volume option (`-v`)** is how you specify what files you’d like available in the container and where to find them. In this instance we are using the output of the pwd command (print working directory) so that wherever you run this command, the files in that directory will be available in the container. The part after the colon specifies where these files will be found in the container.
 - **The environment option (`-e`)** is how you can specify any environment variables you will need. In this instance for the rocker image we need to specify a password. but for the python image we needed to specify `JUPYTER_ENABLE_LAB=yes` so that we can use Jupyter Lab.  
 - **The port option (`-p`)** is how you specify what port you can connect to this on using your internet browser.
 - **The image** to use is specified in the last part of the `docker run` command says what image to run, so in these instances, we are running a container using the `jhudsl/reproducible-r` or `jhudsl/reproducible-python` images.
-
-![](resources/images/06-launching-docker_files/figure-docx//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfbc11e6ab0_0_18.png){width=100%}
 
 ## More about Docker
 

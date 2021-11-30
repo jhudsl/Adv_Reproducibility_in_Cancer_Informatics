@@ -47,3 +47,15 @@ a-breakdown-what-these-docker-run-options-are
 more-about-docker
 python-specific
 r-specific
+modifying-a-docker-image
+learning-objectives-4
+managing-images
+exercise-build-a-docker-image
+download-an-example-dockerfile
+build-a-docker-image-from-a-dockerfile
+modify-a-docker-image
+add-to-the-dockerfile
+add-another-package
+adding-an-r-package
+more-about-docker-next-steps
+a-list-of-handy-docker-commands
