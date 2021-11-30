@@ -20,6 +20,29 @@ We've discussed that a reproducible analysis can be run by someone else and obta
 leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g104d8c58b62_46_9")
 ```
 
+There are a lot of applications for GitHub Actions (see links at the end of this chapter) but in the context of our [R](https://github.com/jhudsl/reproducible-R-example) and [Python](https://github.com/jhudsl/reproducible-python-example) examples or for scientific notebooks in general, it can be useful to build a GitHub Actions that re-runs the notebook every time a pull request is opened.
 
-Great course about github actions: 
-https://lab.github.com/githubtraining/github-actions:-hello-world
+This is useful because if the notebook does not re-run successfully by GitHub actions, this can be informative to something being amiss in the changes being made.
+
+## Build an example GitHub Actions
+
+### Structure of GitHub actions file
+
+GitHub actions are written yaml file that you store in a folder called `.github/workflows` in your GitHub repository.
+
+They have two main parts: the `trigger` and the `action`
+
+The trigger is specified by `on:` and the action that happens upon the trigger being activated is specified by `jobs:`.
+
+```
+on:
+  # Some stuff that specifies when the action should run
+
+jobs:
+  # The action that should run
+```
+
+
+- [Python example GitHub Actions to re-run notebook](https://github.com/jhudsl/reproducible-python-example/blob/main/.github/workflows/run-python-notebook.yml)
+- [R example GitHub Actions to re-run notebook](https://github.com/jhudsl/reproducible-R-example/blob/main/.github/workflows/run-r-notebook.yml)
+- [Great course about github actions](https://lab.github.com/githubtraining/github-actions:-hello-world)
