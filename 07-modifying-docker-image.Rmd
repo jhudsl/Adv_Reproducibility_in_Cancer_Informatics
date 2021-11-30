@@ -46,11 +46,11 @@ leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIA
 After you've created the image repository, you will be brought to the image repository page.
 It will tell you `Last pushed: never`. On the right it will tell you the command you will need in order to push the image to dockerhub.
 
-```{r, fig.alt="After you've created the image repository, you will be brought to the image repository page. It will tell you `Last pushed: never`. On the right it will tell you the command you will need in order to push the image to dockerhub.", out.width = "100%", echo = FALSE}
+```{r, fig.alt="After you've created the image repository, you will be brought to the image repository page. It will tell you Last pushed: never. On the right it will tell you the command you will need in order to push the image to dockerhub.", out.width = "100%", echo = FALSE}
 leanbuild::include_slide(https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfc8849fa4d_0_56")
 ```
 
-Go to your [local command line]((https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955)) and use the command specified on the right side of your repository page. You don't have to specify a tagname if you don't want to.  If you don't want to specify a tagname, leave off the `:tagname` if you like.
+Go to your [local command line](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955) and use the command specified on the right side of your repository page. You don't have to specify a tagname if you don't want to.  If you don't want to specify a tagname, leave off the `:tagname` if you like.
 
 Now you will be able to test pulling your image using `docker pull <image name>` like we did in the previous chapter.
 
