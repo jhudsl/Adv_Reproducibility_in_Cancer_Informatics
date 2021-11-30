@@ -30,9 +30,11 @@ This is useful because if the notebook does not re-run successfully by GitHub ac
 
 GitHub actions are written yaml file that you store in a folder called `.github/workflows` in your GitHub repository.
 
-They have two main parts: the `trigger` and the `action`
+They have two main parts:  
+- the trigger: `on:`
+- the action: `job:`
 
-The trigger is specified by `on:` and the action that happens upon the trigger being activated is specified by `jobs:`.
+The trigger is specified by `on:` and the action that happens upon the trigger being activated is specified by `jobs:`. The job can be made up of multiple `steps:`.
 
 ```
 on:
@@ -42,7 +44,57 @@ jobs:
   # The action that should run
 ```
 
+### Setting up the trigger
 
+There's a list of things that happen in GitHub that can be used to trigger a GitHub actions. [See the list here](https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows) in this case, we will set up a github action that happens whenever a pull request is opened that is going to the `main` branch.
+```
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  # The action that should run
+```
+
+### Setting up the action
+
+The action part of the GitHub action can be named something (here we are calling it `name-of-job` and we can use the `runs-on:` to specify a docker image to run this on. For this we will use a base image of `ubuntu-latest`.
+
+This simple action will run a bash command `echo` to say `"GitHub action is run!"`.
+
+```
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  name-of-job:
+    runs-on: ubuntu-latest
+
+    - name: Run message
+       run: echo "GitHub action is run!"
+```
+
+
+## Exercise: Set up a GitHub action
+
+Use a [GitHub Action Template by following these instructions](https://docs.github.com/en/actions/learn-github-actions/using-workflow-templates#using-workflow-templates)
+
+You will need to navigate to your own repository to do this.
+
+_Tips for developing a GitHub Action:_  
+
+- As you are adding your GitHub actions, [consult the GitHub actions log](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/using-workflow-run-logs).
+- [GitHub actions has pretty great documentation](https://docs.github.com/en/actions) so as you are setting up your GitHub actions template, you will want to reference them.
+- Be careful with your spacing this will break your GitHub action.
+- Take a look at other GitHub actions that are doing something similar to what you are trying to accomplish.
+- For testing purposes, modify the trigger so you can test it. You may want to use a [manual workflow trigger](https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows#manual-events) or [`pull request:` and `push:`](https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows#push).
+
+
+### Resources for setting up your GitHub Actions
 - [Python example GitHub Actions to re-run notebook](https://github.com/jhudsl/reproducible-python-example/blob/main/.github/workflows/run-python-notebook.yml)
 - [R example GitHub Actions to re-run notebook](https://github.com/jhudsl/reproducible-R-example/blob/main/.github/workflows/run-r-notebook.yml)
-- [Great course about github actions](https://lab.github.com/githubtraining/github-actions:-hello-world)
+- [Great course about GitHub actions](https://lab.github.com/githubtraining/github-actions:-hello-world)
+- [Introduction to GitHub Actions for data scientists](https://towardsdatascience.com/introduction-to-github-actions-7fcb30d0f959).
