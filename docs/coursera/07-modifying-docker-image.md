@@ -182,6 +182,8 @@ There are so many things you can add to your Docker image. (Picture whatever sof
 
 To figure out how to add something, a good strategy is to look for other Dockerfiles that might have the package you want installed and borrow their `RUN` command. Then try to re-build your Docker image with that added `RUN` command and see if it builds successfully.
 
+And lastly, make sure that whatever changes you make to your Dockerfile, that you add it to your GitHub repository by [creating a pull request as we did in Chapter 3](https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/using-version-control-with-github.html#create-a-branch).
+
 ### More about Docker next steps
 
 - [Dockerfile Tutorial by Example](https://takacsmark.com/dockerfile-tutorial-by-example-dockerfile-best-practices-2018/#lets-create-your-first-image).

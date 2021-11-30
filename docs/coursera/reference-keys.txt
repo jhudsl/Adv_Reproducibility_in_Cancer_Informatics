@@ -13,7 +13,7 @@ get-the-exercise-project-files
 start-a-github-repository
 git-clone
 create-a-branch
-more-reading-about-github
+more-resources-for-learning-github
 engaging-in-code-review---as-an-author
 learning-objectives-1
 author-responsibilities-in-code-review
@@ -59,3 +59,11 @@ add-another-package
 adding-an-r-package
 more-about-docker-next-steps
 a-list-of-handy-docker-commands
+automation-as-a-reproducibility-tool
+learning-objectives-5
+build-an-example-github-actions
+structure-of-github-actions-file
+setting-up-the-trigger
+setting-up-the-action
+exercise-set-up-a-github-action
+resources-for-setting-up-your-github-actions

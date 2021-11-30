@@ -160,10 +160,12 @@ To summarize, this is what this workflow looks like:
 
 One more note, if you do want to use command line or you want to know more about the specific git commands that GitKraken is doing for you (might be handy for troubleshooting), **the specific commands that can be used or Googled at each step are highlighted in red in the images**, you just need to add `git` before them! So for example you would type `git push` in your command line in order to push your code. Or if you'd like to know more about pushing code, you can google `git push`.
 
-## More reading about GitHub
+## More resources for learning GitHub
 
 - [Happy Git and GitHub for the useR](https://happygitwithr.com/) by @Bryan2021.
 - [GitHub for data scientists](https://towardsdatascience.com/introduction-to-github-for-data-scientists-2cf8b9b25fba) by @Vickery2019.
 - [Intro to GitHub](https://lab.github.com/githubtraining/introduction-to-github) by @GitHub2021.
+- [First Day on GitHub](https://lab.github.com/githubtraining/first-day-on-github) by @GitHub2021c.
+- [First Week on GitHub](https://lab.github.com/githubtraining/first-week-on-github) by @GitHub2021d.
 - [GitHub docs about creating a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) by @GitHub2021b.
 - [Making a Pull Request](https://www.atlassian.com/git/tutorials/making-a-pull-request) by @Radigan2021.
