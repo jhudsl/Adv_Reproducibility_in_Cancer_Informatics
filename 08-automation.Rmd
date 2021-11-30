@@ -19,3 +19,7 @@ We've discussed that a reproducible analysis can be run by someone else and obta
 ```{r, fig.alt="Ruby wants to know if her analysis is reproducibly so she sets up an automation tool to re-run her analysis whenever she pushes changes to her analysis. This robot has a computer for a body and says 'I will re-run Ruby’s analysis consistently and instantly upon whatever trigger she sets up.''", out.width = "100%", echo = FALSE}
 leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g104d8c58b62_46_9")
 ```
+
+
+Great course about github actions: 
+https://lab.github.com/githubtraining/github-actions:-hello-world
