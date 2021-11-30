@@ -31,8 +31,9 @@ This is useful because if the notebook does not re-run successfully by GitHub ac
 GitHub actions are written yaml file that you store in a folder called `.github/workflows` in your GitHub repository.
 
 They have two main parts:  
-- the trigger: `on:`
-- the action: `job:`
+
+- the trigger: `on:`  
+- the action: `job:`  
 
 The trigger is specified by `on:` and the action that happens upon the trigger being activated is specified by `jobs:`. The job can be made up of multiple `steps:`.
 
@@ -80,18 +81,19 @@ jobs:
 
 ## Exercise: Set up a GitHub action
 
-Use a [GitHub Action Template by following these instructions](https://docs.github.com/en/actions/learn-github-actions/using-workflow-templates#using-workflow-templates)
+Use a <a href="https://docs.github.com/en/actions/learn-github-actions/using-workflow-templates#using-workflow-templates" target="_blank">GitHub Action Template by following these instructions</a>.
 
 You will need to navigate to your own repository to do this.
 
 _Tips for developing a GitHub Action:_  
 
-- As you are adding your GitHub actions, [consult the GitHub actions log](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/using-workflow-run-logs).
-- [GitHub actions has pretty great documentation](https://docs.github.com/en/actions) so as you are setting up your GitHub actions template, you will want to reference them.
+- As you are adding your GitHub actions, <a href="https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/using-workflow-run-logs" target="_blank">consult the GitHub actions log</a>.
+- <a href="https://docs.github.com/en/actions" target="_blank">GitHub actions has pretty great documentation</a> so as you are setting up your GitHub actions template, you will want to reference them.
 - Be careful with your spacing this will break your GitHub action.
 - Take a look at other GitHub actions that are doing something similar to what you are trying to accomplish.
-- For testing purposes, modify the trigger so you can test it. You may want to use a [manual workflow trigger](https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows#manual-events) or [`pull request:` and `push:`](https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows#push).
-
+- For testing purposes, modify the trigger so you can test it. You may want to use a
+<a href="https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows#manual-events" target="_blank">manual workflow trigger</a> or <a href="https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows#push" target="_blank">`pull request:` and `push:`</a>.
+- Use `|` in your `run:` command to give a multi-line command.
 
 ### Resources for setting up your GitHub Actions
 - [Python example GitHub Actions to re-run notebook](https://github.com/jhudsl/reproducible-python-example/blob/main/.github/workflows/run-python-notebook.yml)
