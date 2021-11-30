@@ -48,3 +48,12 @@ Jupyter
 pwd
 renv
 RStudio
+Altervatively
+CMD
+Dockerfile
+Dockerfile
+dockerfiles
+Dockerfiles
+dockerhub
+tagname
+tidyverse
