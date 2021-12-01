@@ -7,6 +7,13 @@ leanbuild::set_knitr_image_path()
 
 ## Learning Objectives
 
-```{r, fig.alt="This chapter will demonstrate how to: Understand that git and GitHub are tools that help your analyses be conducted reproducibly and in an open source manner. Create a GitHub account. Set up a GitHub repository for your analyses.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1013f9881e2_0_132")
+```{r, fig.alt="Learning Objectives This chapter will demonstrate how to: Provide data in a way that allows your analysis to be reproducible. Set up a download data script to include with your analysis repository.", out.width = "100%", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gcfac54ca19_0_0")
 ```
+
+The first part of any analysis should be getting all the data needed to run it. Data come in all kinds of formats and sizes so while we can't give specifics on how to share your data we can provide these guidelines:
+
+- The priority
+
+
+https://jhudatascience.org/Computing_and_Data_Management/data-sharing.html

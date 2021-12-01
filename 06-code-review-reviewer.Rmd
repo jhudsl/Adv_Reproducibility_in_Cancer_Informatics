@@ -7,7 +7,7 @@ leanbuild::set_knitr_image_path()
 
 ## Learning Objectives
 
-```{r, fig.alt="This chapter will demonstrate how to: Understand what to look for when reviewing a pull request. Provide helpful feedback in the context of code review.", out.width = "100%", echo = FALSE}
+```{r, fig.alt="Learning objectives This chapter will demonstrate how to: Understand what to look for when reviewing a pull request. Provide helpful feedback in the context of code review.", out.width = "100%", echo = FALSE}
 leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfc3e8b194d_0_236")
 ```
 
@@ -93,7 +93,7 @@ leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIA
 2. Create a repository and pull request with this old code, following the general steps for creating a repository and pull request [from the previous chapter](https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/using-version-control-with-github.html#start-a-github-repository).
 3. Request yourself as a reviewer.
 4. Review the code on Github using [their docs as a guide for the mechanics of it](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request).
-5. As you review, have empathy for past yourself, and give questions, appreciations, and suggestions in regards to this code. 
+5. As you review, have empathy for past yourself, and give questions, appreciations, and suggestions in regards to this code.
 
 #### Recommended reading about code review
 

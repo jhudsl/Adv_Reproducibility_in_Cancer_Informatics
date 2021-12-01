@@ -7,7 +7,7 @@ leanbuild::set_knitr_image_path()
 
 ## Learning Objectives
 
-```{r, fig.alt="This chapter will demonstrate how to: Understand the goals and motivation of using Docker. Install Docker. Use basic docker commands as a part of a daily usage. Pull and use a docker image for writing code.", out.width = "100%", echo = FALSE}
+```{r, fig.alt="Learning objectives This chapter will demonstrate how to: Understand the goals and motivation of using Docker. Install Docker. Use basic docker commands as a part of a daily usage. Pull and use a docker image for writing code.", out.width = "100%", echo = FALSE}
 leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfa97af8537_0_81")
 ```
 
@@ -117,7 +117,7 @@ leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIA
 
 ### A Breakdown what these Docker run options are
 
-[Docker has super extensive documentation](https://docs.docker.com/)! But to get you started, here's the highlights for this `docker run` command: 
+[Docker has super extensive documentation](https://docs.docker.com/)! But to get you started, here's the highlights for this `docker run` command:
 
 ```{r, fig.alt="A breakdown of the docker run command. The remove option (`--rm`) automatically removes the container when docker run exits. Dash v, the volume option is how you specify what files you’d like available in the container and where to find them. In this instance we are using the output of the pwd command (print working directory) so that wherever you run this command, the files in that directory will be available in the container. The part after the colon specifies where these files will be found in the container. Dash e, the environment option is how you can specify any environment variables you will need. In this instance for the rocker image we need to specify a password. Dash p, the port option is how you specify What port you can connect to this on using your internet browser. The last part of the docker run command says what image to run, so in this instance, we are running a container using the jhudsl/reproducible-r image.", out.width = "100%", echo = FALSE}
 leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfbc11e6ab0_0_18")

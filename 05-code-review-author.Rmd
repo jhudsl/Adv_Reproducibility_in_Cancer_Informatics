@@ -7,7 +7,7 @@ leanbuild::set_knitr_image_path()
 
 ## Learning Objectives
 
-```{r, fig.alt="This chapter will demonstrate how to: Understand the goals and motivation of code review. Solicit feedback in the context of code review. Incorporate feedback in the context of code review.", out.width = "100%", echo = FALSE}
+```{r, fig.alt="Learning objectives This chapter will demonstrate how to: Understand the goals and motivation of code review. Solicit feedback in the context of code review. Incorporate feedback in the context of code review.", out.width = "100%", echo = FALSE}
 leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfa93c34783_0_0")
 ```
 
