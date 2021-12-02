@@ -7,7 +7,7 @@ leanbuild::set_knitr_image_path()
 
 ## Learning Objectives
 
-```{r, fig.alt="This chapter will demonstrate how to: Understand that git and GitHub are tools that help your analyses be conducted reproducibly and in an open source manner. Create a GitHub account. Set up a GitHub repository for your analyses.", out.width = "100%", echo = FALSE}
+```{r, fig.alt="Learning objectives This chapter will demonstrate how to: Understand that git and GitHub are tools that help your analyses be conducted reproducibly and in an open source manner. Create a GitHub account. Set up a GitHub repository for your analyses.", out.width = "100%", echo = FALSE}
 leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1013f9881e2_0_132")
 ```
 
