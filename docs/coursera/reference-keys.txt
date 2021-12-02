@@ -14,8 +14,11 @@ start-a-github-repository
 git-clone
 create-a-branch
 more-resources-for-learning-github
-engaging-in-code-review---as-an-author
+providing-data
 learning-objectives-1
+overview-of-data-sharing
+engaging-in-code-review---as-an-author
+learning-objectives-2
 author-responsibilities-in-code-review
 characteristics-of-great-pull-requests
 theres-plenty-of-context
@@ -29,7 +32,7 @@ set-up-a-pull-request-template
 preparing-for-the-return-of-your-review
 recommended-reading-about-code-review
 engaging-in-code-review---as-a-reviewer
-learning-objectives-2
+learning-objectives-3
 reviewer-responsibilities-in-code-review
 what-to-look-for
 how-to-communicate-it
@@ -39,7 +42,7 @@ appreciations
 exercise-review-past-yous-code
 recommended-reading-about-code-review-1
 launching-a-docker-image
-learning-objectives-3
+learning-objectives-4
 whats-docker
 install-docker
 getting-started-with-docker
@@ -48,7 +51,7 @@ more-about-docker
 python-specific
 r-specific
 modifying-a-docker-image
-learning-objectives-4
+learning-objectives-5
 managing-images
 exercise-build-a-docker-image
 download-an-example-dockerfile
@@ -60,7 +63,7 @@ adding-an-r-package
 more-about-docker-next-steps
 a-list-of-handy-docker-commands
 automation-as-a-reproducibility-tool
-learning-objectives-5
+learning-objectives-6
 build-an-example-github-actions
 structure-of-github-actions-file
 setting-up-the-trigger

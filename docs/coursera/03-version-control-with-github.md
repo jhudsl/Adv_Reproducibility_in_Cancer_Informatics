@@ -5,7 +5,7 @@
 
 ## Learning Objectives
 
-<img src="resources/images/03-version-control-with-github_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1013f9881e2_0_132.png" title="This chapter will demonstrate how to: Understand that git and GitHub are tools that help your analyses be conducted reproducibly and in an open source manner. Create a GitHub account. Set up a GitHub repository for your analyses." alt="This chapter will demonstrate how to: Understand that git and GitHub are tools that help your analyses be conducted reproducibly and in an open source manner. Create a GitHub account. Set up a GitHub repository for your analyses." width="100%" />
+<img src="resources/images/03-version-control-with-github_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1013f9881e2_0_132.png" title="Learning objectives This chapter will demonstrate how to: Understand that git and GitHub are tools that help your analyses be conducted reproducibly and in an open source manner. Create a GitHub account. Set up a GitHub repository for your analyses." alt="Learning objectives This chapter will demonstrate how to: Understand that git and GitHub are tools that help your analyses be conducted reproducibly and in an open source manner. Create a GitHub account. Set up a GitHub repository for your analyses." width="100%" />
 
 In the introductory part of this course, we discussed [some of the reasons for using GitHub](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/making-your-project-open-source-with-github.html#github-and-git-allow-you-to) but we didn't get into version control or GitHub's capabilities much beyond its capacity to store code in a place where others can find it.
 
