@@ -19,6 +19,9 @@ This course introduces the concepts of reproducibility and replicability in the 
 
 The course is intended for students in the biomedical sciences and researchers who use informatics tools in their research. It is the follow up course to the [Introduction to Reproducibility in Cancer Informatics course](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/)
 
+
+![](resources/images/01-intro_files/figure-docx//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g10614eb2a50_0_132.png){width=100%}
+
 ## Curriculum  
 
 ![](resources/images/01-intro_files/figure-docx//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gd422c5de97_0_10.png)
