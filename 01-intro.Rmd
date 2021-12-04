@@ -23,6 +23,11 @@ This course introduces the concepts of reproducibility and replicability in the 
 
 The course is intended for students in the biomedical sciences and researchers who use informatics tools in their research. It is the follow up course to the [Introduction to Reproducibility in Cancer Informatics course](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/)
 
+
+```{r, fig.alt="Intro to Reproducibility: For individuals who: Have some familiarity with R or Python - have written some scripts. Have not had formal training in computational methods. Have limited or no familiarity with GitHub. Advanced Reproducibility: For individuals who: Have completed the intro course and/or Have used GitHub somewhat.", out.width = "100%", echo = FALSE}
+leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g10614eb2a50_0_132")
+```
+
 ## Curriculum  
 
 ```{r, fig.alt = "This course will demonstrate how to: Become familiar with using GitHub in as a part of a analysis project workflow. Engage in code review steps on GitHub. Pull and use an existing Docker image for running an analysis. Make data shareable. Write a simple Github Actions. Obtain confidence to learn and apply additional reproducibility tools to an analysis.", echo = FALSE}
