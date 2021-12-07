@@ -11,6 +11,7 @@ leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIA
 
 ## Topics covered:
 
+This is the second course in a two part series:
 
 ```{r, fig.alt="Advanced Reproducibility for Cancer Informatics: What’s covered. Getting comfortable with GitHub concepts and workflow. Utilizing version control. Engaging in code review. Using a Docker image. Modifying a Docker image. Using Automation (github actions).", out.width = "100%", echo = FALSE}
 leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfd7c7a0ba8_0_21")
