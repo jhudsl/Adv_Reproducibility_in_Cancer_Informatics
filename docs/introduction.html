@@ -96,10 +96,11 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Course</a></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#motivation"><i class="fa fa-check"></i><b>1.1</b> Motivation</a></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#target-audience"><i class="fa fa-check"></i><b>1.2</b> Target Audience</a></li>
-<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#curriculum"><i class="fa fa-check"></i><b>1.3</b> Curriculum</a></li>
-<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#how-to-use-the-course"><i class="fa fa-check"></i><b>1.4</b> How to use the course</a></li>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#topics-covered"><i class="fa fa-check"></i><b>1.1</b> Topics covered:</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#motivation"><i class="fa fa-check"></i><b>1.2</b> Motivation</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#target-audience"><i class="fa fa-check"></i><b>1.3</b> Target Audience</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#curriculum"><i class="fa fa-check"></i><b>1.4</b> Curriculum</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#how-to-use-the-course"><i class="fa fa-check"></i><b>1.5</b> How to use the course</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="defining-reproducibility.html"><a href="defining-reproducibility.html"><i class="fa fa-check"></i><b>2</b> Defining reproducibility</a></li>
 <li class="chapter" data-level="3" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html"><i class="fa fa-check"></i><b>3</b> Using version control with GitHub</a>
@@ -252,29 +253,36 @@ div.csl-indent {
 <div id="introduction" class="section level1" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
 <p><img src="resources/images/01-intro_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gd422c5de97_0_0.png" title="Title image: Advanced Reproducibility in Cancer Informatics" alt="Title image: Advanced Reproducibility in Cancer Informatics" width="100%" /></p>
-<div id="motivation" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Motivation</h2>
+<div id="topics-covered" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Topics covered:</h2>
+<p>This is the second course in a two part series:</p>
+<p><img src="resources/images/01-intro_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfd7c7a0ba8_0_21.png" title="Advanced Reproducibility for Cancer Informatics: What’s covered. Getting comfortable with GitHub concepts and workflow. Utilizing version control. Engaging in code review. Using a Docker image. Modifying a Docker image. Using Automation (github actions)." alt="Advanced Reproducibility for Cancer Informatics: What’s covered. Getting comfortable with GitHub concepts and workflow. Utilizing version control. Engaging in code review. Using a Docker image. Modifying a Docker image. Using Automation (github actions)." width="100%" /></p>
+<p><img src="resources/images/01-intro_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfd7c7a0ba8_0_0.png" title="Discussed in the Introductory Reproducibility in Cancer Informatics course: Organizing your project, using notebooks, Making your project open source with GitHub, using notebooks, managing package versions, writing durable code, documenting analyses, understanding the importance of code review." alt="Discussed in the Introductory Reproducibility in Cancer Informatics course: Organizing your project, using notebooks, Making your project open source with GitHub, using notebooks, managing package versions, writing durable code, documenting analyses, understanding the importance of code review." width="100%" /></p>
+</div>
+<div id="motivation" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Motivation</h2>
 <p>Cancer datasets are plentiful, complicated, and hold untold amounts of information regarding cancer biology. Cancer researchers are working to apply their expertise to the analysis of these vast amounts of data but training opportunities to properly equip them in these efforts can be sparse. This includes training in reproducible data analysis methods.</p>
 <p>Data analyses are generally not reproducible without direct contact with the original researchers and a substantial amount of time and effort <span class="citation">(<a href="#ref-BeaulieuJones2017" role="doc-biblioref">Beaulieu-Jones and Greene 2017</a>)</span>. Reproducibility in cancer informatics (as with other fields) is still not monitored or incentivized despite that it is fundamental to the scientific method. Despite the lack of incentive, many researchers strive for reproducibility in their own work but often lack the skills or training to do so effectively.</p>
 <p>Equipping researchers with the skills to create reproducible data analyses increases the efficiency of everyone involved. Reproducible analyses are more likely to be understood, applied, and replicated by others. This helps expedite the scientific process by helping researchers avoid false positive dead ends. Open source clarity in reproducible methods also saves researchers’ time so they don’t have to reinvent the proverbial wheel for methods that everyone in the field is already performing.</p>
-<p>This course introduces the concepts of reproducibility and replicability in the context of cancer informatics. It uses hands-on exercises to demonstrate in practical terms how to increase the reproducibility of data analyses. The course also introduces tools relevant to reproducibility including analysis notebooks, package managers, git and GitHub.</p>
+<p>This course introduces tools that help enhance reproducibility and replicability in the context of cancer informatics. It uses hands-on exercises to demonstrate in practical terms how to get acquainted with these tools but is by no means meant to be a comprehensive dive into these tools. The course introduces tools and their concepts such as git and GitHub, code review, Docker, and GitHub actions.</p>
 </div>
-<div id="target-audience" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Target Audience</h2>
+<div id="target-audience" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Target Audience</h2>
 <p>The course is intended for students in the biomedical sciences and researchers who use informatics tools in their research. It is the follow up course to the <a href="https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/">Introduction to Reproducibility in Cancer Informatics course</a></p>
 <p><img src="resources/images/01-intro_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g10614eb2a50_0_132.png" title="Intro to Reproducibility: For individuals who: Have some familiarity with R or Python - have written some scripts. Have not had formal training in computational methods. Have limited or no familiarity with GitHub. Advanced Reproducibility: For individuals who: Have completed the intro course and/or Have used GitHub somewhat." alt="Intro to Reproducibility: For individuals who: Have some familiarity with R or Python - have written some scripts. Have not had formal training in computational methods. Have limited or no familiarity with GitHub. Advanced Reproducibility: For individuals who: Have completed the intro course and/or Have used GitHub somewhat." width="100%" /></p>
 </div>
-<div id="curriculum" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Curriculum</h2>
+<div id="curriculum" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Curriculum</h2>
 <p><img src="resources/images/01-intro_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gd422c5de97_0_10.png" title="This course will demonstrate how to: Become familiar with using GitHub in as a part of a analysis project workflow. Engage in code review steps on GitHub. Pull and use an existing Docker image for running an analysis. Make data shareable. Write a simple Github Actions. Obtain confidence to learn and apply additional reproducibility tools to an analysis." alt="This course will demonstrate how to: Become familiar with using GitHub in as a part of a analysis project workflow. Engage in code review steps on GitHub. Pull and use an existing Docker image for running an analysis. Make data shareable. Write a simple Github Actions. Obtain confidence to learn and apply additional reproducibility tools to an analysis."  /></p>
-<p>The course includes hands-on exercises for how to apply reproducible code concepts to their code. Individuals who take this course are encouraged to complete these activities as they follow along with the course material to help increase the reproducibility of their analyses.</p>
 <p><strong>Goal of this course:</strong><br />
 To equip learners with a deeper knowledge of the capabilities of reproducibility tools and how they can apply to their existing analyses scripts and projects.</p>
+<p><strong>What is NOT the goal of this course</strong>
+To be a comprehensive tutorial to each of the tools shown.</p>
 </div>
-<div id="how-to-use-the-course" class="section level2" number="1.4">
-<h2><span class="header-section-number">1.4</span> How to use the course</h2>
-<p>This course is designed with busy professional learners in mind – who may have to pick up and put down the course when their schedule allows.</p>
-<p>Each exercise has the option for you to continue along with the example files as you’ve been editing them in each chapter, OR you can download fresh chapter files that have been edited in accordance with the relative part of the course. This way, if you decide to skip a chapter or find that your own files you’ve been working on no longer make sense, you have a fresh starting point at each exercise.</p>
+<div id="how-to-use-the-course" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> How to use the course</h2>
+<p>Each chapter has associated exercises that you are encourage to complete in order to get the full benefit of the course</p>
+<p>This course is designed with busy professional learners in mind – who may have to pick up and put down the course when their schedule allows. In general, you are able to skip to chapters you find a most useful to (One incidence where a prior chapter is required is noted).</p>
 
 </div>
 </div>

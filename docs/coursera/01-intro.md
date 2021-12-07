@@ -5,6 +5,14 @@
 
 <img src="resources/images/01-intro_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gd422c5de97_0_0.png" title="Title image: Advanced Reproducibility in Cancer Informatics" alt="Title image: Advanced Reproducibility in Cancer Informatics" width="100%" />
 
+## Topics covered:
+
+This is the second course in a two part series:
+
+<img src="resources/images/01-intro_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfd7c7a0ba8_0_21.png" title="Advanced Reproducibility for Cancer Informatics: What’s covered. Getting comfortable with GitHub concepts and workflow. Utilizing version control. Engaging in code review. Using a Docker image. Modifying a Docker image. Using Automation (github actions)." alt="Advanced Reproducibility for Cancer Informatics: What’s covered. Getting comfortable with GitHub concepts and workflow. Utilizing version control. Engaging in code review. Using a Docker image. Modifying a Docker image. Using Automation (github actions)." width="100%" />
+
+<img src="resources/images/01-intro_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfd7c7a0ba8_0_0.png" title="Discussed in the Introductory Reproducibility in Cancer Informatics course: Organizing your project, using notebooks, Making your project open source with GitHub, using notebooks, managing package versions, writing durable code, documenting analyses, understanding the importance of code review." alt="Discussed in the Introductory Reproducibility in Cancer Informatics course: Organizing your project, using notebooks, Making your project open source with GitHub, using notebooks, managing package versions, writing durable code, documenting analyses, understanding the importance of code review." width="100%" />
+
 ## Motivation
 
 Cancer datasets are plentiful, complicated, and hold untold amounts of information regarding cancer biology. Cancer researchers are working to apply their expertise to the analysis of these vast amounts of data but training opportunities to properly equip them in these efforts can be sparse. This includes training in reproducible data analysis methods.
@@ -13,7 +21,7 @@ Data analyses are generally not reproducible without direct contact with the ori
 
 Equipping researchers with the skills to create reproducible data analyses increases the efficiency of everyone involved. Reproducible analyses are more likely to be understood, applied, and replicated by others. This helps expedite the scientific process by helping researchers avoid false positive dead ends. Open source clarity in reproducible methods also saves researchers' time so they don't have to reinvent the proverbial wheel for methods that everyone in the field is already performing.
 
-This course introduces the concepts of reproducibility and replicability in the context of cancer informatics. It uses hands-on exercises to demonstrate in practical terms how to increase the reproducibility of data analyses. The course also introduces tools relevant to reproducibility including analysis notebooks, package managers, git and GitHub.
+This course introduces tools that help enhance reproducibility and replicability in the context of cancer informatics. It uses hands-on exercises to demonstrate in practical terms how to get acquainted with these tools but is by no means meant to be a comprehensive dive into these tools.  The course introduces tools and their concepts such as git and GitHub, code review, Docker, and GitHub actions.
 
 ## Target Audience  
 
@@ -26,13 +34,14 @@ The course is intended for students in the biomedical sciences and researchers w
 
 <img src="resources/images/01-intro_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gd422c5de97_0_10.png" title="This course will demonstrate how to: Become familiar with using GitHub in as a part of a analysis project workflow. Engage in code review steps on GitHub. Pull and use an existing Docker image for running an analysis. Make data shareable. Write a simple Github Actions. Obtain confidence to learn and apply additional reproducibility tools to an analysis." alt="This course will demonstrate how to: Become familiar with using GitHub in as a part of a analysis project workflow. Engage in code review steps on GitHub. Pull and use an existing Docker image for running an analysis. Make data shareable. Write a simple Github Actions. Obtain confidence to learn and apply additional reproducibility tools to an analysis."  />
 
-The course includes hands-on exercises for how to apply reproducible code concepts to their code. Individuals who take this course are encouraged to complete these activities as they follow along with the course material to help increase the reproducibility of their analyses.
-
 **Goal of this course:**  
 To equip learners with a deeper knowledge of the capabilities of reproducibility tools and how they can apply to their existing analyses scripts and projects.
 
+**What is NOT the goal of this course**
+To be a comprehensive tutorial to each of the tools shown.
+
 ## How to use the course
 
-This course is designed with busy professional learners in mind -- who may have to pick up and put down the course when their schedule allows.
+Each chapter has associated exercises that you are encourage to complete in order to get the full benefit of the course
 
-Each exercise has the option for you to continue along with the example files as you've been editing them in each chapter, OR you can download fresh chapter files that have been edited in accordance with the relative part of the course. This way, if you decide to skip a chapter or find that your own files you've been working on no longer make sense, you have a fresh starting point at each exercise.
+This course is designed with busy professional learners in mind -- who may have to pick up and put down the course when their schedule allows. In general, you are able to skip to chapters you find a most useful to (One incidence where a prior chapter is required is noted).
