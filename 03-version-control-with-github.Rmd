@@ -93,12 +93,11 @@ unzip -o chapter-zips/reproducible-R-example.zip -d chapter-zips/
 
 ## Start a GitHub repository
 
-With the project files you've downloaded in the location you would like them to be, [open up your command line](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955#:~:text=Opening%20Command%20Line.&text=There%20are%20varying%20ways%20of,and%20press%20the%20return%20key.) and navigate to that being your current directory using the [`cd`](https://www.geeksforgeeks.org/cd-command-in-linux-with-examples/) and [`ls`](https://linuxize.com/post/how-to-list-files-in-linux-using-the-ls-command/) commands.
-
-- Go to [Github's main page](https://github.com/) and click Sign Up if you don't have an account.
+- Go to [Github's main page](https://github.com/) and sign in with your GitHub account.
 - Follow [these instructions to create a repository](https://docs.github.com/en/get-started/quickstart/create-a-repo). As a general, but not absolute rule, you will want to keep one GitHub repository for one analysis project.
   - Name the repository something that reminds you what its related to. For these examples, we're calling using `repository-name` as our placeholder.
   - Choose `Public`.
+  - Choose `add a README`
 - Follow [these instructions](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository#adding-a-file-to-a-repository-on-github) to add all the files that are inside the `reproducible-R-example.zip` or `reproducible-python-example.zip` file you downloaded to this new repository.
 
 This new repository you created should look [something like this](https://github.com/cansavvy/repository-name).
