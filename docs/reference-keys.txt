@@ -18,6 +18,8 @@ more-resources-for-learning-github
 providing-data
 learning-objectives-1
 overview-of-data-sharing
+a-very-general-example-of-a-data-download-bash-script
+examples-of-data-download-scripts
 engaging-in-code-review---as-an-author
 learning-objectives-2
 author-responsibilities-in-code-review

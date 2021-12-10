@@ -57,3 +57,7 @@ Dockerfiles
 dockerhub
 tagname
 tidyverse
+Dockerfile's
+GEOquery
+PII
+yaml
