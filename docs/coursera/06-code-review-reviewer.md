@@ -90,3 +90,5 @@ This interaction reminds us that effective code review is steeped in empathy fro
 - [Code Review Guidelines for Humans](https://phauer.com/2018/code-review-guidelines/) by @Hauer2018.
 - [Your Code Sucks! – Code Review Best Practices](https://quickbirdstudios.com/blog/code-review-best-practices-guidelines/) by @Hildebr2020.
 - An even longer list of [readings about code review](https://github.com/joho/awesome-code-review)
+
+**If you have any feedback on this chapter, please [fill out this form](https://forms.gle/j3cJZX5CmNtQp6QKA), we'd love to hear your feedback!**

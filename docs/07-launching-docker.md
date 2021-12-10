@@ -122,3 +122,5 @@ To see what containers you have running or to clear out old containers, in Docke
 
 - [Launching RStudio in Docker](https://jsta.github.io/r-docker-tutorial/02-Launching-Docker.html) by @openscilabs2021.
 - [Getting started with R and Docker](https://mdneuzerling.com/post/user-getting-started-with-r-and-docker/) by @Neuzerling2018.
+
+**If you have any feedback on this chapter, please [fill out this form](https://forms.gle/j3cJZX5CmNtQp6QKA), we'd love to hear your feedback!**
