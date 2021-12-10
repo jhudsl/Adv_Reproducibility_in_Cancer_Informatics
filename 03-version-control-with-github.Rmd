@@ -97,7 +97,7 @@ unzip -o chapter-zips/reproducible-R-example.zip -d chapter-zips/
 - Follow [these instructions to create a repository](https://docs.github.com/en/get-started/quickstart/create-a-repo). As a general, but not absolute rule, you will want to keep one GitHub repository for one analysis project.
   - Name the repository something that reminds you what its related to. For these examples, we're calling using `repository-name` as our placeholder.
   - Choose `Public`.
-  - Choose `add a README`
+  - Choose `add a README`.
 - Follow [these instructions](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository#adding-a-file-to-a-repository-on-github) to add all the files that are inside the `reproducible-R-example.zip` or `reproducible-python-example.zip` file you downloaded to this new repository.
 
 This new repository you created should look [something like this](https://github.com/cansavvy/repository-name).
@@ -105,7 +105,6 @@ This new repository you created should look [something like this](https://github
 ### git clone
 
 Now you have a repository on GitHub online!
-
 
 But in our daily grind, we will work on this code from our own computer. So to set this up, we'll need to `clone` it to our own computer. Cloning is just making a remote copy of the project local.
 
@@ -216,3 +215,6 @@ One more note, if you do want to use command line or you want to know more about
 - [First Week on GitHub](https://lab.github.com/githubtraining/first-week-on-github) by @GitHub2021d.
 - [GitHub docs about creating a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) by @GitHub2021b.
 - [Making a Pull Request](https://www.atlassian.com/git/tutorials/making-a-pull-request) by @Radigan2021.
+
+
+**If you have any feedback on this chapter, please [fill out this form](https://forms.gle/j3cJZX5CmNtQp6QKA), we'd love to hear your feedback!**
