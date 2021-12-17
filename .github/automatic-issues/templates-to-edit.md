@@ -1,5 +1,5 @@
 
-[Follow the Wiki instructions here](https://github.com/jhudsl/DaSL_Course_Template_Bookdown/wiki/Setting-up-your-repository-files#setting-up-the-repository) for details on how to complete the items in this issue.
+[Follow the Wiki instructions here](https://github.com/jhudsl/OTTR_Template/wiki/Setting-up-your-repository-files#setting-up-the-repository) for details on how to complete the items in this issue.
 
 The following files need to be edited to get this new course started!
 
@@ -23,9 +23,9 @@ _If you are creating any other courses:_
 
 ### Files that need to be edited upon adding each new chapter (including upon creating a new course):
 
-- [ ] `_bookdown.yml` - The list of Rmd files that need to be rendered needs to be updated. See [instructions](https://github.com/jhudsl/DaSL_Course_Template_Bookdown/wiki/Publishing-with-Bookdown).
-- [ ] `book.bib` - any citations need to be added. See [instructions](https://github.com/jhudsl/DaSL_Course_Template_Bookdown/wiki/Citations).
+- [ ] `_bookdown.yml` - The list of Rmd files that need to be rendered needs to be updated. See [instructions](https://github.com/jhudsl/OTTR_Template/wiki/Publishing-with-Bookdown).
+- [ ] `book.bib` - any citations need to be added. See [instructions](https://github.com/jhudsl/OTTR_Template/wiki/Citations).
 
 ### Files that need to be edited upon adding new packages that the book's code uses:
-- `docker/Dockerfile` needs to have the new package added so it will be installed. See [instructions](https://github.com/jhudsl/DaSL_Course_Template_Bookdown/wiki/Using-Docker#starting-a-new-docker-image).
+- `docker/Dockerfile` needs to have the new package added so it will be installed. See [instructions](https://github.com/jhudsl/OTTR_Template/wiki/Using-Docker#starting-a-new-docker-image).
 - The code chunk in `index.Rmd` should be edited to add the new package.
