@@ -1,10 +1,15 @@
 
+```{r, include = FALSE}
+leanbuild::set_knitr_image_path()
+```
+
 _If you've not previously read through the `defining reproducibility` chapter in our introductory course, we recommend you read through it here; otherwise feel free to skip to the next chapter._
 
 
-```{r, echo=FALSE, results='asis'}
+```{r, echo = FALSE, results='asis'}
 cow::borrow_chapter(
 doc_path = "02-defining-reproducibility.Rmd",
 repo_name = "jhudsl/Reproducibility_in_Cancer_Informatics"
 )
 ```
+
