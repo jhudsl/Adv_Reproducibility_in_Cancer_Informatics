@@ -1,229 +1,11 @@
 
 
 
-_If you've not previously read through the `defining reproducibility` chapter in our introductory course, we recommend you read through it here; otherwise feel free to skip to the next chapter._
+# Defining Reproducibility
+
+_If you've not previously read through the `defining reproducibility` chapter in our introductory course, we recommend you read through it here; otherwise feel free to skip the next chapter._
 
 
-
-```
-## Could not find git credentials, please set by running usethis::create_github_token(),
-##               or directly providing a personal access token using the git_pat argument
-```
-
-```
-## https://raw.githubusercontent.com/jhudsl/Reproducibility_in_Cancer_Informatics/main/02-defining-reproducibility.Rmd
-```
-
-```
-## 
-## 
-## processing file: ./resources/other_chapters/02-defining-reproducibility.Rmd
-```
-
-  |                                                                              |                                                                      |   0%  |                                                                              |..                                                                    |   2%
-  ordinary text without R code
-
-  |                                                                              |....                                                                  |   5%
-label: unnamed-chunk-3 (with options) 
-List of 1
- $ include: logi FALSE
-
-  |                                                                              |.....                                                                 |   8%
-  ordinary text without R code
-
-  |                                                                              |.......                                                               |  10%
-label: unnamed-chunk-4 (with options) 
-List of 3
- $ fig.align: chr "center"
- $ echo     : logi FALSE
- $ fig.alt  : chr "This chapter will demonstrate how to: Understand the fundamental concepts of reproducibility vs replicability v"| __truncated__
-
-  |                                                                              |.........                                                             |  12%
-  ordinary text without R code
-
-  |                                                                              |..........                                                            |  15%
-label: unnamed-chunk-5 (with options) 
-List of 3
- $ fig.align: chr "center"
- $ echo     : logi FALSE
- $ fig.alt  : chr "Reproducibility is a different analyst re­-performing the same analysis with the same code and data."
-
-  |                                                                              |............                                                          |  18%
-  ordinary text without R code
-
-  |                                                                              |..............                                                        |  20%
-label: unnamed-chunk-6 (with options) 
-List of 3
- $ fig.align: chr "center"
- $ echo     : logi FALSE
- $ fig.alt  : chr "Ruby the researcher has found something very interesting through data analysis. Ruby has a scatterplot on her c"| __truncated__
-
-  |                                                                              |................                                                      |  22%
-  ordinary text without R code
-
-  |                                                                              |..................                                                    |  25%
-label: unnamed-chunk-7 (with options) 
-List of 3
- $ fig.align: chr "center"
- $ echo     : logi FALSE
- $ fig.alt  : chr "Repeatable means that if you keep everything the same but repeat the analysis - do you get the same results? Ru"| __truncated__
-
-  |                                                                              |...................                                                   |  28%
-  ordinary text without R code
-
-  |                                                                              |.....................                                                 |  30%
-label: unnamed-chunk-8 (with options) 
-List of 3
- $ fig.align: chr "center"
- $ echo     : logi FALSE
- $ fig.alt  : chr "Reproducible: using the same data and analysis but in the hands of another researcher - do we get the same resu"| __truncated__
-
-  |                                                                              |.......................                                               |  32%
-  ordinary text without R code
-
-  |                                                                              |........................                                              |  35%
-label: unnamed-chunk-9 (with options) 
-List of 3
- $ fig.align: chr "center"
- $ echo     : logi FALSE
- $ fig.alt  : chr "Replicable: with new data do we obtain the same inferences? Ruby the researcher sends her code to Avi the Assoc"| __truncated__
-
-  |                                                                              |..........................                                            |  38%
-  ordinary text without R code
-
-  |                                                                              |............................                                          |  40%
-label: unnamed-chunk-10 (with options) 
-List of 3
- $ fig.align: chr "center"
- $ echo     : logi FALSE
- $ fig.alt  : chr "A triangular graph shows a hierarchy of research. Repeatability is a the bottom ‘same researcher, same machine’"| __truncated__
-
-  |                                                                              |..............................                                        |  42%
-  ordinary text without R code
-
-  |                                                                              |................................                                      |  45%
-label: unnamed-chunk-11 (with options) 
-List of 3
- $ fig.align: chr "center"
- $ echo     : logi FALSE
- $ fig.alt  : chr "If your results are not repeatable they will NOT be reproducible. In other words, if you can’t get the same ans"| __truncated__
-
-  |                                                                              |.................................                                     |  48%
-  ordinary text without R code
-
-  |                                                                              |...................................                                   |  50%
-label: unnamed-chunk-12 (with options) 
-List of 3
- $ fig.align: chr "center"
- $ echo     : logi FALSE
- $ fig.alt  : chr "Ruby the researcher has found something very interesting through data analysis. Ruby has a scatterplot on her c"| __truncated__
-
-  |                                                                              |.....................................                                 |  52%
-  ordinary text without R code
-
-  |                                                                              |......................................                                |  55%
-label: unnamed-chunk-13 (with options) 
-List of 3
- $ fig.align: chr "center"
- $ echo     : logi FALSE
- $ fig.alt  : chr "Ruby the researcher has her computer with a plot and a significant and exciting research result. Ruby says 'Her"| __truncated__
-
-  |                                                                              |........................................                              |  58%
-  ordinary text without R code
-
-  |                                                                              |..........................................                            |  60%
-label: unnamed-chunk-14 (with options) 
-List of 3
- $ fig.align: chr "center"
- $ echo     : logi FALSE
- $ fig.alt  : chr "Avi the associate is confused and sweating. His computer has the word ‘error’ written all over it and its on fi"| __truncated__
-
-  |                                                                              |............................................                          |  62%
-  ordinary text without R code
-
-  |                                                                              |..............................................                        |  65%
-label: unnamed-chunk-15 (with options) 
-List of 3
- $ fig.align: chr "center"
- $ echo     : logi FALSE
- $ fig.alt  : chr "Ruby the researcher and Avi are emailing back and forth. Avi is very confused about Ruby’s code and data. Avi’s"| __truncated__
-
-  |                                                                              |...............................................                       |  68%
-  ordinary text without R code
-
-  |                                                                              |.................................................                     |  70%
-label: unnamed-chunk-16 (with options) 
-List of 3
- $ fig.align: chr "center"
- $ echo     : logi FALSE
- $ fig.alt  : chr "Ruby the researcher and Avi the associate are both very confused and slightly horrified that they both ran the "| __truncated__
-
-  |                                                                              |...................................................                   |  72%
-  ordinary text without R code
-
-  |                                                                              |....................................................                  |  75%
-label: unnamed-chunk-17 (with options) 
-List of 3
- $ fig.align: chr "center"
- $ echo     : logi FALSE
- $ fig.alt  : chr "Reproducibility is a tortoise’s game - it’s an incremental and slow process but it has high payoffs!"
-
-  |                                                                              |......................................................                |  78%
-  ordinary text without R code
-
-  |                                                                              |........................................................              |  80%
-label: unnamed-chunk-18 (with options) 
-List of 3
- $ fig.align: chr "center"
- $ echo     : logi FALSE
- $ fig.alt  : chr "Reproducible analyses save everyone time and effort!"
-
-  |                                                                              |..........................................................            |  82%
-  ordinary text without R code
-
-  |                                                                              |............................................................          |  85%
-label: unnamed-chunk-19 (with options) 
-List of 3
- $ fig.align: chr "center"
- $ echo     : logi FALSE
- $ fig.alt  : chr "Ruby the researcher’s code works now as represented on her computer by a check mark. But Future Ruby, who has g"| __truncated__
-
-  |                                                                              |.............................................................         |  88%
-  ordinary text without R code
-
-  |                                                                              |...............................................................       |  90%
-label: unnamed-chunk-20 (with options) 
-List of 3
- $ fig.align: chr "center"
- $ echo     : logi FALSE
- $ fig.alt  : chr "If Ruby’s code is less reproducible, every researcher who attempts to use Ruby’s code will encounter the same e"| __truncated__
-
-  |                                                                              |.................................................................     |  92%
-  ordinary text without R code
-
-  |                                                                              |..................................................................    |  95%
-label: unnamed-chunk-21 (with options) 
-List of 3
- $ fig.align: chr "center"
- $ echo     : logi FALSE
- $ fig.alt  : chr "If Ruby’s code is built in a sturdier manner, it will save others’ time who might also need to perform a simila"| __truncated__
-
-  |                                                                              |....................................................................  |  98%
-  ordinary text without R code
-
-  |                                                                              |......................................................................| 100%
-label: unnamed-chunk-22 (with options) 
-List of 3
- $ fig.align: chr "center"
- $ echo     : logi FALSE
- $ fig.alt  : chr "Reproducibility is on a continuum. This graph shows a two sided arrow with a gradient. On the very left is a ‘n"| __truncated__
-
-
-
-
-
-
-# Defining reproducibility
 
 ## Learning Objectives
 
@@ -328,4 +110,3 @@ But, reproducible code saves everyone exponential amounts of time and effort! It
 Incremental work on your analyses is good! You do not need to make your analyses perfect on the first try or even within a particular time frame. The first step in creating an analysis is to get it to work once! But the work does not end there. Furthermore, no analysis is or will ever be perfect in that it will not be reproducible in every single context throughout time. incrementally pushing our analyses toward the right of this continuum is the goal.
 
 <img src="resources/images/02-defining-reproducibility_files/figure-html//1LMurysUhCjZb7DVF6KS9QmJ5NBjwWVjRn40MS9f2noE_gf7bed24491_1_0.png" title="Reproducibility is on a continuum. This graph shows a two sided arrow with a gradient. On the very left is a ‘not repeatable analysis’ it was ran once. To the right of that is an analysis that ‘re-runs sometimes’. To the right of this, is an analysis that ‘Re-runs reliably in most contexts’.  And all the way to the right is a ‘perfectly reproducible analysis’ that ‘Re-runs in every situation and gets the same result every time’. In red lettering we note that every analysis is started by being run once but no analysis is ‘perfectly reproducible’." alt="Reproducibility is on a continuum. This graph shows a two sided arrow with a gradient. On the very left is a ‘not repeatable analysis’ it was ran once. To the right of that is an analysis that ‘re-runs sometimes’. To the right of this, is an analysis that ‘Re-runs reliably in most contexts’.  And all the way to the right is a ‘perfectly reproducible analysis’ that ‘Re-runs in every situation and gets the same result every time’. In red lettering we note that every analysis is started by being run once but no analysis is ‘perfectly reproducible’." style="display: block; margin: auto;" />
-
