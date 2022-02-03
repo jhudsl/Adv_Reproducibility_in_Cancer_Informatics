@@ -1,6 +1,6 @@
 
 ```{r, include = FALSE}
-leanbuild::set_knitr_image_path()
+ottr::set_knitr_image_path()
 ```
 
 # Engaging in Code Review - as an author
@@ -8,7 +8,7 @@ leanbuild::set_knitr_image_path()
 ## Learning Objectives
 
 ```{r, fig.alt="Learning objectives This chapter will demonstrate how to: Understand the goals and motivation of code review. Solicit feedback in the context of code review. Incorporate feedback in the context of code review.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfa93c34783_0_0")
+ottr::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfa93c34783_0_0")
 ```
 
 We've previously discussed that the only way to know if your analysis is truly reproducible is to send it to someone else to reproduce! That sentiment is at the heart of code review. Although most wouldn't dare send out a manuscript for publishing without having our collaborators giving it a line-by-line review, people don't always feel the same way about code.
@@ -28,7 +28,7 @@ In this chapter and the next we will discuss the two sides of code review. Code 
 The code review process begins with the creation of a pull request (which we practiced in the previous chapter). Successful and efficient code review is born out of quality communication, which is a skill set on its own. You can set up your reviewers (and yourself) up for success by knowing what basic information can help get the code review conversation going.
 
 ```{r, fig.alt="Ruby has filed a very large pull request with a very short PR description:  I updated the project and added new files. She then requested Avi to review this PR. This leaves Avi with very little information to go on and he is very confused. Avi comments: Ummm… I’m a bit confused. Can you explain the context of these changes? This is a lot for me to try to follow.  I’m also unsure what kind of feedback you are looking for. ", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfc3e8b194d_0_46")
+ottr::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfc3e8b194d_0_46")
 ```
 
 Even if you end up being the only person who will review your own code, writing these things out is still very helpful and highly recommended. It can help you spot problems you might not have otherwise seen and generally help you document better for future you!
@@ -90,13 +90,13 @@ Additional tip, if you don't want others to look at your pull request yet becaus
 #### In summary:
 
 ```{r, fig.alt="Great pull requests … provide plenty of context, have an explicit request for what kind of feedback is needed, point out questionable areas, are relatively small and focused, don't ask a reviewer for help too soon", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfa97af8537_0_8")
+ottr::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfa97af8537_0_8")
 ```
 
 Let's revisit our scenario with Avi and Ruby and see how Ruby could better prepare her changes for review:
 
 ```{r, fig.alt="Ruby has filed a much smaller pull request with a better PR description: Background: In this previous PR we updated the heatmap-script.R file. But now the documentation in the README is out of date. This PR aims to update the README accordingly. Approach: I updated the README with information on the new arguments we added. This also required me to update the Usage section and recommendations there. Feedback needed: Can you look at the Usage section and try running the command and steps described there? I am concerned that this section is not clear enough but I am not sure how to add clarity. Please let me know if you have suggestions on this point.  She has then requested Avi to review this PR.  Avi responds back: Ruby this is great! I was able to dig into this and give you feedback at the places you asked. Let me know what you think of my ideas and comments! This code review situation has been very productive!", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfc3e8b194d_0_118")
+ottr::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfc3e8b194d_0_118")
 ```
 
 In this scenario Ruby was able to save Avi time in getting into the code review by being more specific about what kind of feedback she is looking for as well as links that explain the context behind these changes. Additionally, by supplying Avi with a smaller PR, Avi is less likely to be overwhelmed by Ruby's request and be able to give her suggestions in a more timely manner.
@@ -108,7 +108,7 @@ Add a [pull request template](https://docs.github.com/en/communities/using-templ
 Pull request templates are a way to give yourself and other contributors prompts when starting a new pull request. See below for an example. The comments between `<!--` and `-->` are html comments that will not show up so you don't need to delete them if you don't want to. On the right side, it shows how this template looks when it's rendered. You can see this at any time by clicking `Preview` -- this is true in other places in GitHub.
 
 ```{r, fig.alt="Pull request templates are a way to give yourself and other contributors prompts when starting a new pull request. For example, upon creating a pull request, this text will automatically appear in the text box for your pull request template. Now this helps you and others fill out the pull request more like a form and respond to the prompts. On the right side, it shows how this template looks when it's rendered. You can see this at any time by clicking Preview. ", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfa97af8537_0_0")
+ottr::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfa97af8537_0_0")
 ```
 
 #### Set up a pull request template
@@ -131,7 +131,7 @@ leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIA
 As you wait for your reviewer to get back to you, it can be helpful to remind yourself the purpose of code reviews get yourself in a positive mindset. You've given your reviewer information to help them help you and now is the time to wait.
 
 ```{r, fig.alt="Main goals of an pull request author Set up your reviewer for success by erring toward overcommunicating Interpret reviews positively! Determine solutions collaboratively.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g102298f211a_0_49")
+ottr::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g102298f211a_0_49")
 ```
 
 First of all, you should pat yourself on the back for engaging in code review. It does require more time and sometimes that can feel scary with looming deadlines, but kudos for being able to prioritize your commitment to creating increasingly reproducibility analyses!
@@ -139,7 +139,7 @@ First of all, you should pat yourself on the back for engaging in code review. I
 Remember that you are not your code and mistakes are all a part of the process! Putting your project out there can feel a tad vulnerable even. You may have felt the impulse to keep your code's problems buried under a rug, but you pushed past that and are making your analyses transparent! Remember that hidden problems don't get solved, but known problems are opportunities for reaching an even better end result than you imagined!
 
 ```{r, fig.alt="Remember that you are not your code and mistakes are all a part of the process! The cartoon shows you with exclamation point and equal sign with a fake bit of code to illustrate you are not your code.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfa97af8537_0_86")
+ottr::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfa97af8537_0_86")
 ```
 
 When you receive a review back remember that you and the reviewer are on the same team and both want the best end result feasible for this project! They may suggest ideas that you love and can't wait to implement. They also might suggest ideas you don't agree with. Do your best to take all their comments as positive learning opportunities and look for ways to compromise and determine solutions collaboratively.
