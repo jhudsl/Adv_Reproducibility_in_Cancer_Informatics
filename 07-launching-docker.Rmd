@@ -1,6 +1,6 @@
 
 ```{r, include = FALSE}
-leanbuild::set_knitr_image_path()
+ottr::set_knitr_image_path()
 ```
 
 # Launching a Docker image
@@ -8,7 +8,7 @@ leanbuild::set_knitr_image_path()
 ## Learning Objectives
 
 ```{r, fig.alt="Learning objectives This chapter will demonstrate how to: Understand the goals and motivation of using Docker. Install Docker. Use basic docker commands as a part of a daily usage. Pull and use a docker image for writing code.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfa97af8537_0_81")
+ottr::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfa97af8537_0_81")
 ```
 
 ***
@@ -16,7 +16,7 @@ leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIA
 In the introductory part of this course, we discussed [package managers](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/managing-package-versions.html) like renv or conda. Recall that even if you have the same packages installed between two computers, you can still get different results!
 
 ```{r, fig.alt="Ruby has a particular computing environment she has developed her code from. This computing environment is represented as a bubble above her computer with various hexagons with version numbers as well as Rstudio and R installed on her computer. Her code ran just fine on her particular computing environment. Avi attempted to run Ruby’s code on his very different local computing environment and got an error. His computer runs the same code but came up with a different result!", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfd7f4e514e_0_256")
+ottr::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfd7f4e514e_0_256")
 ```
 
 This is because package versions _do_ influence results as demonstrated by @BeaulieuJones2017.
@@ -29,7 +29,7 @@ This is where Docker can help fill in the gaps.
 @Radecic2020
 
 ```{r, fig.alt="From Beaulieu-Jones and Casey S. Greene, 2017 A.) The status quo requires a reader or reviewer to find and install specific versions of dependencies. These dependencies can become difficult to find and may become incompatible with newer versions of other software packages. Different versions of packages identify different numbers of significantly differentially expressed genes from the same source code and data. B.) Containers define a computing environment that captures dependencies. In container-based systems, the results are the same regardless of the host system.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfd7f4e514e_0_0")
+ottr::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfd7f4e514e_0_0")
 ```
 
 ## What's Docker?
@@ -37,13 +37,13 @@ leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIA
 One way to ensure that her collaborators have the same computing environment is Ruby could ship her computer to each of her collaborators and have them run the analysis on her computer. But before you buy hundreds of laptops for your projects, we'll show you how Docker will allow you to send your computing environment to your collaborators in a practical manner.
 
 ```{r, fig.alt="Ruby has a particular computing environment she has developed her code from but this time Ruby has this computing environment wrapped up in a Docker container. Avi the Associate is able to download the exact computing environment Ruby used for her analysis.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfd7f4e514e_0_5")
+ottr::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfd7f4e514e_0_5")
 ```
 
 Ruby can create a Docker image that Avi can use to run the analysis. This way Ruby and Avi know they are using the same computing environment. Now if Ruby and Avi obtain different results, it won't be because of version differences.
 
 ```{r, fig.alt="Ruby and Avi are using Docker and can ensure that they are using the exact same computing environment as they are working on Ruby’s analysis.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfd7f4e514e_0_55")
+ottr::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfd7f4e514e_0_55")
 ```
 
 ## Install Docker
@@ -59,7 +59,7 @@ After you install Docker, start up Docker desktop by double clicking on the app.
 2. First we need to get the Docker **image**. A Docker image is like a snapshot of your computing environment that you can move from place to place. We can download images from online and then use them to make a container. Containers are what we use to actually run analyses.
 
 ```{r, fig.alt="First we need to get the Docker image. A Docker image is like a snapshot of your computing environment that you can move from place to place. We can download images from online and then use them to make a container. Containers are what we use to actually run analyses.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfbb8cb91d5_0_116")
+ottr::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfbb8cb91d5_0_116")
 ```
 
 From command line, run one of these commands depending on whether you'd like to use Python or Docker:
@@ -81,7 +81,7 @@ docker pull jhudsl/reproducible-R
 
 
 ```{r, fig.alt="Open up Docker desktop. Click on ‘images’ on the left. This shows the images you have available on your computer. If you hover your mouse over one of these images, you will see a Run button appear. Click the Run button to start a container with this image.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfbb8cb91d5_0_237")
+ottr::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfbb8cb91d5_0_237")
 ```
 
 4. Return to your command line. Using [`cd`](https://www.geeksforgeeks.org/cd-command-in-linux-with-examples/) and [`ls`](https://linuxize.com/post/how-to-list-files-in-linux-using-the-ls-command/) navigate to your project repository (or whatever files you'd like to be accessible in your development environment) and we can start up a docker container using `docker run`.
@@ -112,7 +112,7 @@ Now you are ready to develop inside a Docker container!
 To see what containers you have running or to clear out old containers, in Docker Desktop you can go to the `Containers/Apps` page.
 
 ```{r, fig.alt="If you navigate to the Containers/Apps page in Docker Desktop, you should see a container in the list. It will be named something randomly (in this case ‘zen_merkle’). From this page you can stop or remove old containers as well as navigate to their browser page. ", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfc8849fa4d_0_10")
+ottr::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfc8849fa4d_0_10")
 ```
 
 ### A Breakdown what these Docker run options are
@@ -120,7 +120,7 @@ leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIA
 [Docker has super extensive documentation](https://docs.docker.com/)! But to get you started, here's the highlights for this `docker run` command:
 
 ```{r, fig.alt="A breakdown of the docker run command. The remove option (`--rm`) automatically removes the container when docker run exits. Dash v, the volume option is how you specify what files you’d like available in the container and where to find them. In this instance we are using the output of the pwd command (print working directory) so that wherever you run this command, the files in that directory will be available in the container. The part after the colon specifies where these files will be found in the container. Dash e, the environment option is how you can specify any environment variables you will need. In this instance for the rocker image we need to specify a password. Dash p, the port option is how you specify What port you can connect to this on using your internet browser. The last part of the docker run command says what image to run, so in this instance, we are running a container using the jhudsl/reproducible-r image.", out.width = "100%", echo = FALSE}
-leanbuild::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfbc11e6ab0_0_18")
+ottr::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfbc11e6ab0_0_18")
 ```
 
 - **The remove option (`--rm`)**	Automatically removes the container when docker run exits.
