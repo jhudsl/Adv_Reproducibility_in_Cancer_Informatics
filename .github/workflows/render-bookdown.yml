@@ -77,8 +77,10 @@ jobs:
         run: |
           docker run \
           --mount type=bind,target=/home/rstudio,source=$PWD \
+          --user "$(id -u):$(id -g)" \
           jhudsl/course_template \
-          Rscript -e "bookdown::render_book('index.Rmd', output_format = 'all')"
+          Rscript -e "bookdown::render_book('index.Rmd', output_format = 'all');
+          file.copy(from = 'assets', to = 'docs/assets', overwrite = TRUE)"
 
 ##### If you do not wish to host your course on Coursera, you can delete this section #####
       # Run Coursera version
@@ -87,6 +89,7 @@ jobs:
         run: |
           docker run \
           --mount type=bind,target=/home/rstudio,source=$PWD \
+          --user "$(id -u):$(id -g)" \
           jhudsl/course_template \
           Rscript -e "ottr::render_coursera()"
 
