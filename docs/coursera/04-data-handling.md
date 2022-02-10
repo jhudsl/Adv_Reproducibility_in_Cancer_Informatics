@@ -11,8 +11,7 @@ The first part of any analysis should be getting all the data needed to run it. 
 
 ### Overview of data sharing
 
-- The data to be shared does not contain <a href="https://jhudatascience.org/Data_Management/data-privacy.html" target="_blank">PII (personal identifiable information) or PHI (protected health information) information</a>.
-.
+- The data to be shared does not contain <a href="https://jhudatascience.org/Data_Management_for_Cancer_Research/data-privacy.html" target="_blank"> PII (personal identifiable information) or PHI (protected health information) information</a>.
 - The data are accessible by a download script that is automatically downloaded when re-running the analysis.
 - Every data file needed to run the analysis is available.
 - The data are downloaded to files in an organized manner. For more about project organization, see [this chapter from the Introduction to Reproducibility course](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/organizing-your-project.html).
