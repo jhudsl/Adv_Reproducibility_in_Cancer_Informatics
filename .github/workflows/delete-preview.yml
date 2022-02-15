@@ -7,7 +7,7 @@ on:
     types: [closed]
 
 jobs:
-  build-all:
+  delete-preview:
     runs-on: ubuntu-latest
     steps:
 
@@ -16,9 +16,12 @@ jobs:
         run: sleep 300s
         shell: bash
 
-      # Delete the branch!
-      - name: Delete branch
-        uses: dawidd6/action-delete-branch@v3
+      # Check out current repository
+      - name: checkout
+        uses: actions/checkout@v2
         with:
-          github_token: ${{ secrets.GH_PAT }}
-          branches: preview-${{ github.event.pull_request.number }}
+          fetch-depth: 0
+
+      # Delete the branch!
+      - name: Delete branch locally and remotely
+        run: git push origin --delete preview-${{ github.event.pull_request.number }} || echo "No branch to delete"
