@@ -1,0 +1,13 @@
+
+##### Checks run at pull request #####
+# Check quiz formatting
+check-quizzes: yes
+# Check that urls in the content are not broken
+url-checker: yes
+# Spell check Rmds and quizzes
+spell-check: yes
+
+##### Renderings run upon merge to main branch #####
+# Rendering the quizzes for both quiz-supporting platforms
+render-leanpub: yes
+render-coursera: yes
