@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Engaging in Code Review - as a reviewer | Advanced Reproducibility in Cancer Informatics</title>
+  <meta name="description" content="Description about Course/Book." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Engaging in Code Review - as a reviewer | Advanced Reproducibility in Cancer Informatics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Description about Course/Book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Engaging in Code Review - as a reviewer | Advanced Reproducibility in Cancer Informatics" />
+  
+  <meta name="twitter:description" content="Description about Course/Book." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/dasl_favicon.ico" type="image/x-icon" />
+<link rel="prev" href="engaging-in-code-review---as-an-author.html"/>
+<link rel="next" href="launching-a-docker-image.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="assets/style_ITN.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="https://www.itcrtraining.org/"><img src="assets/ITN_logo.png" style="padding-left: 15px; padding-top: 8px;"</a>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Course</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#topics-covered"><i class="fa fa-check"></i><b>1.1</b> Topics covered:</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#motivation"><i class="fa fa-check"></i><b>1.2</b> Motivation</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#target-audience"><i class="fa fa-check"></i><b>1.3</b> Target Audience</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#curriculum"><i class="fa fa-check"></i><b>1.4</b> Curriculum</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#how-to-use-the-course"><i class="fa fa-check"></i><b>1.5</b> How to use the course</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="defining-reproducibility.html"><a href="defining-reproducibility.html"><i class="fa fa-check"></i><b>2</b> Defining Reproducibility</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="defining-reproducibility.html"><a href="defining-reproducibility.html#learning-objectives"><i class="fa fa-check"></i><b>2.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="2.2" data-path="defining-reproducibility.html"><a href="defining-reproducibility.html#what-is-reproducibility"><i class="fa fa-check"></i><b>2.2</b> What is reproducibility</a></li>
+<li class="chapter" data-level="2.3" data-path="defining-reproducibility.html"><a href="defining-reproducibility.html#reproducibility-in-daily-life"><i class="fa fa-check"></i><b>2.3</b> Reproducibility in daily life</a></li>
+<li class="chapter" data-level="2.4" data-path="defining-reproducibility.html"><a href="defining-reproducibility.html#reproducibility-is-worth-the-effort"><i class="fa fa-check"></i><b>2.4</b> Reproducibility is worth the effort!</a></li>
+<li class="chapter" data-level="2.5" data-path="defining-reproducibility.html"><a href="defining-reproducibility.html#reproducibility-exists-on-a-continuum"><i class="fa fa-check"></i><b>2.5</b> Reproducibility exists on a continuum!</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html"><i class="fa fa-check"></i><b>3</b> Using version control with GitHub</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#learning-objectives-1"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="3.2" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#prerequisites-for-this-chapter"><i class="fa fa-check"></i><b>3.2</b> Prerequisites for this chapter</a></li>
+<li class="chapter" data-level="3.3" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#set-up-a-git-client-gitkraken"><i class="fa fa-check"></i><b>3.3</b> Set up a Git Client (GitKraken)</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#install-gitkraken"><i class="fa fa-check"></i><b>3.3.1</b> Install GitKraken</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#get-the-exercise-project-files"><i class="fa fa-check"></i><b>3.4</b> Get the exercise project files</a></li>
+<li class="chapter" data-level="3.5" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#start-a-github-repository"><i class="fa fa-check"></i><b>3.5</b> Start a GitHub repository</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#git-clone"><i class="fa fa-check"></i><b>3.5.1</b> git clone</a></li>
+<li class="chapter" data-level="3.5.2" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#create-a-branch"><i class="fa fa-check"></i><b>3.5.2</b> Create a branch</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#more-resources-for-learning-github"><i class="fa fa-check"></i><b>3.6</b> More resources for learning GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="providing-data.html"><a href="providing-data.html"><i class="fa fa-check"></i><b>4</b> Providing data</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="providing-data.html"><a href="providing-data.html#learning-objectives-2"><i class="fa fa-check"></i><b>4.1</b> Learning Objectives</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="providing-data.html"><a href="providing-data.html#overview-of-data-sharing"><i class="fa fa-check"></i><b>4.1.1</b> Overview of data sharing</a></li>
+<li class="chapter" data-level="4.1.2" data-path="providing-data.html"><a href="providing-data.html#a-very-general-example-of-a-data-download-bash-script"><i class="fa fa-check"></i><b>4.1.2</b> A very general example of a data download bash script</a></li>
+<li class="chapter" data-level="4.1.3" data-path="providing-data.html"><a href="providing-data.html#examples-of-data-download-scripts"><i class="fa fa-check"></i><b>4.1.3</b> Examples of data download scripts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html"><i class="fa fa-check"></i><b>5</b> Engaging in Code Review - as an author</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html#learning-objectives-3"><i class="fa fa-check"></i><b>5.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="5.2" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html#author-responsibilities-in-code-review"><i class="fa fa-check"></i><b>5.2</b> Author responsibilities in code review</a></li>
+<li class="chapter" data-level="5.3" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html#characteristics-of-great-pull-requests"><i class="fa fa-check"></i><b>5.3</b> Characteristics of great pull requests</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html#theres-plenty-of-context"><i class="fa fa-check"></i><b>5.3.1</b> There’s plenty of context!</a></li>
+<li class="chapter" data-level="5.3.2" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html#includes-an-explicit-request-for-what-kind-of-feedback-is-needed"><i class="fa fa-check"></i><b>5.3.2</b> Includes an explicit request for what kind of feedback is needed</a></li>
+<li class="chapter" data-level="5.3.3" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html#points-out-questionable-areas-that-need-extra-attention"><i class="fa fa-check"></i><b>5.3.3</b> Points out questionable areas that need extra attention</a></li>
+<li class="chapter" data-level="5.3.4" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html#are-relatively-small-and-focused"><i class="fa fa-check"></i><b>5.3.4</b> Are relatively small and focused</a></li>
+<li class="chapter" data-level="5.3.5" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html#dont-ask-a-reviewer-to-dig-through-dirty-code"><i class="fa fa-check"></i><b>5.3.5</b> Don’t ask a reviewer to dig through dirty code</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html#exercise-create-your-pull-request-description"><i class="fa fa-check"></i><b>5.4</b> Exercise: Create your pull request description</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html#preparing-for-the-return-of-your-review"><i class="fa fa-check"></i><b>5.4.1</b> Preparing for the return of your review</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="engaging-in-code-review---as-a-reviewer.html"><a href="engaging-in-code-review---as-a-reviewer.html"><i class="fa fa-check"></i><b>6</b> Engaging in Code Review - as a reviewer</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="engaging-in-code-review---as-a-reviewer.html"><a href="engaging-in-code-review---as-a-reviewer.html#learning-objectives-4"><i class="fa fa-check"></i><b>6.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="6.2" data-path="engaging-in-code-review---as-a-reviewer.html"><a href="engaging-in-code-review---as-a-reviewer.html#reviewer-responsibilities-in-code-review"><i class="fa fa-check"></i><b>6.2</b> Reviewer responsibilities in code review</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="engaging-in-code-review---as-a-reviewer.html"><a href="engaging-in-code-review---as-a-reviewer.html#what-to-look-for"><i class="fa fa-check"></i><b>6.2.1</b> What to look for!</a></li>
+<li class="chapter" data-level="6.2.2" data-path="engaging-in-code-review---as-a-reviewer.html"><a href="engaging-in-code-review---as-a-reviewer.html#how-to-communicate-it"><i class="fa fa-check"></i><b>6.2.2</b> How to communicate it</a></li>
+<li class="chapter" data-level="6.2.3" data-path="engaging-in-code-review---as-a-reviewer.html"><a href="engaging-in-code-review---as-a-reviewer.html#exercise-review-past-yous-code"><i class="fa fa-check"></i><b>6.2.3</b> Exercise: Review Past you’s code</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="launching-a-docker-image.html"><a href="launching-a-docker-image.html"><i class="fa fa-check"></i><b>7</b> Launching a Docker image</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="launching-a-docker-image.html"><a href="launching-a-docker-image.html#learning-objectives-5"><i class="fa fa-check"></i><b>7.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="7.2" data-path="launching-a-docker-image.html"><a href="launching-a-docker-image.html#whats-docker"><i class="fa fa-check"></i><b>7.2</b> What’s Docker?</a></li>
+<li class="chapter" data-level="7.3" data-path="launching-a-docker-image.html"><a href="launching-a-docker-image.html#install-docker"><i class="fa fa-check"></i><b>7.3</b> Install Docker</a></li>
+<li class="chapter" data-level="7.4" data-path="launching-a-docker-image.html"><a href="launching-a-docker-image.html#getting-started-with-docker"><i class="fa fa-check"></i><b>7.4</b> Getting started with Docker</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="launching-a-docker-image.html"><a href="launching-a-docker-image.html#a-breakdown-what-these-docker-run-options-are"><i class="fa fa-check"></i><b>7.4.1</b> A Breakdown what these Docker run options are</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="launching-a-docker-image.html"><a href="launching-a-docker-image.html#more-about-docker"><i class="fa fa-check"></i><b>7.5</b> More about Docker</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html"><i class="fa fa-check"></i><b>8</b> Modifying a Docker image</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#learning-objectives-6"><i class="fa fa-check"></i><b>8.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="8.2" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#managing-images"><i class="fa fa-check"></i><b>8.2</b> Managing images</a></li>
+<li class="chapter" data-level="8.3" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#exercise-build-a-docker-image"><i class="fa fa-check"></i><b>8.3</b> Exercise: Build a Docker image</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#download-an-example-dockerfile"><i class="fa fa-check"></i><b>8.3.1</b> Download an example Dockerfile</a></li>
+<li class="chapter" data-level="8.3.2" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#build-a-docker-image-from-a-dockerfile"><i class="fa fa-check"></i><b>8.3.2</b> Build a Docker image from a Dockerfile</a></li>
+<li class="chapter" data-level="8.3.3" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#modify-a-docker-image"><i class="fa fa-check"></i><b>8.3.3</b> Modify a Docker image</a></li>
+<li class="chapter" data-level="8.3.4" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#add-to-the-dockerfile"><i class="fa fa-check"></i><b>8.3.4</b> Add to the Dockerfile</a></li>
+<li class="chapter" data-level="8.3.5" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#add-another-package"><i class="fa fa-check"></i><b>8.3.5</b> Add another package!</a></li>
+<li class="chapter" data-level="8.3.6" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#more-about-docker-next-steps"><i class="fa fa-check"></i><b>8.3.6</b> More about Docker next steps</a></li>
+<li class="chapter" data-level="8.3.7" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#a-list-of-handy-docker-commands"><i class="fa fa-check"></i><b>8.3.7</b> A list of handy Docker commands:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="automation-as-a-reproducibility-tool.html"><a href="automation-as-a-reproducibility-tool.html"><i class="fa fa-check"></i><b>9</b> Automation as a reproducibility tool</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="automation-as-a-reproducibility-tool.html"><a href="automation-as-a-reproducibility-tool.html#learning-objectives-7"><i class="fa fa-check"></i><b>9.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="9.2" data-path="automation-as-a-reproducibility-tool.html"><a href="automation-as-a-reproducibility-tool.html#build-an-example-github-actions"><i class="fa fa-check"></i><b>9.2</b> Build an example GitHub Actions</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="automation-as-a-reproducibility-tool.html"><a href="automation-as-a-reproducibility-tool.html#structure-of-github-actions-file"><i class="fa fa-check"></i><b>9.2.1</b> Structure of GitHub actions file</a></li>
+<li class="chapter" data-level="9.2.2" data-path="automation-as-a-reproducibility-tool.html"><a href="automation-as-a-reproducibility-tool.html#setting-up-the-trigger"><i class="fa fa-check"></i><b>9.2.2</b> Setting up the trigger</a></li>
+<li class="chapter" data-level="9.2.3" data-path="automation-as-a-reproducibility-tool.html"><a href="automation-as-a-reproducibility-tool.html#setting-up-the-action"><i class="fa fa-check"></i><b>9.2.3</b> Setting up the action</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="automation-as-a-reproducibility-tool.html"><a href="automation-as-a-reproducibility-tool.html#exercise-set-up-a-github-action"><i class="fa fa-check"></i><b>9.3</b> Exercise: Set up a GitHub action</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="automation-as-a-reproducibility-tool.html"><a href="automation-as-a-reproducibility-tool.html#resources-for-setting-up-your-github-actions"><i class="fa fa-check"></i><b>9.3.1</b> Resources for setting up your GitHub Actions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<p style="text-align:center;"> <a href="https://github.com/jhudsl/OTTR_Template" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown by: </a> </p>
+<p style="text-align:center;"> <a href="http://jhudatascience.org/"> The Johns Hopkins Data Science Lab </a></p>
+<a href="http://jhudatascience.org/"><img src="https://jhudatascience.org/images/dasl.png" style=" width: 80%; filter: grayscale(100%); padding-left: 40px; padding-top: 8px; vertical-align: top "</a>
+<p style="text-align:center; font-size: 12px;"> <a href="https://github.com/rstudio4edu/rstudio4edu-book/"> Style adapted from: rstudio4edu-book </a> <a href ="https://creativecommons.org/licenses/by/2.0/"> (CC-BY 2.0) </a></p>
+<p style="padding-left: 40px;"><div class="trapezoid" style = "padding-left: 40px;"><span>  <a href="https://forms.gle/hc8Xt3Y2Znjb6M4Y7"> Click here to provide feedback</a> <img src="assets/itcr_arrow.png" style=" width: 10%" ></span></div></p>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Advanced Reproducibility in Cancer Informatics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+  <html>
+  
+  <head>
+  <title>Title</title>
+  </head>
+  
+  <body>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0712G9FTQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'G-V0712G9FTQ');
+  </script>
+      
+  </body>
+  </html>
+<head>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+  <!--script src="https://kit.fontawesome.com/6a26f47516.js"></script-->
+  <!--<script src="assets/hideOutput.js"></script>-->
+  <link href="assets/style_ITN.css" rel="stylesheet">
+</head>
+        
+
+
+<div class="hero-image-container"> 
+  <img class= "hero-image" src="assets/itcr_main_image.png">
+</div>
+<div id="engaging-in-code-review---as-a-reviewer" class="section level1" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Engaging in Code Review - as a reviewer</h1>
+<div id="learning-objectives-4" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Learning Objectives</h2>
+<p><img src="resources/images/06-code-review-reviewer_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc3e8b194d_0_236.png" title="Learning objectives This chapter will demonstrate how to: Understand what to look for when reviewing a pull request. Provide helpful feedback in the context of code review." alt="Learning objectives This chapter will demonstrate how to: Understand what to look for when reviewing a pull request. Provide helpful feedback in the context of code review." width="100%" /></p>
+</div>
+<div id="reviewer-responsibilities-in-code-review" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Reviewer responsibilities in code review</h2>
+<p>When reviewing a pull request, you take on responsibility to ensure that the pull request is getting the project to a better state than before.</p>
+<p>There are three aspects to reviewing we will focus on:</p>
+<ol style="list-style-type: decimal">
+<li>Identify areas in the code and documentation that are opportunities for improvement.</li>
+<li>Communicate your questions and concerns effectively and in a way that creates a positive atmosphere.</li>
+<li>Determine solutions collaboratively in a way that allows for a learning as well as a long term improved product.</li>
+</ol>
+<div id="what-to-look-for" class="section level3" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> What to look for!</h3>
+<p>Depending on the goals of the project, and pull request there can be a lot to keep an eye out for. There are <a href="https://github.com/joho/awesome-code-review#articles">many articles out there about what to look for in a code review</a>.</p>
+<p><em>Here’s some general points:</em></p>
+<ul>
+<li>Does the analysis answer the question it’s asking? Are the methods it uses to do so appropriate?</li>
+<li>Is the code clear and readable? Does it contain a healthy amount of comments and documentation for individuals not familiar with the project to understand generally what is going on?</li>
+<li>Is the code efficient with computational resources? (Are there areas it’s a bit too greedy with memory usage?)</li>
+<li>Does the code stick to the style and conventions of this project?</li>
+<li>Are there alternate scenarios where the current strategy might fail? (depending on the likelihood of this use case, this may be an instance for a new issue and for it to be addressed in a different pull request).</li>
+</ul>
+</div>
+<div id="how-to-communicate-it" class="section level3" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> How to communicate it</h3>
+<p>The pull request may be the author’s precious bundle. Try to be empathetic to the learning process! You are both working on this project together – assume you both want the best out of this project. If something seems wrong, work together to find a solution, don’t ever waste time on placing blame.</p>
+<p><img src="resources/images/06-code-review-reviewer_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g102298f211a_0_20.png" title="Remember the author of the pull request has been putting time and effort into this! This cartoon shows a stick person cradling a computer with code on it with lots of hearts and love swirling around. The pull request may be the author’s precious bundle. Try to be empathetic to the learning process!" alt="Remember the author of the pull request has been putting time and effort into this! This cartoon shows a stick person cradling a computer with code on it with lots of hearts and love swirling around. The pull request may be the author’s precious bundle. Try to be empathetic to the learning process!" width="100%" /></p>
+<p>Remember that everything sounds harsher when you don’t have in-person cues! In this example, Avi may be stating factual things, but without his pleasant and reassuring disposition, it can feel super harsh.</p>
+<p><img src="resources/images/06-code-review-reviewer_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc3e8b194d_0_177.png" title="Ruby requested a code review from Avi who has responded: This code needs work. Don’t use the formattR package it’s inefficient and takes forever to run. You didn’t style the last chunk of code. This feels very harsh to Ruby who has a single tear." alt="Ruby requested a code review from Avi who has responded: This code needs work. Don’t use the formattR package it’s inefficient and takes forever to run. You didn’t style the last chunk of code. This feels very harsh to Ruby who has a single tear." width="100%" /></p>
+<p>If Avi had reframed his comments, they might be more effective in this collaboration. <span class="citation">Babatunde (<a href="#ref-Babatunde2018" role="doc-biblioref">2018</a>)</span> suggests framing <a href="https://medium.com/@otarutunde/comments-during-code-reviews-2cb7791e1ac7">review comments in three ways to help communication: questions, suggestions, and appreciations</a>.</p>
+<div id="questions" class="section level4" number="6.2.2.1">
+<h4><span class="header-section-number">6.2.2.1</span> Questions</h4>
+<p><em>For example:</em></p>
+<blockquote>
+<p>What happens if this doesn’t get saved? Does it throw an exception or fails silently?</p>
+</blockquote>
+<p>The key is to be specific with the questions. Mention exact file names. Put comments on the line you are referring to. Explain what you think is happening and ask them to explain if that is correct.</p>
+</div>
+<div id="suggestions" class="section level4" number="6.2.2.2">
+<h4><span class="header-section-number">6.2.2.2</span> Suggestions</h4>
+<p><em>For example:</em></p>
+<blockquote>
+<p>I suggest you use an ArrayHelper getValue method here because of its error handling capability instead of accessing the value directly
+You could even go further by giving an example:
+$a = $b[‘key’]; would raise an error if key is not set but <span class="math inline">\(a = ArrayHelper::getValue(\)</span>b, ‘key’); would return a null value if key is not set.</p>
+</blockquote>
+<p>Giving suggestions and explain not only how to implement it but why it might be preferred in this scenario is a great learning process both for the author and yourself.</p>
+</div>
+<div id="appreciations" class="section level4" number="6.2.2.3">
+<h4><span class="header-section-number">6.2.2.3</span> Appreciations</h4>
+<p>Start every review comment with an appreciation for the hard work completed! This goes a long way for creating a positive atmosphere.</p>
+<p><em>For example:</em></p>
+<blockquote>
+<p>Nice Job! Alice. I suggest we create an interface for this service so other substitute services can implement the interface as well, this would enable us change to a different service with very minimal efforts when the need arises. What do you think?</p>
+</blockquote>
+<p>Let’s see how Avi’s message could have been reworked to give a more effective review:</p>
+<p><img src="resources/images/06-code-review-reviewer_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfa97af8537_0_55.png" title="Ruby has requested a review from Avi but alternatively, Avi has framed his review in a more effective manner, giving context, examples, and creating a much more positive collaboration. Avi’s review says: Ruby, thanks for all this work! This is a great start! I have a few questions so we can further polish this code. Is your usage of the formattR package because of the weird formatting of the data.tsv file? Perhaps we can brainstorm another approach to this that would allow us to get rid of this package requirement. I think that in your last chunk you may have forgotten to style the code according to the conventions for this repository. Perhaps we can discuss how we introduce something to help all authors of this repository adhere to the conventions. This may be an instance we can use automation or a checklist to help. Ruby happily accepts this review and the collaboration will create a better product." alt="Ruby has requested a review from Avi but alternatively, Avi has framed his review in a more effective manner, giving context, examples, and creating a much more positive collaboration. Avi’s review says: Ruby, thanks for all this work! This is a great start! I have a few questions so we can further polish this code. Is your usage of the formattR package because of the weird formatting of the data.tsv file? Perhaps we can brainstorm another approach to this that would allow us to get rid of this package requirement. I think that in your last chunk you may have forgotten to style the code according to the conventions for this repository. Perhaps we can discuss how we introduce something to help all authors of this repository adhere to the conventions. This may be an instance we can use automation or a checklist to help. Ruby happily accepts this review and the collaboration will create a better product." width="100%" /></p>
+<p>This interaction reminds us that effective code review is steeped in empathy from both sides. Authors need to appreciate the time and effort the reviewer is spending to help them; while reviewers need to be sensitive to the amount of effort put in by the author already.</p>
+<p><img src="resources/images/06-code-review-reviewer_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g102298f211a_0_35.png" title="Empathy is an important part of effective code review!" alt="Empathy is an important part of effective code review!" width="100%" /></p>
+</div>
+</div>
+<div id="exercise-review-past-yous-code" class="section level3" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> Exercise: Review Past you’s code</h3>
+<ol style="list-style-type: decimal">
+<li>Find the oldest code you wrote and currently have on your computer.</li>
+<li>Create a repository and pull request with this old code, following the general steps for creating a repository and pull request <a href="https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/using-version-control-with-github.html#start-a-github-repository">from the previous chapter</a>.</li>
+<li>Request yourself as a reviewer.</li>
+<li>Review the code on Github using <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request">their docs as a guide for the mechanics of it</a>.</li>
+<li>As you review, have empathy for past yourself, and give questions, appreciations, and suggestions in regards to this code.</li>
+</ol>
+<div id="recommended-reading-about-code-review-1" class="section level4" number="6.2.3.1">
+<h4><span class="header-section-number">6.2.3.1</span> Recommended reading about code review</h4>
+<ul>
+<li><a href="https://medium.com/@otarutunde/comments-during-code-reviews-2cb7791e1ac7">Comments during Code Reviews</a> by <span class="citation">Babatunde (<a href="#ref-Babatunde2018" role="doc-biblioref">2018</a>)</span></li>
+<li><a href="https://slack.engineering/on-empathy-pull-requests/">On Empathy and Pull Requests</a> by <span class="citation">Duretti Hirpa (<a href="#ref-Hirpa2016" role="doc-biblioref">2016</a>)</span>.</li>
+<li><a href="https://phauer.com/2018/code-review-guidelines/">Code Review Guidelines for Humans</a> by <span class="citation">Hauer (<a href="#ref-Hauer2018" role="doc-biblioref">2018</a>)</span>.</li>
+<li><a href="https://quickbirdstudios.com/blog/code-review-best-practices-guidelines/">Your Code Sucks! – Code Review Best Practices</a> by <span class="citation">Hildebr (<a href="#ref-Hildebr2020" role="doc-biblioref">2020</a>)</span>.</li>
+<li>An even longer list of <a href="https://github.com/joho/awesome-code-review">readings about code review</a></li>
+</ul>
+<p><strong>If you have any feedback on this chapter, please <a href="https://forms.gle/j3cJZX5CmNtQp6QKA">fill out this form</a>, we’d love to hear your feedback!</strong></p>
+
+</div>
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Babatunde2018" class="csl-entry">
+Babatunde, Otaru. 2018. <span>“Comments During Code Reviews.”</span> <em>PullRequest</em>. <a href="https://medium.com/@otarutunde/comments-during-code-reviews-2cb7791e1ac7">https://medium.com/@otarutunde/comments-during-code-reviews-2cb7791e1ac7</a>.
+</div>
+<div id="ref-Hirpa2016" class="csl-entry">
+Duretti Hirpa, Mark Christian. 2016. <span>“On Empathy and Pull Requests.”</span> <em>Slack</em>. <a href="https://slack.engineering/on-empathy-pull-requests/">https://slack.engineering/on-empathy-pull-requests/</a>.
+</div>
+<div id="ref-Hauer2018" class="csl-entry">
+Hauer, Philipp. 2018. <span>“Code <span>Review</span> <span>Guidelines</span> for <span>Humans</span>.”</span> <em>Philipp Hauer’s Blog</em>. <a href="https://phauer.com/2018/code-review-guidelines/">https://phauer.com/2018/code-review-guidelines/</a>.
+</div>
+<div id="ref-Hildebr2020" class="csl-entry">
+Hildebr, Mischa. 2020. <span>“Your <span>Code</span> <span>Sucks</span>! – <span>Code</span> <span>Review</span> <span>Best</span> <span>Practices</span>.”</span> <em>QuickBird Studios Blog</em>. <a href="https://quickbirdstudios.com/blog/code-review-best-practices-guidelines/">https://quickbirdstudios.com/blog/code-review-best-practices-guidelines/</a>.
+</div>
+</div>
+<hr>
+<center> 
+  <div class="footer">
+      All illustrations <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY. </a>
+      <br>
+      All other materials <a href= "https://creativecommons.org/licenses/by/4.0/"> CC-BY </a> unless noted otherwise.
+  </div>
+</center>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="engaging-in-code-review---as-an-author.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="launching-a-docker-image.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Modifying a Docker image | Advanced Reproducibility in Cancer Informatics</title>
+  <meta name="description" content="Description about Course/Book." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Modifying a Docker image | Advanced Reproducibility in Cancer Informatics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Description about Course/Book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Modifying a Docker image | Advanced Reproducibility in Cancer Informatics" />
+  
+  <meta name="twitter:description" content="Description about Course/Book." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/dasl_favicon.ico" type="image/x-icon" />
+<link rel="prev" href="launching-a-docker-image.html"/>
+<link rel="next" href="automation-as-a-reproducibility-tool.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="assets/style_ITN.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="https://www.itcrtraining.org/"><img src="assets/ITN_logo.png" style="padding-left: 15px; padding-top: 8px;"</a>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Course</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#topics-covered"><i class="fa fa-check"></i><b>1.1</b> Topics covered:</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#motivation"><i class="fa fa-check"></i><b>1.2</b> Motivation</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#target-audience"><i class="fa fa-check"></i><b>1.3</b> Target Audience</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#curriculum"><i class="fa fa-check"></i><b>1.4</b> Curriculum</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#how-to-use-the-course"><i class="fa fa-check"></i><b>1.5</b> How to use the course</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="defining-reproducibility.html"><a href="defining-reproducibility.html"><i class="fa fa-check"></i><b>2</b> Defining Reproducibility</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="defining-reproducibility.html"><a href="defining-reproducibility.html#learning-objectives"><i class="fa fa-check"></i><b>2.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="2.2" data-path="defining-reproducibility.html"><a href="defining-reproducibility.html#what-is-reproducibility"><i class="fa fa-check"></i><b>2.2</b> What is reproducibility</a></li>
+<li class="chapter" data-level="2.3" data-path="defining-reproducibility.html"><a href="defining-reproducibility.html#reproducibility-in-daily-life"><i class="fa fa-check"></i><b>2.3</b> Reproducibility in daily life</a></li>
+<li class="chapter" data-level="2.4" data-path="defining-reproducibility.html"><a href="defining-reproducibility.html#reproducibility-is-worth-the-effort"><i class="fa fa-check"></i><b>2.4</b> Reproducibility is worth the effort!</a></li>
+<li class="chapter" data-level="2.5" data-path="defining-reproducibility.html"><a href="defining-reproducibility.html#reproducibility-exists-on-a-continuum"><i class="fa fa-check"></i><b>2.5</b> Reproducibility exists on a continuum!</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html"><i class="fa fa-check"></i><b>3</b> Using version control with GitHub</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#learning-objectives-1"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="3.2" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#prerequisites-for-this-chapter"><i class="fa fa-check"></i><b>3.2</b> Prerequisites for this chapter</a></li>
+<li class="chapter" data-level="3.3" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#set-up-a-git-client-gitkraken"><i class="fa fa-check"></i><b>3.3</b> Set up a Git Client (GitKraken)</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#install-gitkraken"><i class="fa fa-check"></i><b>3.3.1</b> Install GitKraken</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#get-the-exercise-project-files"><i class="fa fa-check"></i><b>3.4</b> Get the exercise project files</a></li>
+<li class="chapter" data-level="3.5" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#start-a-github-repository"><i class="fa fa-check"></i><b>3.5</b> Start a GitHub repository</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#git-clone"><i class="fa fa-check"></i><b>3.5.1</b> git clone</a></li>
+<li class="chapter" data-level="3.5.2" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#create-a-branch"><i class="fa fa-check"></i><b>3.5.2</b> Create a branch</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="using-version-control-with-github.html"><a href="using-version-control-with-github.html#more-resources-for-learning-github"><i class="fa fa-check"></i><b>3.6</b> More resources for learning GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="providing-data.html"><a href="providing-data.html"><i class="fa fa-check"></i><b>4</b> Providing data</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="providing-data.html"><a href="providing-data.html#learning-objectives-2"><i class="fa fa-check"></i><b>4.1</b> Learning Objectives</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="providing-data.html"><a href="providing-data.html#overview-of-data-sharing"><i class="fa fa-check"></i><b>4.1.1</b> Overview of data sharing</a></li>
+<li class="chapter" data-level="4.1.2" data-path="providing-data.html"><a href="providing-data.html#a-very-general-example-of-a-data-download-bash-script"><i class="fa fa-check"></i><b>4.1.2</b> A very general example of a data download bash script</a></li>
+<li class="chapter" data-level="4.1.3" data-path="providing-data.html"><a href="providing-data.html#examples-of-data-download-scripts"><i class="fa fa-check"></i><b>4.1.3</b> Examples of data download scripts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html"><i class="fa fa-check"></i><b>5</b> Engaging in Code Review - as an author</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html#learning-objectives-3"><i class="fa fa-check"></i><b>5.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="5.2" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html#author-responsibilities-in-code-review"><i class="fa fa-check"></i><b>5.2</b> Author responsibilities in code review</a></li>
+<li class="chapter" data-level="5.3" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html#characteristics-of-great-pull-requests"><i class="fa fa-check"></i><b>5.3</b> Characteristics of great pull requests</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html#theres-plenty-of-context"><i class="fa fa-check"></i><b>5.3.1</b> There’s plenty of context!</a></li>
+<li class="chapter" data-level="5.3.2" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html#includes-an-explicit-request-for-what-kind-of-feedback-is-needed"><i class="fa fa-check"></i><b>5.3.2</b> Includes an explicit request for what kind of feedback is needed</a></li>
+<li class="chapter" data-level="5.3.3" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html#points-out-questionable-areas-that-need-extra-attention"><i class="fa fa-check"></i><b>5.3.3</b> Points out questionable areas that need extra attention</a></li>
+<li class="chapter" data-level="5.3.4" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html#are-relatively-small-and-focused"><i class="fa fa-check"></i><b>5.3.4</b> Are relatively small and focused</a></li>
+<li class="chapter" data-level="5.3.5" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html#dont-ask-a-reviewer-to-dig-through-dirty-code"><i class="fa fa-check"></i><b>5.3.5</b> Don’t ask a reviewer to dig through dirty code</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html#exercise-create-your-pull-request-description"><i class="fa fa-check"></i><b>5.4</b> Exercise: Create your pull request description</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="engaging-in-code-review---as-an-author.html"><a href="engaging-in-code-review---as-an-author.html#preparing-for-the-return-of-your-review"><i class="fa fa-check"></i><b>5.4.1</b> Preparing for the return of your review</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="engaging-in-code-review---as-a-reviewer.html"><a href="engaging-in-code-review---as-a-reviewer.html"><i class="fa fa-check"></i><b>6</b> Engaging in Code Review - as a reviewer</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="engaging-in-code-review---as-a-reviewer.html"><a href="engaging-in-code-review---as-a-reviewer.html#learning-objectives-4"><i class="fa fa-check"></i><b>6.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="6.2" data-path="engaging-in-code-review---as-a-reviewer.html"><a href="engaging-in-code-review---as-a-reviewer.html#reviewer-responsibilities-in-code-review"><i class="fa fa-check"></i><b>6.2</b> Reviewer responsibilities in code review</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="engaging-in-code-review---as-a-reviewer.html"><a href="engaging-in-code-review---as-a-reviewer.html#what-to-look-for"><i class="fa fa-check"></i><b>6.2.1</b> What to look for!</a></li>
+<li class="chapter" data-level="6.2.2" data-path="engaging-in-code-review---as-a-reviewer.html"><a href="engaging-in-code-review---as-a-reviewer.html#how-to-communicate-it"><i class="fa fa-check"></i><b>6.2.2</b> How to communicate it</a></li>
+<li class="chapter" data-level="6.2.3" data-path="engaging-in-code-review---as-a-reviewer.html"><a href="engaging-in-code-review---as-a-reviewer.html#exercise-review-past-yous-code"><i class="fa fa-check"></i><b>6.2.3</b> Exercise: Review Past you’s code</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="launching-a-docker-image.html"><a href="launching-a-docker-image.html"><i class="fa fa-check"></i><b>7</b> Launching a Docker image</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="launching-a-docker-image.html"><a href="launching-a-docker-image.html#learning-objectives-5"><i class="fa fa-check"></i><b>7.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="7.2" data-path="launching-a-docker-image.html"><a href="launching-a-docker-image.html#whats-docker"><i class="fa fa-check"></i><b>7.2</b> What’s Docker?</a></li>
+<li class="chapter" data-level="7.3" data-path="launching-a-docker-image.html"><a href="launching-a-docker-image.html#install-docker"><i class="fa fa-check"></i><b>7.3</b> Install Docker</a></li>
+<li class="chapter" data-level="7.4" data-path="launching-a-docker-image.html"><a href="launching-a-docker-image.html#getting-started-with-docker"><i class="fa fa-check"></i><b>7.4</b> Getting started with Docker</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="launching-a-docker-image.html"><a href="launching-a-docker-image.html#a-breakdown-what-these-docker-run-options-are"><i class="fa fa-check"></i><b>7.4.1</b> A Breakdown what these Docker run options are</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="launching-a-docker-image.html"><a href="launching-a-docker-image.html#more-about-docker"><i class="fa fa-check"></i><b>7.5</b> More about Docker</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html"><i class="fa fa-check"></i><b>8</b> Modifying a Docker image</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#learning-objectives-6"><i class="fa fa-check"></i><b>8.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="8.2" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#managing-images"><i class="fa fa-check"></i><b>8.2</b> Managing images</a></li>
+<li class="chapter" data-level="8.3" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#exercise-build-a-docker-image"><i class="fa fa-check"></i><b>8.3</b> Exercise: Build a Docker image</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#download-an-example-dockerfile"><i class="fa fa-check"></i><b>8.3.1</b> Download an example Dockerfile</a></li>
+<li class="chapter" data-level="8.3.2" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#build-a-docker-image-from-a-dockerfile"><i class="fa fa-check"></i><b>8.3.2</b> Build a Docker image from a Dockerfile</a></li>
+<li class="chapter" data-level="8.3.3" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#modify-a-docker-image"><i class="fa fa-check"></i><b>8.3.3</b> Modify a Docker image</a></li>
+<li class="chapter" data-level="8.3.4" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#add-to-the-dockerfile"><i class="fa fa-check"></i><b>8.3.4</b> Add to the Dockerfile</a></li>
+<li class="chapter" data-level="8.3.5" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#add-another-package"><i class="fa fa-check"></i><b>8.3.5</b> Add another package!</a></li>
+<li class="chapter" data-level="8.3.6" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#more-about-docker-next-steps"><i class="fa fa-check"></i><b>8.3.6</b> More about Docker next steps</a></li>
+<li class="chapter" data-level="8.3.7" data-path="modifying-a-docker-image.html"><a href="modifying-a-docker-image.html#a-list-of-handy-docker-commands"><i class="fa fa-check"></i><b>8.3.7</b> A list of handy Docker commands:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="automation-as-a-reproducibility-tool.html"><a href="automation-as-a-reproducibility-tool.html"><i class="fa fa-check"></i><b>9</b> Automation as a reproducibility tool</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="automation-as-a-reproducibility-tool.html"><a href="automation-as-a-reproducibility-tool.html#learning-objectives-7"><i class="fa fa-check"></i><b>9.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="9.2" data-path="automation-as-a-reproducibility-tool.html"><a href="automation-as-a-reproducibility-tool.html#build-an-example-github-actions"><i class="fa fa-check"></i><b>9.2</b> Build an example GitHub Actions</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="automation-as-a-reproducibility-tool.html"><a href="automation-as-a-reproducibility-tool.html#structure-of-github-actions-file"><i class="fa fa-check"></i><b>9.2.1</b> Structure of GitHub actions file</a></li>
+<li class="chapter" data-level="9.2.2" data-path="automation-as-a-reproducibility-tool.html"><a href="automation-as-a-reproducibility-tool.html#setting-up-the-trigger"><i class="fa fa-check"></i><b>9.2.2</b> Setting up the trigger</a></li>
+<li class="chapter" data-level="9.2.3" data-path="automation-as-a-reproducibility-tool.html"><a href="automation-as-a-reproducibility-tool.html#setting-up-the-action"><i class="fa fa-check"></i><b>9.2.3</b> Setting up the action</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="automation-as-a-reproducibility-tool.html"><a href="automation-as-a-reproducibility-tool.html#exercise-set-up-a-github-action"><i class="fa fa-check"></i><b>9.3</b> Exercise: Set up a GitHub action</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="automation-as-a-reproducibility-tool.html"><a href="automation-as-a-reproducibility-tool.html#resources-for-setting-up-your-github-actions"><i class="fa fa-check"></i><b>9.3.1</b> Resources for setting up your GitHub Actions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<p style="text-align:center;"> <a href="https://github.com/jhudsl/OTTR_Template" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown by: </a> </p>
+<p style="text-align:center;"> <a href="http://jhudatascience.org/"> The Johns Hopkins Data Science Lab </a></p>
+<a href="http://jhudatascience.org/"><img src="https://jhudatascience.org/images/dasl.png" style=" width: 80%; filter: grayscale(100%); padding-left: 40px; padding-top: 8px; vertical-align: top "</a>
+<p style="text-align:center; font-size: 12px;"> <a href="https://github.com/rstudio4edu/rstudio4edu-book/"> Style adapted from: rstudio4edu-book </a> <a href ="https://creativecommons.org/licenses/by/2.0/"> (CC-BY 2.0) </a></p>
+<p style="padding-left: 40px;"><div class="trapezoid" style = "padding-left: 40px;"><span>  <a href="https://forms.gle/hc8Xt3Y2Znjb6M4Y7"> Click here to provide feedback</a> <img src="assets/itcr_arrow.png" style=" width: 10%" ></span></div></p>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Advanced Reproducibility in Cancer Informatics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+  <html>
+  
+  <head>
+  <title>Title</title>
+  </head>
+  
+  <body>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0712G9FTQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'G-V0712G9FTQ');
+  </script>
+      
+  </body>
+  </html>
+<head>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+  <!--script src="https://kit.fontawesome.com/6a26f47516.js"></script-->
+  <!--<script src="assets/hideOutput.js"></script>-->
+  <link href="assets/style_ITN.css" rel="stylesheet">
+</head>
+        
+
+
+<div class="hero-image-container"> 
+  <img class= "hero-image" src="assets/itcr_main_image.png">
+</div>
+<div id="modifying-a-docker-image" class="section level1" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Modifying a Docker image</h1>
+<div id="learning-objectives-6" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Learning Objectives</h2>
+<p><img src="resources/images/08-modifying-docker-image_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfbc11e6ab0_0_149.png" title="Learning Objectives. This chapter will demonstrate how to: Modify an existing Docker image. Store a Docker image on dockerhub. Incorporate Docker image use into a project." alt="Learning Objectives. This chapter will demonstrate how to: Modify an existing Docker image. Store a Docker image on dockerhub. Incorporate Docker image use into a project." width="100%" /></p>
+<hr />
+<p>The docker image you are using from the last chapter was pre-made for you, but you will find depending on the needs of your project, that you may need different packages installed. In this chapter we will introduce you to the basics of how to manage your own Docker image.</p>
+</div>
+<div id="managing-images" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> Managing images</h2>
+<p>Images can be on your own computer or on dockerhub.
+To see your list of images on your computer, you can go to Docker desktop. From here you will want to delete images and containers periodically because they do take up room on your computer.</p>
+<p><img src="resources/images/08-modifying-docker-image_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc8849fa4d_0_17.png" title="A reminder of where to find your current local images. Open up Docker desktop. Click on ‘images’ on the left. This shows the images you have available on your computer. If you hover your mouse over one of these images, you will see a Run button appear. Click the Run button to start a container with this image." alt="A reminder of where to find your current local images. Open up Docker desktop. Click on ‘images’ on the left. This shows the images you have available on your computer. If you hover your mouse over one of these images, you will see a Run button appear. Click the Run button to start a container with this image." width="100%" /></p>
+<p>To see what images you have on your internet repository, you can log on to dockerhub.
+<a href="https://hub.docker.com/">Go here to login (or create a username if you have not yet)</a>.</p>
+<p><img src="resources/images/08-modifying-docker-image_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc8849fa4d_0_38.png" title="The dockerhub login page." alt="The dockerhub login page." width="100%" /></p>
+<p>After you sign into dockerhub, you can see the list of repositories you have stored online. At this point, you won’t have any if you just created your dockerhub account. To create a new repository, click the ‘Create Repository’ button.</p>
+<p><img src="resources/images/08-modifying-docker-image_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc8849fa4d_0_10.png" title="In your dockerhub main page, you can see the list of repositories you have stored online. At this point, you won’t have any if you just created your dockerhub account. To create a new repository, click the ‘Create Repository’ button." alt="In your dockerhub main page, you can see the list of repositories you have stored online. At this point, you won’t have any if you just created your dockerhub account. To create a new repository, click the ‘Create Repository’ button." width="100%" /></p>
+<p>Upon adding the new repository to dockerhub, you will need name it the same as whatever you are calling it locally. You can put a description and name and click create. On the right it shows how you can interact with this from your local command line.</p>
+<p><img src="resources/images/08-modifying-docker-image_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc8849fa4d_0_48.png" title="Upon adding the new repository to dockerhub, you will need name it the same as whatever you are calling it locally. You can put a description and name and click create. On the right it shows how you can interact with this from your local command line." alt="Upon adding the new repository to dockerhub, you will need name it the same as whatever you are calling it locally. You can put a description and name and click create. On the right it shows how you can interact with this from your local command line." width="100%" /></p>
+<p>After you’ve created the image repository, you will be brought to the image repository page.
+It will tell you <code>Last pushed: never</code>. On the right it will tell you the command you will need in order to push the image to dockerhub.</p>
+<p><img src="resources/images/08-modifying-docker-image_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc8849fa4d_0_56.png" title="After you've created the image repository, you will be brought to the image repository page. It will tell you Last pushed: never. On the right it will tell you the command you will need in order to push the image to dockerhub." alt="After you've created the image repository, you will be brought to the image repository page. It will tell you Last pushed: never. On the right it will tell you the command you will need in order to push the image to dockerhub." width="100%" /></p>
+<p>Go to your <a href="https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955">local command line</a> and use the command specified on the right side of your repository page. You don’t have to specify a tagname if you don’t want to. If you don’t want to specify a tagname, leave off the <code>:tagname</code> if you like.</p>
+<p>Now you will be able to test pulling your image using <code>docker pull &lt;image name&gt;</code> like we did in the previous chapter.</p>
+<p>Docker images can be pulled from being stored online but these images are built originally from a <code>Dockerfile</code>.</p>
+</div>
+<div id="exercise-build-a-docker-image" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> Exercise: Build a Docker image</h2>
+<p>A Dockerfile is a recipe for how to build a docker image. The best way to learn to write Dockerfiles is to start off with one that is already written and modify it for your needs.</p>
+<p>You can practice building a docker image by downloading the dockerfiles we have started and changing it slightly.</p>
+<div id="download-an-example-dockerfile" class="section level3" number="8.3.1">
+<h3><span class="header-section-number">8.3.1</span> Download an example Dockerfile</h3>
+<details>
+<summary>
+Get the Python Dockerfile
+</summary>
+<p>Download the example Dockerfile for Python analyses.</p>
+<pre><code>wget https://raw.githubusercontent.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics/main/resources/python-docker/Dockerfile</code></pre>
+<p>If you get a message like <code>command not found</code> that means you will need to install <a href="https://www.jcchouinard.com/wget/"><code>wget</code></a>.</p>
+<p>Altervatively, you can navigate to the <a href="https://raw.githubusercontent.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics/main/resources/python-docker/Dockerfile">Dockerfile’s page on GitHub</a> and use <code>File</code> &gt; <code>Save as</code> but do not add any suffix to the end of the file (no <code>.txt</code> or anything). Just save it as <code>Dockerfile</code>.</p>
+</details>
+<details>
+<summary>
+Get the R Dockerfile
+</summary>
+<p>Download the example Dockerfile for R analyses.</p>
+<pre><code>wget https://raw.githubusercontent.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics/main/resources/r-docker/Dockerfile</code></pre>
+<p>If you get a message like <code>command not found</code> that means you will need to install <a href="https://www.jcchouinard.com/wget/"><code>wget</code></a>.</p>
+<p>Altervatively, you can navigate to the <a href="https://raw.githubusercontent.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics/main/resources/r-docker/Dockerfile">Dockerfile’s page on GitHub</a> and use <code>File</code> &gt; <code>Save as</code> but do not add any suffix to the end of the file (no <code>.txt</code> or anything). Just save it as <code>Dockerfile</code>.</p>
+</details>
+</div>
+<div id="build-a-docker-image-from-a-dockerfile" class="section level3" number="8.3.2">
+<h3><span class="header-section-number">8.3.2</span> Build a Docker image from a Dockerfile</h3>
+<p>Place this newly downloaded Dockerfile with the rest of your project files.</p>
+<p>Build a docker image from this Dockerfile using the command below, but replace <code>image_name</code> with what you would like your modified image to be called.</p>
+<pre><code>docker build -f Dockerfile . -t image_name</code></pre>
+<p>Navigate back to your Docker desktop and the <code>images</code> window. If your image built successfully, you should see a new image in your list!</p>
+</div>
+<div id="modify-a-docker-image" class="section level3" number="8.3.3">
+<h3><span class="header-section-number">8.3.3</span> Modify a Docker image</h3>
+<p>If you want add or remove a package from a Docker image, you’ll need to modify the Dockerfile.
+Using your preferred text editor (or RStudio or Jupyter Lab), open up the Dockerfile.</p>
+<p>You will see the first line in the Docker image is a <code>FROM</code> command. This is a command that will take another docker image to start from.
+- For our <strong>R example</strong>, we are starting off with an image that already has R and the tidyverse. - For our <strong>Python example</strong> we are starting off with an image that already has Python and Jupyter Lab.</p>
+<p>There are so many Docker images out there, that it might be that someone has already created a docker image with most of the functionality you need for your project.</p>
+<p><code>FROM</code> is one of the <a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/">main commands that a Dockerfile can take as described by their documentation</a>:</p>
+<blockquote>
+<p><strong>FROM</strong> creates a layer from the another Docker image.
+<strong>COPY</strong> adds files from your Docker client’s current directory.
+<strong>RUN</strong> builds your application with make.
+<strong>CMD</strong> specifies what command to run within the container.</p>
+</blockquote>
+</div>
+<div id="add-to-the-dockerfile" class="section level3" number="8.3.4">
+<h3><span class="header-section-number">8.3.4</span> Add to the Dockerfile</h3>
+<p>To get a feel for how these work, let’s add a line to the your example Dockerfile.</p>
+<p>Using your preferred text editor (or RStudio or Jupyter Lab), open up the Dockerfile and add this line at the very end of the file.</p>
+<pre><code>CMD [&quot;echo&quot;,&quot;Yay! I added to this Docker image&quot;]</code></pre>
+<p>Now re-run <code>docker build</code> as you did in the previous section. (Use the command below but replace <code>image_name</code> with whatever your image is called).</p>
+<pre><code>docker build -f Dockerfile . -t image_name</code></pre>
+<p>If all built successfully, you should see a message like:</p>
+<pre><code>=&gt; exporting to image                                                     0.0s
+=&gt; =&gt; exporting layers                                                    0.0s
+=&gt; =&gt; writing image sha256:ayuahgfuiseohfauwheufhauwihefuahweufhawfbuibe  0.0s
+=&gt; =&gt; naming to docker.io/library/image_name</code></pre>
+<p>Now to run the image we can use the docker run command we used in the previous chapter and we should have a message: <code>Yay! I added to this Docker image</code> pop up upon building.</p>
+<details>
+<summary>
+To run your new <strong>Python docker image</strong>
+</summary>
+<p>But replace <code>image_name</code> with whatever you have called your image.</p>
+<pre><code>docker run --rm -v $PWD:/home/jovyan/work -e JUPYTER_ENABLE_LAB=yes -p 8787:8787 image_name</code></pre>
+</details>
+<details>
+<summary>
+To run the <strong>R docker image</strong>
+</summary>
+<p>But replace <code>image_name</code> with whatever you have called your image.</p>
+<pre><code>docker run --rm -v $PWD:/home/rstudio -e PASSWORD=password -p 8787:8787 image_name</code></pre>
+</details>
+<p><strong>Stop and remove these containers before moving on.</strong> You can do this by going to Docker desktop and clicking on the trash can button next to each container. For images click <code>Clean up</code> to check off the images you’d like to remove and then hit <code>Remove</code>.</p>
+</div>
+<div id="add-another-package" class="section level3" number="8.3.5">
+<h3><span class="header-section-number">8.3.5</span> Add another package!</h3>
+<p>Starting off with your example Dockerfile, we will practice adding another package and re-build the docker image with a new package.</p>
+<p><strong>Note</strong> that spacing is important as well as having a <code>\</code> at the end of each line if the command is continuing.</p>
+<div id="adding-an-r-package" class="section level4" number="8.3.5.1">
+<h4><span class="header-section-number">8.3.5.1</span> Adding an R package</h4>
+<p>To add R packages from CRAN, you can use this kind of format:</p>
+<pre><code>RUN Rscript -e  &quot;install.packages( \
+    c(&#39;BiocManager&#39;, \
+      &#39;R.utils&#39;, \
+      &#39;newpackagename&#39;))&quot;</code></pre>
+<p>To add an R package from Bioconductor, you can follow this kind of format:</p>
+<pre><code>RUN Rscript -e &quot;options(warn = 2); BiocManager::install( \
+  c(&#39;limma&#39;, \
+    &#39;newpackagename&#39;)
+</code></pre>
+<p>To add a <strong>Python package using pip</strong>, you will need to add pip3 to install Python packages using this format:</p>
+<pre><code>RUN pip3 install \
+    &quot;somepackage==0.1.0&quot;</code></pre>
+<p>There are so many things you can add to your Docker image. (Picture whatever software and packages you are using on your computer). We can only get you started for the feel of how to build a Dockerfile, and what you put on your Docker image will be up to you.</p>
+<p>To figure out how to add something, a good strategy is to look for other Dockerfiles that might have the package you want installed and borrow their <code>RUN</code> command. Then try to re-build your Docker image with that added <code>RUN</code> command and see if it builds successfully.</p>
+<p>And lastly, make sure that whatever changes you make to your Dockerfile, that you add it to your GitHub repository by <a href="https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/using-version-control-with-github.html#create-a-branch">creating a pull request as we did in Chapter 3</a>.</p>
+</div>
+</div>
+<div id="more-about-docker-next-steps" class="section level3" number="8.3.6">
+<h3><span class="header-section-number">8.3.6</span> More about Docker next steps</h3>
+<ul>
+<li><a href="https://takacsmark.com/dockerfile-tutorial-by-example-dockerfile-best-practices-2018/#lets-create-your-first-image">Dockerfile Tutorial by Example</a>.</li>
+<li><a href="https://linuxtechlab.com/learn-create-dockerfile-example/">Dockerfile examples</a></li>
+</ul>
+</div>
+<div id="a-list-of-handy-docker-commands" class="section level3" number="8.3.7">
+<h3><span class="header-section-number">8.3.7</span> A list of handy Docker commands:</h3>
+<p><em>Get info on current containers:</em></p>
+<pre><code>docker ps</code></pre>
+<p><em>How to stop an individual container:</em></p>
+<pre><code>docker container ls
+docker stop &lt;containerID&gt;</code></pre>
+<p><em>Get rid of all non-running containers:</em></p>
+<pre><code>docker container prune</code></pre>
+<p><em>Stop all containers:</em></p>
+<pre><code>docker stop $(docker ps -a -q)</code></pre>
+<p><em>Remove all containers:</em></p>
+<pre><code>docker rm -f $(docker ps -a -q)</code></pre>
+<p><strong>If you have any feedback on this chapter, please <a href="https://forms.gle/j3cJZX5CmNtQp6QKA">fill out this form</a>, we’d love to hear your feedback!</strong></p>
+
+</div>
+</div>
+</div>
+<hr>
+<center> 
+  <div class="footer">
+      All illustrations <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY. </a>
+      <br>
+      All other materials <a href= "https://creativecommons.org/licenses/by/4.0/"> CC-BY </a> unless noted otherwise.
+  </div>
+</center>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="launching-a-docker-image.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="automation-as-a-reproducibility-tool.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
