@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
         # Use the yaml-env-action action.
       - name: Load environment from YAML
@@ -60,7 +62,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{needs.yaml-check.outputs.toggle_spell_check == 'yes'}}
     container:
-      image: jhudsl/course_template
+      image: jhudsl/course_template:main
 
     steps:
       - name: Checkout files
@@ -153,7 +155,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{needs.yaml-check.outputs.toggle_style_code == 'yes'}}
     container:
-      image: jhudsl/course_template
+      image: jhudsl/course_template:main
 
     steps:
       - name: Checkout files
@@ -208,7 +210,7 @@ jobs:
     needs: yaml-check
     runs-on: ubuntu-latest
     container:
-      image: jhudsl/course_template
+      image: jhudsl/course_template:main
     if: ${{needs.yaml-check.outputs.toggle_quiz_check == 'yes'}}
     steps:
       - name: Checkout files
@@ -230,7 +232,7 @@ jobs:
       - name: Run quiz check
         id: quiz_check_run
         run: |
-          Rscript -e "ottr::check_quizzes(quiz_dir = 'quizzes', write_report = TRUE, verbose = TRUE)"
+          Rscript -e "ottrpal::check_quizzes(quiz_dir = 'quizzes', write_report = TRUE, verbose = TRUE)"
           results=0
           if -f "question_error_report.tsv"; then
             results=$(wc -l < question_error_report.tsv >/dev/null)
@@ -305,7 +307,7 @@ jobs:
     needs: yaml-check
     runs-on: ubuntu-latest
     container:
-      image: jhudsl/course_template
+      image: jhudsl/course_template:main
     if: ${{needs.yaml-check.outputs.toggle_render_preview == 'yes'}}
     steps:
       - name: Checkout files
@@ -322,13 +324,6 @@ jobs:
           branch_name='preview-${{ github.event.pull_request.number }}'
           git fetch --all
           git checkout $branch_name
-
-          # Start fresh and delete these files
-          rm -rf docs/* *.rds
-          git rm docs/*
-          git rm *.rds
-          git commit -m "delete docs"
-
           git merge -s recursive --strategy-option=theirs origin/${{ github.head_ref }}
         shell: bash
 
@@ -342,7 +337,7 @@ jobs:
       # This job creates a shared scaffold for both.
       - name: Run TOC-less version of render
         id: tocless
-        run: Rscript -e "ottr::render_without_toc()"
+        run: Rscript -e "ottrpal::render_without_toc()"
 
       # This checks on the steps before it and makes sure that they completed.
       # If the renders didn't complete we don't want to commit the file changes

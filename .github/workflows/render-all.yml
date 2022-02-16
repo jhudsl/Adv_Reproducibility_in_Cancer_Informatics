@@ -35,7 +35,7 @@ jobs:
     needs: yaml-check
     runs-on: ubuntu-latest
     container:
-      image: jhudsl/course_template
+      image: jhudsl/course_template:main
     if: ${{needs.yaml-check.outputs.toggle_bookdown == 'yes'}}
 
     steps:
@@ -83,7 +83,7 @@ jobs:
     needs: [yaml-check]
     runs-on: ubuntu-latest
     container:
-      image: jhudsl/course_template
+      image: jhudsl/course_template:main
     if: ${{needs.yaml-check.outputs.toggle_coursera == 'yes' || needs.yaml-check.outputs.toggle_leanpub == 'yes'}}
 
     steps:
@@ -102,7 +102,7 @@ jobs:
       # This job creates a shared scaffold for both.
       - name: Run TOC-less version of render
         id: tocless
-        run: Rscript -e "ottr::render_without_toc()"
+        run: Rscript -e "ottrpal::render_without_toc()"
 
       # Commit the TOC-less version files
       - name: Commit tocless bookdown files
@@ -118,7 +118,7 @@ jobs:
     needs: [yaml-check, render-tocless]
     runs-on: ubuntu-latest
     container:
-      image: jhudsl/ottr
+      image: jhudsl/ottrpal:main
     if: ${{needs.yaml-check.outputs.toggle_leanpub == 'yes'}}
 
     steps:
@@ -144,9 +144,9 @@ jobs:
       - name: Delete old manuscript/
         run: rm -rf manuscript/
 
-      - name: Run ottr::bookdown_to_embed_leanpub
+      - name: Run ottrpal::bookdown_to_embed_leanpub
         run: |
-          Rscript -e "ottr::bookdown_to_embed_leanpub(
+          Rscript -e "ottrpal::bookdown_to_embed_leanpub(
             render = FALSE, \
             chapt_img_key = 'resources/chapt_screen_images/chapter_urls.tsv', \
             make_book_txt = TRUE)"
@@ -165,7 +165,7 @@ jobs:
     needs: [yaml-check, render-tocless]
     runs-on: ubuntu-latest
     container:
-      image: jhudsl/course_template
+      image: jhudsl/course_template:main
     if: ${{needs.yaml-check.outputs.toggle_coursera == 'yes'}}
 
     steps:
@@ -181,17 +181,10 @@ jobs:
           git config --local user.name "jhudsl-robot"
 
       # Run Coursera version
-      - name: Run Coursera version of render
+      - name: Convert Leanpub quizzes to Coursera
+        if: needs.yaml-check.outputs.toggle_leanpub == 'yes'
         id: coursera
-        run: Rscript -e "ottr::convert_coursera_quizzes()"
-
-      # This checks on the steps before it and makes sure that they completed.
-      # If the renders didn't complete we don't want to commit the file changes
-      - name: Check on render steps
-        if: steps.coursera.outcome != 'success'
-        run: |
-          echo Coursera status ${{steps.coursera.outcome}}
-          exit 1
+        run: Rscript -e "ottrpal::convert_coursera_quizzes()"
 
       # Commit the rendered bookdown files
       - name: Commit rendered Coursera files
