@@ -1,6 +1,6 @@
 
 ```{r, include = FALSE}
-ottr::set_knitr_image_path()
+ottrpal::set_knitr_image_path()
 ```
 
 # Providing data
@@ -8,7 +8,7 @@ ottr::set_knitr_image_path()
 ## Learning Objectives
 
 ```{r, fig.alt="Learning Objectives This chapter will demonstrate how to: Provide data in a way that allows your analysis to be reproducible. Set up a download data script to include with your analysis repository.", out.width = "100%", echo = FALSE}
-ottr::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gcfac54ca19_0_0")
+ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gcfac54ca19_0_0")
 ```
 
 The first part of any analysis should be getting all the data needed to run it. Data come in all kinds of formats and sizes so while we can't give specifics on how to share your data we can provide these guidelines:
