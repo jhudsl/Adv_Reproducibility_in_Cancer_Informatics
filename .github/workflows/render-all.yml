@@ -195,7 +195,7 @@ jobs:
 
       # Run Coursera version
       - name: Convert Leanpub quizzes to Coursera
-        if: needs.yaml-check.outputs.toggle_leanpub == 'yes' && if: needs.yaml-check.outputs.toggle_quiz_check == 'yes'
+        if: needs.yaml-check.outputs.toggle_leanpub == 'yes' && needs.yaml-check.outputs.toggle_quiz_check == 'yes'
         id: coursera
         run: Rscript -e "ottrpal::convert_coursera_quizzes()"
 
