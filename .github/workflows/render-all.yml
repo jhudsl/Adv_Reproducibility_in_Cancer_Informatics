@@ -20,6 +20,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: check command
+        run: echo git remote set-url origin https://${secrets.GH_PAT}@github.com/${GITHUB_REPOSITORY}
+        
         # Use the yaml-env-action action.
       - name: Load environment from YAML
         uses: doughepi/yaml-env-action@v1.0.0
@@ -75,7 +78,7 @@ jobs:
       # Commit the rendered bookdown files
       - name: Commit rendered bookdown files
         run: |
-          git remote set-url origin https://${secrets.GH_PAT}@github.com/${GITHUB_REPOSITORY}
+          echo git remote set-url origin https://${secrets.GH_PAT}@github.com/${GITHUB_REPOSITORY}
           git add --force docs/*
           git commit -m 'Render bookdown' || echo "No changes to commit"
           git push origin main || echo "No changes to push"
