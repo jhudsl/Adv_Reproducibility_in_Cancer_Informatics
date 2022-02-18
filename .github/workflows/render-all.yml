@@ -74,8 +74,10 @@ jobs:
 
       # Commit the rendered bookdown files
       - name: Commit rendered bookdown files
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          echo git remote set-url origin https://${secrets.GH_PAT}@github.com/${GITHUB_REPOSITORY}
+          git remote set-url origin https://${GH_PAT}@github.com/${GITHUB_REPOSITORY}
           git add --force docs/*
           git commit -m 'Render bookdown' || echo "No changes to commit"
           git pull --allow-unrelated-histories --strategy-option=theirs
