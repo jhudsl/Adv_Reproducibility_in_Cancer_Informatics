@@ -3,8 +3,10 @@ Avi's
 al
 Avi
 AML
+Bookdown
 Browse’
 Azacytidine
+Coursera
 Decitabine
 dropdown
 et
@@ -61,3 +63,4 @@ Dockerfile's
 GEOquery
 PII
 yaml
+Leanpub
