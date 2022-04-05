@@ -48,10 +48,10 @@ GitHub has a host of terms that can feel like a whole language at first, but we'
 ```{r, fig.alt="GitHub has a whole host of terms that can feel like a whole language at first, but we'll introduce them one at a time. To start with, a lot of the GitHub workflow centers around handling copies of your code that are either stored on the internet (are _remote_) or are stored on your computer (are _local_).", out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_120")
 ```
-:::
+<div class = "github">
 **Remote** = GitHub on the internet
 **Local** = What's on your own computer
-:::
+</div>
 
 A _repository_, in the case of a data science project, is mostly synonymous with the word "project". Using GitHub, a project will exist both as a remote repository and a local repository (in other words, it will be on the internet on GitHub and on your computer).
 
