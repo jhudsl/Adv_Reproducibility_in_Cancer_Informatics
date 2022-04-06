@@ -178,7 +178,7 @@ If we want to add these file changes to our current branch, we need to `commit` 
 ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_664")
 ```
 <div class = "github">
-**add** = to stage your files to be committed to your current branch.
+**add** = to stage your files to be committed to your current branch. <br>
 **commit** = include your set of file changes to your current branch.
 </div>
 
