@@ -49,7 +49,7 @@ GitHub has a host of terms that can feel like a whole language at first, but we'
 ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_120")
 ```
 <div class = "github">
-**Remote** = GitHub on the internet
+**Remote** = GitHub on the internet <br>
 **Local** = What's on your own computer
 </div>
 
@@ -58,6 +58,10 @@ A _repository_, in the case of a data science project, is mostly synonymous with
 ```{r, fig.alt="A remote repository is project that is stored on the internet for example, a URL to jhudsl/reproducible-R-example. A local repository is a project copy that lives on your computer. For example, a file path to reproducible-R-example. So using GitHub, a project will exist both as a remote repository and a local repository. (It will be on the internet on GitHub and on your computer). ", out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_149")
 ```
+
+<div class = "github">
+**Repository** = a set of project files that have a location on GitHub
+</div>
 
 ## Get the exercise project files
 
@@ -105,7 +109,6 @@ unzip -o chapter-zips/reproducible-R-example.zip -d chapter-zips/
 - Follow [these instructions](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository#adding-a-file-to-a-repository-on-github) to add all the files that are inside the `reproducible-R-example.zip` or `reproducible-python-example.zip` file you downloaded to this new repository.
 
 This new repository you created should look [something like this](https://github.com/cansavvy/repository-name).
-AVOCADO: The link seems to be broken: does not show.
 
 ### git clone
 
@@ -116,6 +119,10 @@ In our daily grind, we will work on this code from our own computer. To set this
 ```{r, fig.alt="To clone a repository means to copy a remote repository to your local computer", out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_90")
 ```
+
+<div class = "github">
+**clone** = To make a remote repository local. In other words, to make an online repository downloaded and linked on your computer.
+</div>
 
 To get started, you will need to clone the GitHub repository you created. We will be using this repository for the duration of this course.
 
@@ -131,8 +138,11 @@ Now you are ready to click `Clone the repository`! It will ask you if you'd like
 
 ### Create a branch
 
-Handling branches is where you unleash the real benefit of GitHub, but it's also the confusing part to get the hang of. A branch is a unique set, or copy, of codes and code changes.
-AVOCADO: Please check the definition and see if this is accurate. I felt a definition would be helpful but am unsure if this description captures everything.
+Handling branches is where you unleash the real benefit of GitHub, but it's also the confusing part to get the hang of.
+
+<div class = "github">
+**branch** = a unique working copy of file changes of a GitHub repository. A branch can be local and remote.
+</div>
 
 ```{r, fig.alt="Using branches is where you unleash the real benefit of GitHub, but it's also the confusing part to get a hang of. Currently, the repository we just made has a main branch. The main branch is the default branch and is The main branch is what you want most curated, working, and always ready for others to use!", out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_266")
@@ -143,7 +153,6 @@ The best way to get a grasp on what the branches represent is to create one and 
 ```{r, fig.alt="In GitKraken we can create a new branch; this will be your working copy. First, click the Branch button. Next, type in a branch name in the box that the cursor is blinking in. In our example, we are calling it a-new-branch. Then click Enter! Now you have a new branch!", out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_632")
 ```
-AVOCADO: In screenshot above - revise numbering (1, 2, 3; not 2, 3, 3)
 
 In GitKraken we can create a new branch; this will be your working copy. First, click the Branch button. Next, type in a branch name in the box that the cursor is blinking in. In our example, we are calling it `a-new-branch`. Now click `Enter`! Now you have a new branch!
 
@@ -168,6 +177,10 @@ If we want to add these file changes to our current branch, we need to `commit` 
 ```{r, fig.alt="To commit files is to include your set of file changes to your current branch. Write a commit message that explains the changes. Now click on the button that says Commit changes to 1 file.", out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_664")
 ```
+<div class = "github">
+**add** = to stage your files to be committed to your current branch.
+**commit** = include your set of file changes to your current branch.
+</div>
 
 Now that we have changes committed to our branch we are ready to add them to the remote, internet copy! To do this, we will need to `push` our branch.
 
@@ -176,7 +189,11 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6
 ```
 
 To push means to add changes that are on your new branch to the remote branch (internet version). You can select your _origin_, which refers to where your branch is stored on the internet. Choose your origin in the dropdown menu and click Submit.
-AVOCADO: Please also review the definition of origin - I also searched this on Google and hope it is correct!
+
+<div class = "github">
+**origin** = where your branch is stored on the internet (remotely)
+**push** = to add changes from your branch to its remote counterpart. In other words, put your changes online.
+</div>
 
 ```{r, fig.alt="To push means to add changes that are on your new branch to the remote branch (internet version). The word origin just refers to where your branch is stored on the internet. Choose your origin in the dropdown menu and click Submit. ", out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1014c75158f_0_786")
@@ -184,9 +201,13 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6
 
 After a variable number of commits, your branch, called `a-new-branch`, is a different version of the original code base that may have a nifty improvement to it. But our main goal is to add that nifty improvement to the main branch. To start this process of bringing in new changes to the main curated repository, we will create a `pull request`.
 
+<div class = "github">
+**pull request** = A way to propose changes from a branch to be included into the main repository.
+<br>
 From GitHub:
-
 > Pull requests let you tell others about changes you've pushed to a GitHub repository. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.
+
+</div>
 
 Pull requests are the meat of how code changes and improvements get reviewed and incorporated! A vast majority of the benefits of incorporating GitHub into your workflow centers around fully utilizing the power of pull requests!
 
@@ -217,7 +238,6 @@ One more note: if you do want to use the command line or if you want to know mor
 ```{r, fig.alt="Alternative text", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g122da391674_0_5")
 ```
-AVOCADO: this image needs to be confirmed.
 
 ## More resources for learning GitHub
 
