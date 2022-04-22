@@ -11,7 +11,8 @@ These credits are based on our [course contributors table guidelines](https://gi
 |Lead Content Instructor(s)|[Candace Savonen]|
 |Lecturer(s)|[Candace Savonen]|
 |Content Directors|[Jeff Leek], [Sarah Wheelan]|
-|Content Consultants||
+|Content Reviewer| [Sarah Wheelan]|
+|Content Editor|[Jimin Hwang]|
 |Acknowledgments| |
 |**Production**||
 |Content Publisher|[Ira Gooding]|
@@ -23,7 +24,7 @@ These credits are based on our [course contributors table guidelines](https://gi
 |Technical Publishing Stylists|[Carrie Wright], [Candace Savonen]|
 |Package Developers ([ottrpal])[John Muschelli], [Candace Savonen], [Carrie Wright]|
 |**Art and Design**||
-|Illustrator| [Candace Savonen]|
+|Illustrator| [Candace Savonen] [Jimin Hwang]|
 |Figure Artist| [Candace Savonen]|
 |Videographer|[Candace Savonen]|
 |Videography Editor| [Candace Savonen]|
@@ -45,7 +46,7 @@ These credits are based on our [course contributors table guidelines](https://gi
 ##  collate  en_US.UTF-8                 
 ##  ctype    en_US.UTF-8                 
 ##  tz       Etc/UTC                     
-##  date     2022-03-23                  
+##  date     2022-04-22                  
 ## 
 ## ─ Packages ───────────────────────────────────────────────────────────────────
 ##  package     * version    date       lib source                            
@@ -104,6 +105,7 @@ These credits are based on our [course contributors table guidelines](https://gi
 [Candace Savonen]: https://www.cansavvy.com/
 [Carrie Wright]: https://carriewright11.github.io/
 [Ira Gooding]: https://publichealth.jhu.edu/faculty/4130/ira-gooding
+[Jimin Hwang]: https://www.linkedin.com/in/jimin-hwang-549835142/
 [Jeff Leek]: https://jtleek.com/
 [John Muschelli]: https://johnmuschelli.com/
 [Sarah Wheelan]: https://www.hopkinsmedicine.org/profiles/details/sarah-wheelan
