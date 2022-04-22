@@ -7,23 +7,23 @@
 
 <img src="resources/images/03-version-control-with-github_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1013f9881e2_0_132.png" title="Learning objectives This chapter will demonstrate how to: Understand that git and GitHub are tools that help your analyses be conducted reproducibly and in an open source manner. Create a GitHub account. Set up a GitHub repository for your analyses." alt="Learning objectives This chapter will demonstrate how to: Understand that git and GitHub are tools that help your analyses be conducted reproducibly and in an open source manner. Create a GitHub account. Set up a GitHub repository for your analyses." width="100%" />
 
-In the introductory part of this course, we discussed [some of the reasons for using GitHub](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/making-your-project-open-source-with-github.html#github-and-git-allow-you-to) but we didn't get into version control or GitHub's capabilities much beyond its capacity to store code in a place where others can find it.
+In the introductory part of this course, we discussed [some of the reasons for using GitHub](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/making-your-project-open-source-with-github.html#github-and-git-allow-you-to) but we didn't get into version control (i.e. creating versions for managing changes over time) or GitHub's capabilities much beyond its capacity to store code in a place where others can find it.
 
-In this advanced course, we will dig deeper into Git and GitHub's capabilities so you can really use this to your daily work's advantage. But, to gain the benefit of these deeper GitHub skills it will require some new habits to be formed. Fully embracing the GitHub workflow will make your work more efficient and help you create more transparent and reproducible analyses!
+In this advanced course, we will dig deeper into Git and GitHub's capabilities so you can use this to your daily work's advantage. However, to gain the benefit of these deeper GitHub skills, you will have to form some new habits. Fully embracing the GitHub workflow will make your work more efficient and help you create more transparent and reproducible analyses!
 
-In this chapter we're going to introduce you one by one to the basic git commands you'll need as we do them!
+In this chapter we're going to introduce you to the basic git commands you'll need, and guide you as we do them together one by one!
 
 ## Prerequisites for this chapter
 
-In order to complete this chapter **you will need a GitHub account (it's free)**. If you do not currently have a GitHub account, we recommend you go through our [Intro to Github chapter from the Introduction to Reproducibility course](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/making-your-project-open-source-with-github.html) first and then return to this chapter.
+In order to complete this chapter **you will need a GitHub account (it's free)**. If you do not currently have a GitHub account, we recommend you go through our [Intro to Github chapter from the Introduction to Reproducibility course](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/making-your-project-open-source-with-github.html) first, then return to this chapter.
 
 <img src="resources/images/03-version-control-with-github_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g101867ebdaa_18_0.png" title="This chapter has Prerequisites. Before working on this chapter you should: Have a basic understanding of the motivation for using git and GitHub and Have a GitHub account. If you are lacking either of these, you can scan this QR code, or go to bit.ly/github-rationale" alt="This chapter has Prerequisites. Before working on this chapter you should: Have a basic understanding of the motivation for using git and GitHub and Have a GitHub account. If you are lacking either of these, you can scan this QR code, or go to bit.ly/github-rationale" width="100%" />
 
 ## Set up a Git Client (GitKraken)
 
-Interaction with git and GitHub can be done completely from command line, but sometimes this can be harder to keep track of. So to help us navigate this, we recommend using a git client. There's a lot of different clients out there, and they are generally free for most situations you will need. In this course we will take you through how to use [GitKraken](https://www.gitkraken.com/git-client), one such git client.
+Interaction with git and GitHub can be done completely from the command line, but sometimes this can be harder to keep track of. To help us navigate this, we recommend using a git client. There are a lot of different clients out there, and they are generally free for most situations you will need. In this course, we will take you through how to use [GitKraken](https://www.gitkraken.com/git-client), one such git client.
 
-GitKraken is nice because they have lots of nice tutorials, it works pretty well, and its free for most use cases. But if you find GitKraken doesn't work for you, you can explore [other git clients](https://www.hostinger.com/tutorials/best-git-gui-clients/). But for this course, we'll be using GitKraken.
+GitKraken is nice because they have lots of nice tutorials, it works pretty well, and its free for most use cases. But if you find GitKraken doesn't work for you, you can explore [other git clients](https://www.hostinger.com/tutorials/best-git-gui-clients/). For this course, we'll be using GitKraken.
 
 ### Install GitKraken
 
@@ -35,17 +35,25 @@ You may find it helpful to watch GitKraken's own tutorial (linked below) about h
 
 <iframe src="https://www.youtube.com/embed/ub9GfRziCtU" width="672" height="400px"></iframe>
 
-GitHub has a whole host of terms that can feel like a whole language at first, but we'll introduce them one at a time. To start, a lot of the GitHub workflow centers around handling copies of your code that are either stored on the internet (are _remote_) or are stored on your computer (are _local_).
+GitHub has a host of terms that can feel like a whole language at first, but we'll introduce them one at a time. To start, a lot of the GitHub workflow centers around handling copies of your code that are either stored on the internet (are _remote_) or are stored on your computer (are _local_).
 
-<img src="resources/images/03-version-control-with-github_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_120.png" title="GitHub has a whole host of terms that can feel like a whole language at first, but we'll introduce them one at a time. To start a lot of the GitHub workflow centers around handling copies of your code that are either stored on the internet (are _remote_) or are stored on your computer (are _local_)." alt="GitHub has a whole host of terms that can feel like a whole language at first, but we'll introduce them one at a time. To start a lot of the GitHub workflow centers around handling copies of your code that are either stored on the internet (are _remote_) or are stored on your computer (are _local_)." width="100%" />
+<img src="resources/images/03-version-control-with-github_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_120.png" title="GitHub has a whole host of terms that can feel like a whole language at first, but we'll introduce them one at a time. To start with, a lot of the GitHub workflow centers around handling copies of your code that are either stored on the internet (are _remote_) or are stored on your computer (are _local_)." alt="GitHub has a whole host of terms that can feel like a whole language at first, but we'll introduce them one at a time. To start with, a lot of the GitHub workflow centers around handling copies of your code that are either stored on the internet (are _remote_) or are stored on your computer (are _local_)." width="100%" />
+<div class = "github">
+**Remote** = GitHub on the internet <br>
+**Local** = What's on your own computer
+</div>
 
-A repository, in the case of a data science project, is mostly synonymous with the word "project". So using GitHub, a project will exist both as a remote repository and a local repository. (It will be on the internet on GitHub and on your computer).
+A _repository_, in the case of a data science project, is mostly synonymous with the word "project". Using GitHub, a project will exist both as a remote repository and a local repository (in other words, it will be on the internet on GitHub and on your computer).
 
 <img src="resources/images/03-version-control-with-github_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_149.png" title="A remote repository is project that is stored on the internet for example, a URL to jhudsl/reproducible-R-example. A local repository is a project copy that lives on your computer. For example, a file path to reproducible-R-example. So using GitHub, a project will exist both as a remote repository and a local repository. (It will be on the internet on GitHub and on your computer). " alt="A remote repository is project that is stored on the internet for example, a URL to jhudsl/reproducible-R-example. A local repository is a project copy that lives on your computer. For example, a file path to reproducible-R-example. So using GitHub, a project will exist both as a remote repository and a local repository. (It will be on the internet on GitHub and on your computer). " width="100%" />
 
+<div class = "github">
+**Repository** = a set of project files that have a location on GitHub
+</div>
+
 ## Get the exercise project files
 
-In this course, you can work on the exercises from your own GitHub repository, but first we will need to set that up. Here we are providing you with the files you will want to upload to that repository.
+In this course, you can work on the exercises from your own GitHub repository, but first we will need to set that up. Below are the files you will want to upload to that repository.
 
 Depending on whether you prefer to use R or Python, you can choose to follow this course using one or the other.
 
@@ -84,15 +92,19 @@ This new repository you created should look [something like this](https://github
 
 Now you have a repository on GitHub online!
 
-But in our daily grind, we will work on this code from our own computer. So to set this up, we'll need to `clone` it to our own computer. Cloning is just making a remote copy of the project local.
+In our daily grind, we will work on this code from our own computer. To set this up, we'll need to `clone` it to our own computer. Cloning is making a remote copy of the project local.
 
 <img src="resources/images/03-version-control-with-github_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_90.png" title="To clone a repository means to copy a remote repository to your local computer" alt="To clone a repository means to copy a remote repository to your local computer" width="100%" />
 
-So to get started, you will need to clone the GitHub repository you created that we will be using for the duration of this course.
+<div class = "github">
+**clone** = To make a remote repository local. In other words, to make an online repository downloaded and linked on your computer.
+</div>
+
+To get started, you will need to clone the GitHub repository you created. We will be using this repository for the duration of this course.
 
 <img src="resources/images/03-version-control-with-github_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_166.png" title="To clone a GitHub repository, using GitKraken. First, Click Clone a repo. Then, choose where you’d like the repository to be on your computer using the ‘Browse’ button. Then Copy + Paste the url to the project you want to clone where it says ‘URL’. Then click `Clone the repository’." alt="To clone a GitHub repository, using GitKraken. First, Click Clone a repo. Then, choose where you’d like the repository to be on your computer using the ‘Browse’ button. Then Copy + Paste the url to the project you want to clone where it says ‘URL’. Then click `Clone the repository’." width="100%" />
 
-To clone a GitHub repository, using GitKraken. First, click `Clone a repo`. Then, choose where you’d like the repository to be on your computer using the `Browse` button. You will need to `Copy + Paste` your new repository's url to  where it says `URL`.
+It is simple to clone a GitHub repository using GitKraken. First, sign in to GitKraken; under Repository Management > Clone tab, click `Clone a repo`. Then, choose where you’d like the repository to be on your computer using the `Browse` button. You will need to `Copy + Paste` your new repository's URL (web address) to  where it says `URL`.
 
 Navigate to your repository on GitHub to copy the URL. Copying and pasting is advisable because any little typo will inhibit cloning.
 
@@ -100,7 +112,11 @@ Now you are ready to click `Clone the repository`! It will ask you if you'd like
 
 ### Create a branch
 
-Handling branches is where you unleash the real benefit of GitHub, but it's also the confusing part to get a hang of.
+Handling branches is where you unleash the real benefit of GitHub, but it's also the confusing part to get the hang of.
+
+<div class = "github">
+**branch** = a unique working copy of file changes of a GitHub repository. A branch can be local and remote.
+</div>
 
 <img src="resources/images/03-version-control-with-github_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_266.png" title="Using branches is where you unleash the real benefit of GitHub, but it's also the confusing part to get a hang of. Currently, the repository we just made has a main branch. The main branch is the default branch and is The main branch is what you want most curated, working, and always ready for others to use!" alt="Using branches is where you unleash the real benefit of GitHub, but it's also the confusing part to get a hang of. Currently, the repository we just made has a main branch. The main branch is the default branch and is The main branch is what you want most curated, working, and always ready for others to use!" width="100%" />
 
@@ -123,22 +139,35 @@ If you've made a change to any file in your repository, it will appear in GitKra
 If we want to add these file changes to our current branch, we need to `commit` them.
 
 <img src="resources/images/03-version-control-with-github_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_664.png" title="To commit files is to include your set of file changes to your current branch. Write a commit message that explains the changes. Now click on the button that says Commit changes to 1 file." alt="To commit files is to include your set of file changes to your current branch. Write a commit message that explains the changes. Now click on the button that says Commit changes to 1 file." width="100%" />
+<div class = "github">
+**add** = to stage your files to be committed to your current branch. <br>
+**commit** = include your set of file changes to your current branch.
+</div>
 
-Now that we have changes committed to our branch we are ready to also add them to the remote, internet copy! To do this, we will need to `push` our branch.
+Now that we have changes committed to our branch we are ready to add them to the remote, internet copy! To do this, we will need to `push` our branch.
 
 <img src="resources/images/03-version-control-with-github_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_686.png" title="To push changes on GitHub means to add changes to the remote repository on GitHub." alt="To push changes on GitHub means to add changes to the remote repository on GitHub." width="100%" />
 
-To push means to add changes that are on your new branch to the remote branch (internet version). The word origin just refers to where your branch is stored on the internet. Choose your origin in the dropdown menu and click Submit.
+To push means to add changes that are on your new branch to the remote branch (internet version). You can select your _origin_, which refers to where your branch is stored on the internet. Choose your origin in the dropdown menu and click Submit.
+
+<div class = "github">
+**origin** = where your branch is stored on the internet (remotely)
+**push** = to add changes from your branch to its remote counterpart. In other words, put your changes online.
+</div>
 
 <img src="resources/images/03-version-control-with-github_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_786.png" title="To push means to add changes that are on your new branch to the remote branch (internet version). The word origin just refers to where your branch is stored on the internet. Choose your origin in the dropdown menu and click Submit. " alt="To push means to add changes that are on your new branch to the remote branch (internet version). The word origin just refers to where your branch is stored on the internet. Choose your origin in the dropdown menu and click Submit. " width="100%" />
 
-After a variable number of commits, your branch, called a-new-branch is a different version of the original code base that may have a nifty improvement to it. But our main goal is to add that nifty improvement to the main branch. To start this process of bringing in new changes to the main curated repository, we will create a pull request.
+After a variable number of commits, your branch, called `a-new-branch`, is a different version of the original code base that may have a nifty improvement to it. But our main goal is to add that nifty improvement to the main branch. To start this process of bringing in new changes to the main curated repository, we will create a `pull request`.
 
+<div class = "github">
+**pull request** = A way to propose changes from a branch to be included into the main repository.
+<br>
 From GitHub:
-
 > Pull requests let you tell others about changes you've pushed to a GitHub repository. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.
 
-Pull Requests are the meat of how code changes and improvements get reviewed and incorporated! A vast majority of the benefits of incorporating GitHub into your workflow centers around fully utilizing the power of pull requests!
+</div>
+
+Pull requests are the meat of how code changes and improvements get reviewed and incorporated! A vast majority of the benefits of incorporating GitHub into your workflow centers around fully utilizing the power of pull requests!
 
 <img src="resources/images/03-version-control-with-github_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_751.png" title="After a variable number of commits, your branch, called a-new-branch is a different version of the original code base that may have a nifty improvement to it. But our main goal is to add that nifty improvement to the main branch. To start this process of bringing in new changes to the main curated repository, we will create a pull request. A pull request will show us the difference between main and a-new-branch so you scrutinize this feature before adding it to the main branch." alt="After a variable number of commits, your branch, called a-new-branch is a different version of the original code base that may have a nifty improvement to it. But our main goal is to add that nifty improvement to the main branch. To start this process of bringing in new changes to the main curated repository, we will create a pull request. A pull request will show us the difference between main and a-new-branch so you scrutinize this feature before adding it to the main branch." width="100%" />
 
@@ -152,11 +181,13 @@ Congrats! You've just opened a pull request!
 
 In an upcoming chapter we will discuss what information you should put in this pull request description to make it pertinent for yourself and whoever reviews your pull request.
 
-To summarize, this is what this workflow looks like:
+To summarize, below is what this workflow looks like:
 
 <img src="resources/images/03-version-control-with-github_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g1014c75158f_0_675.png" title="An overview of the GitHub workflow. Uploaded a project to GitHub. Clone that project to your computer. You will only have to do this cloning and set up step once per repository/project. Now let’s say you have an update in mind. Make a new branch to work off of. Edit code as you normally would. Add and commit the file changes to your branch. Push the changes to your remote branch. Repeat these steps until it you’ve addressed the update you had in mind Now, Create a pull request." alt="An overview of the GitHub workflow. Uploaded a project to GitHub. Clone that project to your computer. You will only have to do this cloning and set up step once per repository/project. Now let’s say you have an update in mind. Make a new branch to work off of. Edit code as you normally would. Add and commit the file changes to your branch. Push the changes to your remote branch. Repeat these steps until it you’ve addressed the update you had in mind Now, Create a pull request." width="100%" />
 
-One more note, if you do want to use command line or you want to know more about the specific git commands that GitKraken is doing for you (might be handy for troubleshooting), **the specific commands that can be used or Googled at each step are highlighted in red in the images**, you just need to add `git` before them! So for example you would type `git push` in your command line in order to push your code. Or if you'd like to know more about pushing code, you can google `git push`.
+One more note: if you do want to use the command line or if you want to know more about the specific git commands that GitKraken is doing for you (which might be handy for troubleshooting), **the specific commands that can be used or Googled at each step are highlighted in red in the images** - you just need to add `git` before them! For example, you would type `git push` in your command line in order to push your code. Or if you'd like to know more about pushing code, you can google `git push`.
+
+<img src="resources/images/03-version-control-with-github_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g122da391674_0_5.png" title="A simple illustration of how you can update codes and work together on GitHub. After you create and make updates to your new branch, you can push your changes to the GitHub cloud. Then, on the GitHub, you create a pull request, for others to come and review. Upon receiving the pull request, other users can review the changes and commit updates to the main branch." alt="A simple illustration of how you can update codes and work together on GitHub. After you create and make updates to your new branch, you can push your changes to the GitHub cloud. Then, on the GitHub, you create a pull request, for others to come and review. Upon receiving the pull request, other users can review the changes and commit updates to the main branch." width="1250" />
 
 ## More resources for learning GitHub
 
