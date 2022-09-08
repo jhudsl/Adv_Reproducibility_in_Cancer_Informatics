@@ -48,7 +48,7 @@ After you install Docker, start up Docker desktop by double clicking on the app.
 
 ![](resources/images/07-launching-docker_files/figure-docx//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfbb8cb91d5_0_116.png){width=100%}
 
-From command line, run one of these commands depending on whether you'd like to use Python or Docker:
+From command line, run one of these commands depending on whether you'd like to use Python or R:
 
 <details> <summary> To obtain the **python docker image** </summary>
 ```
@@ -58,7 +58,7 @@ docker pull jhudsl/reproducible-python
 
 <details> <summary> To obtain the **R docker image** </summary>
 ```
-docker pull jhudsl/reproducible-R
+docker pull jhudsl/reproducible-r
 ```
 </details>
 
