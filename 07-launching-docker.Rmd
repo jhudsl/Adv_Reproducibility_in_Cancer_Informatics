@@ -72,7 +72,7 @@ docker pull jhudsl/reproducible-python
 
 <details> <summary> To obtain the **R docker image** </summary>
 ```
-docker pull jhudsl/reproducible-R
+docker pull jhudsl/reproducible-r
 ```
 </details>
 
