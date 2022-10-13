@@ -1,6 +1,6 @@
 ---
 title: "Advanced Reproducibility in Cancer Informatics"
-date: "September, 2022"
+date: "October, 2022"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
