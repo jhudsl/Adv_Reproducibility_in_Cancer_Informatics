@@ -96,7 +96,7 @@ _Tips for developing a GitHub Action:_
 - Use `|` in your `run:` command to give a multi-line command.
 
 ### Resources for setting up your GitHub Actions
-- [Python example GitHub Actions to re-run notebook](https://github.com/jhudsl/reproducible-python-example/blob/main/.github/workflows/run-python-notebook.yml)
+- [Python example GitHub Actions to re-run notebook](https://github.com/jhudsl/reproducible-python-example/blob/49e1e33ad0c19d59f85d7c6a6ef8cb173cee0661/.github/workflows/run-py-notebook.yml)
 - [R example GitHub Actions to re-run notebook](https://github.com/jhudsl/reproducible-R-example/blob/main/.github/workflows/run-r-notebook.yml)
 - [Great course about GitHub actions](https://lab.github.com/githubtraining/github-actions:-hello-world)
 - [Introduction to GitHub Actions for data scientists](https://towardsdatascience.com/introduction-to-github-actions-7fcb30d0f959).
