@@ -1,7 +1,7 @@
 
-# Intro to Reproducibility in Cancer Informatics
+# Advanced Reproducibility in Cancer Informatics
 
-[![Render Bookdown and Coursera](https://github.com/jhudsl/OTTR_Template/actions/workflows/render-bookdown.yml/badge.svg)](https://github.com/jhudsl/OTTR_Template/actions/workflows/render-bookdown.yml)
+[![Render Bookdown and Coursera](https://github.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics/actions/workflows/render-all.yml/badge.svg)](https://github.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics/actions/workflows/render-all.yml/badge.svg)
 
 This course was created from [this GitHub template](https://github.com/jhudsl/OTTR_Template) and is the second part of the two part Reproducibility course. The first [part of the course is here](https://github.com/jhudsl/Reproducibility_in_Cancer_Informatics).
 
@@ -11,10 +11,10 @@ If you would like to contribute to this course material, take a look at the [get
 
 ## About this course
 
-This course introduces the concepts of reproducibility and replicability in the context of cancer informatics.
-It is the first course in a two part course on reproducibility (the second part is not yet written but coming soon).
+This course introduces deeper concepts of reproducibility and replicability in the context of cancer informatics.
+It is the second course in a two part course on reproducibility.
 It uses hands-on exercises to demonstrate in practical terms how to increase the reproducibility of data analyses.
-The course also introduces tools relevant to reproducibility including analysis notebooks, package management, git and GitHub.
+The course also introduces tools relevant to reproducibility including analysis git and GitHub, GitHub Actions, Docker, and more.
 
 ## Learning Objectives
 
@@ -33,29 +33,27 @@ If you are encountering any problems with this course, please file a GitHub issu
 
 _All materials in this course are licensed [CC-BY](https://tldrlegal.com/license/creative-commons-attribution-(cc)) and can be repurposed freely with attribution._
 
-## About the chapter example files
+## About example files
 
-Each chapter has its own zip file to be downloaded as a learner is going through a particular chapter.
+There are files that can be downloaded for learners to work through examples.
 
 There are the Python and R versions.
-For example, for chapter 2 there are:
-```
-python-examples/python-heatmap-adv-chapt-2
-r-examples/r-heatmap-adv-chapt-2
+
 ```
 These files are zipped up by a GitHub action so they are ready for easy downloading by the learner.
-The user will download these according to the chapter and follow along with the chapter to make them more reproducible and eventually hopefully have something that looks like the "final" reproducible example versions.
+The user will download these follow along with the chapter to make them more reproducible and eventually hopefully have something that looks like the "final" reproducible example versions.
 
-This is the URL pattern they can find the chapter files at:
+This is the URL pattern they can find the chapter files at (where there is a **download** button on these pages):
 
 _For Python_:
 ```
-https://github.com/jhudsl/Reproducibility_in_Cancer_Informatics/raw/main/chapter-zips/python-heatmap-chapt-4.zip
+https://github.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics/blob/main/chapter-zips/reproducible-python-example.zip
 ```
 _For R_:
 ```
-https://github.com/jhudsl/Reproducibility_in_Cancer_Informatics/raw/main/chapter-zips/r-heatmap-chapt-4.zip
+https://github.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics/blob/main/chapter-zips/reproducible-R-example.zip
 ```
+
 
 ## Obtaining the "final" versions of the example reproducible analyses
 
