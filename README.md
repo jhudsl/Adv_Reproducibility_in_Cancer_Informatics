@@ -31,7 +31,7 @@ This course will teach learners to:
 
 If you are encountering any problems with this course, please file a GitHub issue or contact us at {Some email or web address with a contact form}.
 
-_All materials in this course are licensed [CC-BY](https://tldrlegal.com/license/creative-commons-attribution-(cc)#:~:text=Edit-,Quick%20Summary,-This%20is%20the) and can be repurposed freely with attribution._
+_All materials in this course are licensed [CC-BY](https://creativecommons.org/licenses/by-nc/3.0/us/) and can be repurposed freely with attribution._
 
 ## About example files
 
