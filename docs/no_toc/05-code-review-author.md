@@ -103,8 +103,8 @@ Pull request templates are a way to give yourself and other contributors prompts
 
 1. Create a new branch as we described in the previous chapter.
 2. In your local repository, create a folder called `.github`
-3. Download this [pull request template file](https://raw.githubusercontent.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics/main/resources/PULL_REQUEST_TEMPLATE.md) to get you started.
-4. Feel free to edit this file to your own needs and add it to the `.github` folder.
+3. Copy and paste this [pull request template file](https://raw.githubusercontent.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics/main/.github/PULL_REQUEST_TEMPLATE.md) to a new text file and save it as a `.md` to get started.
+4. Feel free to edit this file to your own needs and add it to the `.github` folder of your repository.
 5. Use GitKraken to `add` and `commit` this new file.
 6. Push this commit.
 7. Open up a pull request.
