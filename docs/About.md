@@ -46,7 +46,7 @@ These credits are based on our [course contributors table guidelines](https://gi
 ##  collate  en_US.UTF-8                 
 ##  ctype    en_US.UTF-8                 
 ##  tz       Etc/UTC                     
-##  date     2022-04-22                  
+##  date     2022-12-21                  
 ## 
 ## ─ Packages ───────────────────────────────────────────────────────────────────
 ##  package     * version    date       lib source                            
@@ -100,7 +100,7 @@ These credits are based on our [course contributors table guidelines](https://gi
 [Jimin Hwang]: https://www.linkedin.com/in/jimin-hwang-549835142/
 [Jeff Leek]: https://jtleek.com/
 [John Muschelli]: https://johnmuschelli.com/
-[Sarah Wheelan]: https://www.hopkinsmedicine.org/profiles/details/sarah-wheelan
+[Sarah Wheelan]: https://www.linkedin.com/in/sarah-wheelan-782688203/
 
 <!-- Links -->
 

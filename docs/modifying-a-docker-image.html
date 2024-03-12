@@ -28,7 +28,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
-  <link rel="shortcut icon" href="assets/dasl_favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="assets/ITN_favicon.ico" type="image/x-icon" />
 <link rel="prev" href="launching-a-docker-image.html"/>
 <link rel="next" href="automation-as-a-reproducibility-tool.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
@@ -339,7 +339,7 @@ Using your preferred text editor (or RStudio or Jupyter Lab), open up the Docker
 <div id="add-to-the-dockerfile" class="section level3" number="8.3.4">
 <h3><span class="header-section-number">8.3.4</span> Add to the Dockerfile</h3>
 <p>To get a feel for how these work, let’s add a line to the your example Dockerfile.</p>
-<p>Using your preferred text editor (or RStudio or Jupyter Lab), open up the Dockerfile and add this line at the very end of the file.</p>
+<p>Using your preferred text editor (or RStudio or Jupyter Lab), open up the Dockerfile and add this line at the <strong>very end</strong> of the file. Do not add this line to the start of the file as this will not work. The <code>FROM</code> command needs to come first.</p>
 <pre><code>CMD [&quot;echo&quot;,&quot;Yay! I added to this Docker image&quot;]</code></pre>
 <p>Now re-run <code>docker build</code> as you did in the previous section. (Use the command below but replace <code>image_name</code> with whatever your image is called).</p>
 <pre><code>docker build -f Dockerfile . -t image_name</code></pre>

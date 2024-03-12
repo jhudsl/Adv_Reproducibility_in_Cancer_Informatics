@@ -109,7 +109,7 @@ There are so many Docker images out there, that it might be that someone has alr
 
 To get a feel for how these work, let's add a line to the your example Dockerfile.
 
-Using your preferred text editor (or RStudio or Jupyter Lab), open up the Dockerfile and add this line at the very end of the file.
+Using your preferred text editor (or RStudio or Jupyter Lab), open up the Dockerfile and add this line at the **very end** of the file. Do not add this line to the start of the file as this will not work. The `FROM` command needs to come first.
 
 ```
 CMD ["echo","Yay! I added to this Docker image"]

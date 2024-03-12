@@ -198,9 +198,9 @@ One more note: if you do want to use the command line or if you want to know mor
 
 - [Happy Git and GitHub for the useR](https://happygitwithr.com/) by @Bryan2021.
 - [GitHub for data scientists](https://towardsdatascience.com/introduction-to-github-for-data-scientists-2cf8b9b25fba) by @Vickery2019.
-- [Intro to GitHub](https://lab.github.com/githubtraining/introduction-to-github) by @GitHub2021.
-- [First Day on GitHub](https://lab.github.com/githubtraining/first-day-on-github) by @GitHub2021c.
-- [First Week on GitHub](https://lab.github.com/githubtraining/first-week-on-github) by @GitHub2021d.
+- [Intro to GitHub](https://github.com/skills/introduction-to-github) by @GitHub2022.
+- [First Day on GitHub](https://skills.github.com/#first-day-on-github) by @GitHub2022c.
+- [First Week on GitHub](https://skills.github.com/#first-week-on-github) by @GitHub2022d.
 - [GitHub docs about creating a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) by @GitHub2021b.
 - [Making a Pull Request](https://www.atlassian.com/git/tutorials/making-a-pull-request) by @Radigan2021.
 
