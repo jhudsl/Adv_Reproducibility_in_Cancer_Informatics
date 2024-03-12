@@ -108,6 +108,13 @@ unzip -o chapter-zips/reproducible-R-example.zip -d chapter-zips/
   - Choose `add a README`.
 - Follow [these instructions](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository#adding-a-file-to-a-repository-on-github) to add all the files that are inside the `reproducible-R-example.zip` or `reproducible-python-example.zip` file you downloaded to this new repository.
 
+Your new repository should more or less look like this when you are done (with obviously some minor differences). 
+
+```{r, fig.alt="An image showing what a repository looks like with our example files loaded in.
+", out.width = "100%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g2c22eaae560_0_0")
+```
+
 ### git clone
 
 Now you have a repository on GitHub online!
