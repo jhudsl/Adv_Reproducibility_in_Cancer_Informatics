@@ -1,0 +1,7 @@
+About.Rmd
+docs/*
+style-sets/*
+manuscript/*
+LICENSE.md
+README.md
+code_of_conduct.md

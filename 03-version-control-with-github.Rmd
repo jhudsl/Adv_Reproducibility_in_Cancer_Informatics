@@ -33,7 +33,7 @@ GitKraken is nice because they have lots of nice tutorials, it works pretty well
 
 ### Install GitKraken
 
-[Go here to install GitKraken](https://support.gitkraken.com/how-to-install/).
+[Go here to install GitKraken](https://www.gitkraken.com/).
 
 Follow their instructions to sign in with your GitHub account. It will ask you to authorize your GitHub account to connect to GitKraken. Click `Authorize`.
 
@@ -77,7 +77,7 @@ mkdir -p chapter-zips
 wget -O chapter-zips/reproducible-python-example.zip https://raw.githubusercontent.com/jhudsl/Reproducibility_in_Cancer_Informatics/main/chapter-zips/reproducible-python-example.zip
 ```
 
-Now double click your chapter zip file to unzip. For Windows you may have to [follow these instructions](https://support.microsoft.com/en-us/windows/zip-and-unzip-files-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc)).
+Now double click your chapter zip file to unzip. For Windows you may have to [follow these instructions](https://support.microsoft.com/en-us/windows/zip-and-unzip-files-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc).
 
 ```{bash, include = FALSE}
 unzip -o chapter-zips/reproducible-python-example.zip -d chapter-zips/
@@ -92,7 +92,7 @@ mkdir -p chapter-zips
 wget -O chapter-zips/reproducible-R-example.zip https://raw.githubusercontent.com/jhudsl/Reproducibility_in_Cancer_Informatics/main/chapter-zips/reproducible-R-example.zip
 ```
 
-Now double click your chapter zip file to unzip. For Windows you may have to [follow these instructions](https://support.microsoft.com/en-us/windows/zip-and-unzip-files-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc)).
+Now double click your chapter zip file to unzip. For Windows you may have to [follow these instructions](https://support.microsoft.com/en-us/windows/zip-and-unzip-files-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc).
 
 ```{bash, include = FALSE}
 unzip -o chapter-zips/reproducible-R-example.zip -d chapter-zips/
@@ -246,7 +246,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6
 
 ## More resources for learning GitHub
 
-- [Happy Git and GitHub for the useR](https://happygitwithr.com/) by @Bryan2021.
+- [Happy Git and GitHub for the useR](https://happygitwithr.com) by @Bryan2021.
 - [GitHub for data scientists](https://towardsdatascience.com/introduction-to-github-for-data-scientists-2cf8b9b25fba) by @Vickery2019.
 - [Intro to GitHub](https://github.com/skills/introduction-to-github) by @GitHub2022.
 - [First Day on GitHub](https://skills.github.com/#first-day-on-github) by @GitHub2022c.
