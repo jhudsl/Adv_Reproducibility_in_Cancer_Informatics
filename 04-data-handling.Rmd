@@ -38,7 +38,7 @@ wget -h
 wget -O <FOLDER/FILE_TO_SAVE_TO> <URL>
 ```
 
-You can download this [general template download file here](https://raw.githubusercontent.com/AlexsLemonade/training-specific-template/main/working-with-your-data/template-scripts/wget-TEMPLATE.sh) [@Shapiro2021].
+You can download this [general template download file here](https://raw.githubusercontent.com/AlexsLemonade/training-specific-template/main/additional-resources/template-scripts/wget-TEMPLATE.sh) [@Shapiro2021].
 
 ### Examples of data download scripts
 
@@ -46,4 +46,4 @@ You can download this [general template download file here](https://raw.githubus
 - [Data download script for multiple files of the same place](https://github.com/AlexsLemonade/training-modules/blob/master/machine-learning/setup/00-data-download.sh)
 - [Data download script - refine.bio example](https://github.com/jhudsl/reproducible-R-example/blob/main/00-download-data.py)
 
-For more about data sharing techniques, see the [Ethical Data Handling for Cancer Research](https://jhudatascience.org/Ethical_Data_Handling_for_Cancer_Research/) course</a>.
+For more about data sharing techniques, see the [Ethical Data Handling for Cancer Research](https://github.com/fhdsl/Ethical_Data_Handling_for_Cancer_Research) course</a>.
