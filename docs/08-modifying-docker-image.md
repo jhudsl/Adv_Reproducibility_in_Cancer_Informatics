@@ -23,7 +23,7 @@ To see what images you have on your internet repository, you can log on to docke
 
 ![](resources/images/08-modifying-docker-image_files/figure-docx//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc8849fa4d_0_38.png){width=100%}
 
-After you sign into dockerhub, you can see the list of repositories you have stored online. At this point, you won’t have any if you just created your dockerhub account. To create a new repository, click the ‘Create Repository’ button.
+After you sign into dockerhub, click on the `Repositories` tab, so you can see the list of repositories you have stored online. At this point, you won’t have any if you just created your dockerhub account. To create a new repository, click the ‘Create Repository’ button.
 
 ![](resources/images/08-modifying-docker-image_files/figure-docx//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc8849fa4d_0_10.png){width=100%}
 
@@ -38,7 +38,7 @@ It will tell you `Last pushed: never`. On the right it will tell you the command
 
 Go to your [local command line](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955) and use the command specified on the right side of your repository page. You don't have to specify a tagname if you don't want to.  If you don't want to specify a tagname, leave off the `:tagname` if you like.
 
-Now you will be able to test pulling your image using `docker pull <image name>` like we did in the previous chapter.
+Now you will be able to test pulling your image using `docker pull <image name>` like we did in the previous chapter. You can also click on the `Public View` button to copy the pull command for your Docker image.
 
 Docker images can be pulled from being stored online but these images are built originally from a `Dockerfile`.
 
@@ -129,7 +129,7 @@ If all built successfully, you should see a message like:
 => => naming to docker.io/library/image_name
 ```
 
-Now to run the image we can use the docker run command we used in the previous chapter and we should have a message: `Yay! I added to this Docker image` pop up upon building.
+Now to run the image we can use the docker run command we used in the previous chapter (see below) and we should have a message: `Yay! I added to this Docker image` pop up upon building.
 
 <details> <summary> To run your new **Python docker image** </summary>
 But replace `image_name` with whatever you have called your image.

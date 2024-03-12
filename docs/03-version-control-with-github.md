@@ -27,7 +27,7 @@ GitKraken is nice because they have lots of nice tutorials, it works pretty well
 
 ### Install GitKraken
 
-[Go here to install GitKraken](https://support.gitkraken.com/how-to-install/).
+[Go here to install GitKraken](https://www.gitkraken.com/).
 
 Follow their instructions to sign in with your GitHub account. It will ask you to authorize your GitHub account to connect to GitKraken. Click `Authorize`.
 
@@ -67,7 +67,7 @@ Depending on whether you prefer to use R or Python, you can choose to follow thi
 
 
 
-Now double click your chapter zip file to unzip. For Windows you may have to [follow these instructions](https://support.microsoft.com/en-us/windows/zip-and-unzip-files-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc)).
+Now double click your chapter zip file to unzip. For Windows you may have to [follow these instructions](https://support.microsoft.com/en-us/windows/zip-and-unzip-files-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc).
 
 
 </details>
@@ -77,7 +77,7 @@ Now double click your chapter zip file to unzip. For Windows you may have to [fo
 
 
 
-Now double click your chapter zip file to unzip. For Windows you may have to [follow these instructions](https://support.microsoft.com/en-us/windows/zip-and-unzip-files-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc)).
+Now double click your chapter zip file to unzip. For Windows you may have to [follow these instructions](https://support.microsoft.com/en-us/windows/zip-and-unzip-files-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc).
 
 
 </details>
@@ -90,8 +90,6 @@ Now double click your chapter zip file to unzip. For Windows you may have to [fo
   - Choose `Public`.
   - Choose `add a README`.
 - Follow [these instructions](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository#adding-a-file-to-a-repository-on-github) to add all the files that are inside the `reproducible-R-example.zip` or `reproducible-python-example.zip` file you downloaded to this new repository.
-
-This new repository you created should look [something like this](https://github.com/cansavvy/repository-name).
 
 ### git clone
 
@@ -196,7 +194,7 @@ One more note: if you do want to use the command line or if you want to know mor
 
 ## More resources for learning GitHub
 
-- [Happy Git and GitHub for the useR](https://happygitwithr.com/) by @Bryan2021.
+- [Happy Git and GitHub for the useR](https://happygitwithr.com) by @Bryan2021.
 - [GitHub for data scientists](https://towardsdatascience.com/introduction-to-github-for-data-scientists-2cf8b9b25fba) by @Vickery2019.
 - [Intro to GitHub](https://github.com/skills/introduction-to-github) by @GitHub2022.
 - [First Day on GitHub](https://skills.github.com/#first-day-on-github) by @GitHub2022c.
