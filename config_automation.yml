@@ -10,17 +10,25 @@ render-preview: yes
 spell-check: yes
 # Style any R code
 style-code: yes
+# Would you like your markdown files to be checked for formatting
+markdown-linter: yes
+# Would you like a readability report on your markdowns?
+readability-report: yes
 # Test build the docker image if any docker-relevant files have been changed
 docker-test: no
-# generate book_txt automatically?
-make_book_txt: yes
+# Should URLs be tested periodically?
+url-check-periodically: yes
 
 ##### Renderings run upon merge to main branch #####
 # Rendering each platform's content
-render-bookdown: yes
+render-website: rmd
 render-leanpub: yes
-render-coursera: yes
+render-coursera: no
+
+## Automate the creation of Book.txt file? yes/no
+## This is only relevant if render-leanpub is yes, otherwise it will be ignored
+make-book-txt: yes
 
 # What docker image should be used for rendering?
-# The default is jhudsl/course_template:main
-rendering-docker-image: 'jhudsl/course_template:main'
+# The default is jhudsl/base_ottr:main
+rendering-docker-image: 'jhudsl/base_ottr:main'
