@@ -13,7 +13,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6
 
 This is the second course in a two part series:
 
-```{r, fig.alt="Advanced Reproducibility for Cancer Informatics: What’s covered. Getting comfortable with GitHub concepts and workflow. Utilizing version control. Engaging in code review. Using a Docker image. Modifying a Docker image. Using Automation (github actions).", out.width = "100%", echo = FALSE}
+```{r topics_covered, fig.alt="Advanced Reproducibility for Cancer Informatics: What’s covered. Getting comfortable with GitHub concepts and workflow. Utilizing version control. Engaging in code review. Using a Docker image. Modifying a Docker image. Using Automation (github actions).", out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfd7c7a0ba8_0_21")
 ```
 
@@ -36,13 +36,13 @@ This course introduces tools that help enhance reproducibility and replicability
 The course is intended for students in the biomedical sciences and researchers who use informatics tools in their research. It is the follow up course to the [Introduction to Reproducibility in Cancer Informatics course](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/)
 
 
-```{r, fig.alt="Intro to Reproducibility: For individuals who: Have some familiarity with R or Python - have written some scripts. Have not had formal training in computational methods. Have limited or no familiarity with GitHub. Advanced Reproducibility: For individuals who: Have completed the intro course and/or Have used GitHub somewhat.", out.width = "100%", echo = FALSE}
+```{r for_individuals_who, fig.alt="Intro to Reproducibility: For individuals who: Have some familiarity with R or Python - have written some scripts. Have not had formal training in computational methods. Have limited or no familiarity with GitHub. Advanced Reproducibility: For individuals who: Have completed the intro course and/or Have used GitHub somewhat.", out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g1173f7473f7_0_0")
 ```
 
 ## Curriculum  
 
-```{r, fig.alt = "This course will demonstrate how to: Become familiar with using GitHub in as a part of a analysis project workflow. Engage in code review steps on GitHub. Pull and use an existing Docker image for running an analysis. Make data shareable. Write a simple Github Actions. Obtain confidence to learn and apply additional reproducibility tools to an analysis.", echo = FALSE}
+```{r learning_objectives, fig.alt = "This course will demonstrate how to: Become familiar with using GitHub in as a part of a analysis project workflow. Engage in code review steps on GitHub. Pull and use an existing Docker image for running an analysis. Make data shareable. Write a simple Github Actions. Obtain confidence to learn and apply additional reproducibility tools to an analysis.", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gd422c5de97_0_10")
 ```
 
