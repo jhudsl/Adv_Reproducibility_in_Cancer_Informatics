@@ -35,10 +35,10 @@ You may find it helpful to watch GitKraken's own tutorial (linked below) about h
 
 
 ```
-## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+## `google-chrome`, `chromium-browser` and `chrome` were not found. Try setting the `CHROMOTE_CHROME` environment variable to the executable of a Chromium-based browser, such as Google Chrome, Chromium or Brave or adding one of these executables to your PATH.
 ```
 
-<iframe src="https://www.youtube.com/embed/ub9GfRziCtU" width="100%" height="400px"></iframe>
+<iframe src="https://www.youtube.com/embed/ub9GfRziCtU" width="100%" height="400px" data-external="1"></iframe>
 
 GitHub has a host of terms that can feel like a whole language at first, but we'll introduce them one at a time. To start, a lot of the GitHub workflow centers around handling copies of your code that are either stored on the internet (are _remote_) or are stored on your computer (are _local_).
 
@@ -91,12 +91,9 @@ Now double click your chapter zip file to unzip. For Windows you may have to [fo
   - Choose `add a README`.
 - Follow [these instructions](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository#adding-a-file-to-a-repository-on-github) to add all the files that are inside the `reproducible-R-example.zip` or `reproducible-python-example.zip` file you downloaded to this new repository.
 
-Your new repository should more or less look like this when you are done (with obviously some minor differences). 
+Your new repository should more or less look like this when you are done (with obviously some minor differences).
 
-```{r, fig.alt="An image showing what a repository looks like with our example files loaded in.
-", out.width = "100%", echo = FALSE}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.g2c22eaae560_0_0")
-```
+![](resources/images/03-version-control-with-github_files/figure-docx//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g2c22eaae560_0_0.png){width=100%}
 
 ### git clone
 
