@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 6 Engaging in Code Review - as a reviewer | Advanced Reproducibility in Cancer Informatics</title>
   <meta name="description" content="Description about Course/Book." />
-  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 6 Engaging in Code Review - as a reviewer | Advanced Reproducibility in Cancer Informatics" />
   <meta property="og:type" content="book" />
@@ -50,6 +50,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<base target="_blank">
 
 
 
@@ -269,7 +270,7 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 6</span> Engaging in Code Review - as a reviewer<a href="engaging-in-code-review---as-a-reviewer.html#engaging-in-code-review---as-a-reviewer" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="learning-objectives-4" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Learning Objectives<a href="engaging-in-code-review---as-a-reviewer.html#learning-objectives-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img src="resources/images/06-code-review-reviewer_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc3e8b194d_0_236.png" alt="Learning objectives This chapter will demonstrate how to: Understand what to look for when reviewing a pull request. Provide helpful feedback in the context of code review." width="100%" /></p>
+<p><img src="06-code-review-reviewer_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc3e8b194d_0_236.png" alt="Learning objectives This chapter will demonstrate how to: Understand what to look for when reviewing a pull request. Provide helpful feedback in the context of code review." width="100%" /></p>
 </div>
 <div id="reviewer-responsibilities-in-code-review" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Reviewer responsibilities in code review<a href="engaging-in-code-review---as-a-reviewer.html#reviewer-responsibilities-in-code-review" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -295,9 +296,9 @@ div.csl-indent {
 <div id="how-to-communicate-it" class="section level3 hasAnchor" number="6.2.2">
 <h3><span class="header-section-number">6.2.2</span> How to communicate it<a href="engaging-in-code-review---as-a-reviewer.html#how-to-communicate-it" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The pull request may be the author’s precious bundle. Try to be empathetic to the learning process! You are both working on this project together – assume you both want the best out of this project. If something seems wrong, work together to find a solution, don’t ever waste time on placing blame.</p>
-<p><img src="resources/images/06-code-review-reviewer_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g102298f211a_0_20.png" alt="Remember the author of the pull request has been putting time and effort into this! This cartoon shows a stick person cradling a computer with code on it with lots of hearts and love swirling around. The pull request may be the author’s precious bundle. Try to be empathetic to the learning process!" width="100%" /></p>
+<p><img src="06-code-review-reviewer_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g102298f211a_0_20.png" alt="Remember the author of the pull request has been putting time and effort into this! This cartoon shows a stick person cradling a computer with code on it with lots of hearts and love swirling around. The pull request may be the author’s precious bundle. Try to be empathetic to the learning process!" width="100%" /></p>
 <p>Remember that everything sounds harsher when you don’t have in-person cues! In this example, Avi may be stating factual things, but without his pleasant and reassuring disposition, it can feel super harsh.</p>
-<p><img src="resources/images/06-code-review-reviewer_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc3e8b194d_0_177.png" alt="Ruby requested a code review from Avi who has responded: This code needs work. Don’t use the formattR package it’s inefficient and takes forever to run. You didn’t style the last chunk of code. This feels very harsh to Ruby who has a single tear." width="100%" /></p>
+<p><img src="06-code-review-reviewer_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc3e8b194d_0_177.png" alt="Ruby requested a code review from Avi who has responded: This code needs work. Don’t use the formattR package it’s inefficient and takes forever to run. You didn’t style the last chunk of code. This feels very harsh to Ruby who has a single tear." width="100%" /></p>
 <p>If Avi had reframed his comments, they might be more effective in this collaboration. <span class="citation">Babatunde (<a href="#ref-Babatunde2018">2018</a>)</span> suggests framing <a href="https://medium.com/@otarutunde/comments-during-code-reviews-2cb7791e1ac7">review comments in three ways to help communication: questions, suggestions, and appreciations</a>.</p>
 <div id="questions" class="section level4 hasAnchor" number="6.2.2.1">
 <h4><span class="header-section-number">6.2.2.1</span> Questions<a href="engaging-in-code-review---as-a-reviewer.html#questions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -325,9 +326,9 @@ $a = $b[‘key’]; would raise an error if key is not set but <span class="math
 <p>Nice Job! Alice. I suggest we create an interface for this service so other substitute services can implement the interface as well, this would enable us change to a different service with very minimal efforts when the need arises. What do you think?</p>
 </blockquote>
 <p>Let’s see how Avi’s message could have been reworked to give a more effective review:</p>
-<p><img src="resources/images/06-code-review-reviewer_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfa97af8537_0_55.png" alt="Ruby has requested a review from Avi but alternatively, Avi has framed his review in a more effective manner, giving context, examples, and creating a much more positive collaboration. Avi’s review says: Ruby, thanks for all this work! This is a great start! I have a few questions so we can further polish this code. Is your usage of the formattR package because of the weird formatting of the data.tsv file? Perhaps we can brainstorm another approach to this that would allow us to get rid of this package requirement. I think that in your last chunk you may have forgotten to style the code according to the conventions for this repository. Perhaps we can discuss how we introduce something to help all authors of this repository adhere to the conventions. This may be an instance we can use automation or a checklist to help. Ruby happily accepts this review and the collaboration will create a better product." width="100%" /></p>
+<p><img src="06-code-review-reviewer_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfa97af8537_0_55.png" alt="Ruby has requested a review from Avi but alternatively, Avi has framed his review in a more effective manner, giving context, examples, and creating a much more positive collaboration. Avi’s review says: Ruby, thanks for all this work! This is a great start! I have a few questions so we can further polish this code. Is your usage of the formattR package because of the weird formatting of the data.tsv file? Perhaps we can brainstorm another approach to this that would allow us to get rid of this package requirement. I think that in your last chunk you may have forgotten to style the code according to the conventions for this repository. Perhaps we can discuss how we introduce something to help all authors of this repository adhere to the conventions. This may be an instance we can use automation or a checklist to help. Ruby happily accepts this review and the collaboration will create a better product." width="100%" /></p>
 <p>This interaction reminds us that effective code review is steeped in empathy from both sides. Authors need to appreciate the time and effort the reviewer is spending to help them; while reviewers need to be sensitive to the amount of effort put in by the author already.</p>
-<p><img src="resources/images/06-code-review-reviewer_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g102298f211a_0_35.png" alt="Empathy is an important part of effective code review!" width="100%" /></p>
+<p><img src="06-code-review-reviewer_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g102298f211a_0_35.png" alt="Empathy is an important part of effective code review!" width="100%" /></p>
 </div>
 </div>
 <div id="exercise-review-past-yous-code" class="section level3 hasAnchor" number="6.2.3">
@@ -404,42 +405,42 @@ Hildebr, Mischa. 2020. <span>“Your <span>Code</span> <span>Sucks</span>! – <
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "section"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  }
 });
 });
 </script>

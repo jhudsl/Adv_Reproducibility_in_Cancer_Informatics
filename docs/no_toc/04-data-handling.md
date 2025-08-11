@@ -5,7 +5,7 @@
 
 ## Learning Objectives
 
-<img src="resources/images/04-data-handling_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gcfac54ca19_0_0.png" alt="Learning Objectives This chapter will demonstrate how to: Provide data in a way that allows your analysis to be reproducible. Set up a download data script to include with your analysis repository." width="100%" />
+<img src="04-data-handling_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gcfac54ca19_0_0.png" alt="Learning Objectives This chapter will demonstrate how to: Provide data in a way that allows your analysis to be reproducible. Set up a download data script to include with your analysis repository." width="100%" />
 
 The first part of any analysis should be getting all the data needed to run it. Data come in all kinds of formats and sizes so while we can't give specifics on how to share your data we can provide these guidelines:
 
