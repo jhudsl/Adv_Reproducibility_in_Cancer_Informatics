@@ -1,0 +1,12 @@
+1-Introduction.md
+2-Defining-Reproducibility.md
+3-Using-version-control-with-GitHub.md
+4-Providing-data.md
+5-Engaging-in-Code-Review---as-an-author.md
+6-Engaging-in-Code-Review---as-a-reviewer.md
+7-Launching-a-Docker-image.md
+8-Modifying-a-Docker-image.md
+9-Automation-as-a-reproducibility-tool.md
+About-this-Course.md
+About-the-Authors.md
+References.md
