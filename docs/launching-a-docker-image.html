@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Launching a Docker image | Advanced Reproducibility in Cancer Informatics</title>
   <meta name="description" content="Description about Course/Book." />
-  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Launching a Docker image | Advanced Reproducibility in Cancer Informatics" />
   <meta property="og:type" content="book" />
@@ -269,10 +269,10 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 7</span> Launching a Docker image<a href="launching-a-docker-image.html#launching-a-docker-image" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="learning-objectives-5" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Learning Objectives<a href="launching-a-docker-image.html#learning-objectives-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img src="resources/images/07-launching-docker_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfa97af8537_0_81.png" alt="Learning objectives This chapter will demonstrate how to: Understand the goals and motivation of using Docker. Install Docker. Use basic docker commands as a part of a daily usage. Pull and use a docker image for writing code." width="100%" /></p>
+<p><img src="07-launching-docker_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfa97af8537_0_81.png" alt="Learning objectives This chapter will demonstrate how to: Understand the goals and motivation of using Docker. Install Docker. Use basic docker commands as a part of a daily usage. Pull and use a docker image for writing code." width="100%" /></p>
 <hr />
 <p>In the introductory part of this course, we discussed <a href="https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/managing-package-versions.html">package managers</a> like renv or conda. Recall that even if you have the same packages installed between two computers, you can still get different results!</p>
-<p><img src="resources/images/07-launching-docker_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfd7f4e514e_0_256.png" alt="Ruby has a particular computing environment she has developed her code from. This computing environment is represented as a bubble above her computer with various hexagons with version numbers as well as Rstudio and R installed on her computer. Her code ran just fine on her particular computing environment. Avi attempted to run Ruby’s code on his very different local computing environment and got an error. His computer runs the same code but came up with a different result!" width="100%" /></p>
+<p><img src="07-launching-docker_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfd7f4e514e_0_256.png" alt="Ruby has a particular computing environment she has developed her code from. This computing environment is represented as a bubble above her computer with various hexagons with version numbers as well as Rstudio and R installed on her computer. Her code ran just fine on her particular computing environment. Avi attempted to run Ruby’s code on his very different local computing environment and got an error. His computer runs the same code but came up with a different result!" width="100%" /></p>
 <p>This is because package versions <em>do</em> influence results as demonstrated by <span class="citation">Beaulieu-Jones and Greene (<a href="#ref-BeaulieuJones2017">2017</a>)</span>.
 Package managers address part of this problem, however their limitation is that generally only can help with certain sets of packages. <code>conda</code> really only manages <code>conda</code> installed packages and <code>renv</code> doesn’t help with package management outside of R. Both of these have limited capabilities for cross platform shipping.</p>
 <p>This is where Docker can help fill in the gaps.</p>
@@ -280,14 +280,14 @@ Package managers address part of this problem, however their limitation is that 
 <p>I don’t even count anymore how many times did my code break when someone else run it. The strange part was — it worked on my machine. That’s where Docker saves the day. If it works on your machine, it will work on any.</p>
 </blockquote>
 <p><span class="citation">Radečić (<a href="#ref-Radecic2020">2020</a>)</span></p>
-<p><img src="resources/images/07-launching-docker_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfd7f4e514e_0_0.png" alt="From Beaulieu-Jones and Casey S. Greene, 2017 A.) The status quo requires a reader or reviewer to find and install specific versions of dependencies. These dependencies can become difficult to find and may become incompatible with newer versions of other software packages. Different versions of packages identify different numbers of significantly differentially expressed genes from the same source code and data. B.) Containers define a computing environment that captures dependencies. In container-based systems, the results are the same regardless of the host system." width="100%" /></p>
+<p><img src="07-launching-docker_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfd7f4e514e_0_0.png" alt="From Beaulieu-Jones and Casey S. Greene, 2017 A.) The status quo requires a reader or reviewer to find and install specific versions of dependencies. These dependencies can become difficult to find and may become incompatible with newer versions of other software packages. Different versions of packages identify different numbers of significantly differentially expressed genes from the same source code and data. B.) Containers define a computing environment that captures dependencies. In container-based systems, the results are the same regardless of the host system." width="100%" /></p>
 </div>
 <div id="whats-docker" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> What’s Docker?<a href="launching-a-docker-image.html#whats-docker" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>One way to ensure that her collaborators have the same computing environment is Ruby could ship her computer to each of her collaborators and have them run the analysis on her computer. But before you buy hundreds of laptops for your projects, we’ll show you how Docker will allow you to send your computing environment to your collaborators in a practical manner.</p>
-<p><img src="resources/images/07-launching-docker_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfd7f4e514e_0_5.png" alt="Ruby has a particular computing environment she has developed her code from but this time Ruby has this computing environment wrapped up in a Docker container. Avi the Associate is able to download the exact computing environment Ruby used for her analysis." width="100%" /></p>
+<p><img src="07-launching-docker_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfd7f4e514e_0_5.png" alt="Ruby has a particular computing environment she has developed her code from but this time Ruby has this computing environment wrapped up in a Docker container. Avi the Associate is able to download the exact computing environment Ruby used for her analysis." width="100%" /></p>
 <p>Ruby can create a Docker image that Avi can use to run the analysis. This way Ruby and Avi know they are using the same computing environment. Now if Ruby and Avi obtain different results, it won’t be because of version differences.</p>
-<p><img src="resources/images/07-launching-docker_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfd7f4e514e_0_55.png" alt="Ruby and Avi are using Docker and can ensure that they are using the exact same computing environment as they are working on Ruby’s analysis." width="100%" /></p>
+<p><img src="07-launching-docker_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfd7f4e514e_0_55.png" alt="Ruby and Avi are using Docker and can ensure that they are using the exact same computing environment as they are working on Ruby’s analysis." width="100%" /></p>
 </div>
 <div id="install-docker" class="section level2 hasAnchor" number="7.3">
 <h2><span class="header-section-number">7.3</span> Install Docker<a href="launching-a-docker-image.html#install-docker" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -301,7 +301,7 @@ After you install Docker, start up Docker desktop by double clicking on the app.
 <li>Open up your <a href="https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955">command line</a>.</li>
 <li>First we need to get the Docker <strong>image</strong>. A Docker image is like a snapshot of your computing environment that you can move from place to place. We can download images from online and then use them to make a container. Containers are what we use to actually run analyses.</li>
 </ol>
-<p><img src="resources/images/07-launching-docker_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfbb8cb91d5_0_116.png" alt="First we need to get the Docker image. A Docker image is like a snapshot of your computing environment that you can move from place to place. We can download images from online and then use them to make a container. Containers are what we use to actually run analyses." width="100%" /></p>
+<p><img src="07-launching-docker_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfbb8cb91d5_0_116.png" alt="First we need to get the Docker image. A Docker image is like a snapshot of your computing environment that you can move from place to place. We can download images from online and then use them to make a container. Containers are what we use to actually run analyses." width="100%" /></p>
 <p>From command line, run one of these commands depending on whether you’d like to use Python or R:</p>
 <details>
 <summary>
@@ -318,7 +318,7 @@ To obtain the <strong>R docker image</strong>
 <ol start="3" style="list-style-type: decimal">
 <li>Open up the Docker Desktop app. Click on ‘images’ on the left. This shows the images you currently have available on your computer.</li>
 </ol>
-<p><img src="resources/images/07-launching-docker_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfbb8cb91d5_0_237.png" alt="Open up Docker desktop. Click on ‘images’ on the left. This shows the images you have available on your computer. If you hover your mouse over one of these images, you will see a Run button appear. Click the Run button to start a container with this image." width="100%" /></p>
+<p><img src="07-launching-docker_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfbb8cb91d5_0_237.png" alt="Open up Docker desktop. Click on ‘images’ on the left. This shows the images you have available on your computer. If you hover your mouse over one of these images, you will see a Run button appear. Click the Run button to start a container with this image." width="100%" /></p>
 <ol start="4" style="list-style-type: decimal">
 <li>Return to your command line. Using <a href="https://www.geeksforgeeks.org/cd-command-in-linux-with-examples/"><code>cd</code></a> and <a href="https://linuxize.com/post/how-to-list-files-in-linux-using-the-ls-command/"><code>ls</code></a> navigate to your project repository (or whatever files you’d like to be accessible in your development environment) and we can start up a docker container using <code>docker run</code>.</li>
 </ol>
@@ -341,11 +341,11 @@ To run the <strong>R docker image</strong>
 <p>Now you are ready to develop inside a Docker container!</p>
 </details>
 <p>To see what containers you have running or to clear out old containers, in Docker Desktop you can go to the <code>Containers/Apps</code> page.</p>
-<p><img src="resources/images/07-launching-docker_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc8849fa4d_0_10.png" alt="If you navigate to the Containers/Apps page in Docker Desktop, you should see a container in the list. It will be named something randomly (in this case ‘zen_merkle’). From this page you can stop or remove old containers as well as navigate to their browser page. " width="100%" /></p>
+<p><img src="07-launching-docker_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc8849fa4d_0_10.png" alt="If you navigate to the Containers/Apps page in Docker Desktop, you should see a container in the list. It will be named something randomly (in this case ‘zen_merkle’). From this page you can stop or remove old containers as well as navigate to their browser page. " width="100%" /></p>
 <div id="a-breakdown-what-these-docker-run-options-are" class="section level3 hasAnchor" number="7.4.1">
 <h3><span class="header-section-number">7.4.1</span> A Breakdown what these Docker run options are<a href="launching-a-docker-image.html#a-breakdown-what-these-docker-run-options-are" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><a href="https://docs.docker.com/">Docker has super extensive documentation</a>! But to get you started, here’s the highlights for this <code>docker run</code> command:</p>
-<p><img src="resources/images/07-launching-docker_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfbc11e6ab0_0_18.png" alt="A breakdown of the docker run command. The remove option (`--rm`) automatically removes the container when docker run exits. Dash v, the volume option is how you specify what files you’d like available in the container and where to find them. In this instance we are using the output of the pwd command (print working directory) so that wherever you run this command, the files in that directory will be available in the container. The part after the colon specifies where these files will be found in the container. Dash e, the environment option is how you can specify any environment variables you will need. In this instance for the rocker image we need to specify a password. Dash p, the port option is how you specify What port you can connect to this on using your internet browser. The last part of the docker run command says what image to run, so in this instance, we are running a container using the jhudsl/reproducible-r image." width="100%" /></p>
+<p><img src="07-launching-docker_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfbc11e6ab0_0_18.png" alt="A breakdown of the docker run command. The remove option (`--rm`) automatically removes the container when docker run exits. Dash v, the volume option is how you specify what files you’d like available in the container and where to find them. In this instance we are using the output of the pwd command (print working directory) so that wherever you run this command, the files in that directory will be available in the container. The part after the colon specifies where these files will be found in the container. Dash e, the environment option is how you can specify any environment variables you will need. In this instance for the rocker image we need to specify a password. Dash p, the port option is how you specify What port you can connect to this on using your internet browser. The last part of the docker run command says what image to run, so in this instance, we are running a container using the jhudsl/reproducible-r image." width="100%" /></p>
 <ul>
 <li><strong>The remove option (<code>--rm</code>)</strong> Automatically removes the container when docker run exits.</li>
 <li><strong>The volume option (<code>-v</code>)</strong> is how you specify what files you’d like available in the container and where to find them. In this instance we are using the output of the pwd command (print working directory) so that wherever you run this command, the files in that directory will be available in the container. The part after the colon specifies where these files will be found in the container.</li>
@@ -438,42 +438,42 @@ Srivastav, Prakhar. 2018. <span>“A <span>Docker</span> <span>Tutorial</span> f
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "section"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  }
 });
 });
 </script>
