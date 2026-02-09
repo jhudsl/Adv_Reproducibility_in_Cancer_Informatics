@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Engaging in Code Review - as an author | Advanced Reproducibility in Cancer Informatics</title>
   <meta name="description" content="Description about Course/Book." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Engaging in Code Review - as an author | Advanced Reproducibility in Cancer Informatics" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Description about Course/Book." />
   
@@ -31,7 +30,6 @@
   <link rel="shortcut icon" href="assets/ITN_favicon.ico" type="image/x-icon" />
 <link rel="prev" href="providing-data.html"/>
 <link rel="next" href="engaging-in-code-review---as-a-reviewer.html"/>
-<script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,11 +47,16 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -262,13 +265,13 @@ div.csl-indent {
 <div class="hero-image-container"> 
   <img class= "hero-image" src="assets/itcr_main_image.png">
 </div>
-<div id="engaging-in-code-review---as-an-author" class="section level1" number="5">
-<h1><span class="header-section-number">Chapter 5</span> Engaging in Code Review - as an author</h1>
-<div id="learning-objectives-3" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Learning Objectives</h2>
-<p><img src="resources/images/05-code-review-author_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfa93c34783_0_0.png" title="Learning objectives This chapter will demonstrate how to: Understand the goals and motivation of code review. Solicit feedback in the context of code review. Incorporate feedback in the context of code review." alt="Learning objectives This chapter will demonstrate how to: Understand the goals and motivation of code review. Solicit feedback in the context of code review. Incorporate feedback in the context of code review." width="100%" /></p>
+<div id="engaging-in-code-review---as-an-author" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Engaging in Code Review - as an author<a href="engaging-in-code-review---as-an-author.html#engaging-in-code-review---as-an-author" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="learning-objectives-3" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Learning Objectives<a href="engaging-in-code-review---as-an-author.html#learning-objectives-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="05-code-review-author_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfa93c34783_0_0.png" alt="Learning objectives This chapter will demonstrate how to: Understand the goals and motivation of code review. Solicit feedback in the context of code review. Incorporate feedback in the context of code review." width="100%" /></p>
 <p>We’ve previously discussed that the only way to know if your analysis is truly reproducible is to send it to someone else to reproduce! That sentiment is at the heart of code review. Although most wouldn’t dare send out a manuscript for publishing without having our collaborators giving it a line-by-line review, people don’t always feel the same way about code.</p>
-<p><span class="citation">Parker (<a href="#ref-Parker2017" role="doc-biblioref">2017</a>)</span> describes code review:</p>
+<p><span class="citation">Parker (<a href="#ref-Parker2017">2017</a>)</span> describes code review:</p>
 <blockquote>
 <p>Code review will not guarantee an accurate analysis, but it’s one of the most reliable ways of establishing one that is more accurate than before.</p>
 </blockquote>
@@ -276,16 +279,16 @@ div.csl-indent {
 <p>An effective code review atmosphere is something that individuals and their team have to <em>commit</em> to (pun intended). Effective code review brings so many benefits not only to your project quality but also your communication skills through fostering a learning atmosphere!</p>
 <p>In this chapter and the next we will discuss the two sides of code review. Code review ideally includes at least two people: the author of the pull request and the reviewer of the pull request. Depending on your job context, we realize that sometimes authors have to become their own reviewers if code review is not something that can be prioritized by your institution or team.</p>
 </div>
-<div id="author-responsibilities-in-code-review" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Author responsibilities in code review</h2>
+<div id="author-responsibilities-in-code-review" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Author responsibilities in code review<a href="engaging-in-code-review---as-an-author.html#author-responsibilities-in-code-review" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The code review process begins with the creation of a pull request (which we practiced in the previous chapter). Successful and efficient code review is born out of quality communication, which is a skill set on its own. You can set up your reviewers (and yourself) up for success by knowing what basic information can help get the code review conversation going.</p>
-<p><img src="resources/images/05-code-review-author_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc3e8b194d_0_46.png" title="Ruby has filed a very large pull request with a very short PR description:  I updated the project and added new files. She then requested Avi to review this PR. This leaves Avi with very little information to go on and he is very confused. Avi comments: Ummm… I’m a bit confused. Can you explain the context of these changes? This is a lot for me to try to follow.  I’m also unsure what kind of feedback you are looking for. " alt="Ruby has filed a very large pull request with a very short PR description:  I updated the project and added new files. She then requested Avi to review this PR. This leaves Avi with very little information to go on and he is very confused. Avi comments: Ummm… I’m a bit confused. Can you explain the context of these changes? This is a lot for me to try to follow.  I’m also unsure what kind of feedback you are looking for. " width="100%" /></p>
+<p><img src="05-code-review-author_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc3e8b194d_0_46.png" alt="Ruby has filed a very large pull request with a very short PR description:  I updated the project and added new files. She then requested Avi to review this PR. This leaves Avi with very little information to go on and he is very confused. Avi comments: Ummm… I’m a bit confused. Can you explain the context of these changes? This is a lot for me to try to follow.  I’m also unsure what kind of feedback you are looking for. " width="100%" /></p>
 <p>Even if you end up being the only person who will review your own code, writing these things out is still very helpful and highly recommended. It can help you spot problems you might not have otherwise seen and generally help you document better for future you!</p>
 </div>
-<div id="characteristics-of-great-pull-requests" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Characteristics of great pull requests</h2>
-<div id="theres-plenty-of-context" class="section level3" number="5.3.1">
-<h3><span class="header-section-number">5.3.1</span> There’s plenty of context!</h3>
+<div id="characteristics-of-great-pull-requests" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Characteristics of great pull requests<a href="engaging-in-code-review---as-an-author.html#characteristics-of-great-pull-requests" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="theres-plenty-of-context" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> There’s plenty of context!<a href="engaging-in-code-review---as-an-author.html#theres-plenty-of-context" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>What’s the story behind around the changes you are proposing? Sometimes when we are in the thick of a project we can make the mistake of assuming everyone knows what we know. This can unfortunately leave a huge burden on your reviewer to try to follow a paper trail to try to understand what you are doing.</p>
 <p>Before sending off a review request, re-read your PR description and think about the perspective of your reviewer. Err on the side that they have no idea what is happening on the project (because sometimes this is the case!)</p>
 <p>Tell a short story to explain what lead to you making these changes including attempting to answer these questions:</p>
@@ -296,8 +299,8 @@ div.csl-indent {
 <li>Are there other pull requests related to this change?</li>
 </ul>
 </div>
-<div id="includes-an-explicit-request-for-what-kind-of-feedback-is-needed" class="section level3" number="5.3.2">
-<h3><span class="header-section-number">5.3.2</span> Includes an explicit request for what kind of feedback is needed</h3>
+<div id="includes-an-explicit-request-for-what-kind-of-feedback-is-needed" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Includes an explicit request for what kind of feedback is needed<a href="engaging-in-code-review---as-an-author.html#includes-an-explicit-request-for-what-kind-of-feedback-is-needed" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>What would you like your reviewer to do with this pull request? Stating this explicitly can save both of you time in this code review.</p>
 <ul>
 <li>Are you still in the early stages and looking for a bigger picture review? Let them know that before they waste their time digging into the code line-by-line.</li>
@@ -305,27 +308,27 @@ div.csl-indent {
 <li>Are you looking for feedback on the results or methods?</li>
 </ul>
 </div>
-<div id="points-out-questionable-areas-that-need-extra-attention" class="section level3" number="5.3.3">
-<h3><span class="header-section-number">5.3.3</span> Points out questionable areas that need extra attention</h3>
+<div id="points-out-questionable-areas-that-need-extra-attention" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Points out questionable areas that need extra attention<a href="engaging-in-code-review---as-an-author.html#points-out-questionable-areas-that-need-extra-attention" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Are there specific areas of the code you are having trouble with or are unsure about? Send a link to the <a href="https://stackoverflow.com/questions/23821235/how-to-link-to-specific-line-number-on-github">specific lines in GitHub</a> you are asking about. Are there results that are surprising, confusing, or <a href="https://github.com/jennybc/code-smells-and-feels#code-smells-and-feels">smell wrong</a>?</p>
 <p>Be sure to detail what you have dug into and tried at this point for any problematic points.</p>
 </div>
-<div id="are-relatively-small-and-focused" class="section level3" number="5.3.4">
-<h3><span class="header-section-number">5.3.4</span> Are relatively small and focused</h3>
+<div id="are-relatively-small-and-focused" class="section level3 hasAnchor" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> Are relatively small and focused<a href="engaging-in-code-review---as-an-author.html#are-relatively-small-and-focused" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Try to make sure your pull requests aren’t too long! Code reviewing fatigue is very real. If you send a reviewer thousands of lines of code to review it will be very overwhelming to review or understand.</p>
 <blockquote class="twitter-tweet">
 <p lang="en" dir="ltr">
 10 lines of code = 10 issues.<br><br>500 lines of code = "looks fine."<br><br>Code reviews.
 </p>
-— I Am Devloper (<span class="citation">(<a href="#ref-iamdevloper" role="doc-biblioref"><strong>iamdevloper?</strong></a>)</span>) <a href="https://twitter.com/iamdevloper/status/397664295875805184?ref_src=twsrc%5Etfw">November 5, 2013</a>
+— I Am Devloper (<span class="citation">(<a href="#ref-iamdevloper"><strong>iamdevloper?</strong></a>)</span>) <a href="https://twitter.com/iamdevloper/status/397664295875805184?ref_src=twsrc%5Etfw">November 5, 2013</a>
 </blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <p>Alternatively, when you create a new branch try to set a very intentional (and relatively small) goal you would like to achieve with your upcoming pull request. Keeping your pull requests small and focused on one task at a time will not only help your reviewers but also will help yourself feel more accomplished and organized.</p>
 <p>Also recall that incremental changes are good! Perhaps you do have a very large restructuring of your repository you are trying to accomplish, but finding smaller reasonable sets of changes (which would each have their own pull requests) to reach that goal incrementally can help keep things more manageable.</p>
 <p><a href="https://blog.logrocket.com/using-stacked-pull-requests-in-github/">Using Stacked Pull Requests in GitHub</a></p>
 </div>
-<div id="dont-ask-a-reviewer-to-dig-through-dirty-code" class="section level3" number="5.3.5">
-<h3><span class="header-section-number">5.3.5</span> Don’t ask a reviewer to dig through dirty code</h3>
+<div id="dont-ask-a-reviewer-to-dig-through-dirty-code" class="section level3 hasAnchor" number="5.3.5">
+<h3><span class="header-section-number">5.3.5</span> Don’t ask a reviewer to dig through dirty code<a href="engaging-in-code-review---as-an-author.html#dont-ask-a-reviewer-to-dig-through-dirty-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Determining when a pull request fully cooked and ready for review is a skill in itself. Pull requests that haven’t had enough time to be polished can put an unnecessarily larger burden on the reviewer. On the other hand, pull requests that have been hashed and rehashed in a silo might have benefitted from big picture feedback at an earlier stage of the code. This is something that you and your team can figure out a balance for in time using lots of communication!</p>
 <p>This being said, the first reviewer of your code should always be yourself! Take time to review your own changes by clicking on the <code>Files Changed</code> tab and going over that section carefully.</p>
 <ul>
@@ -334,22 +337,22 @@ div.csl-indent {
 <li>Set aside your changes and return them in a few hours, or the next day. Looking at your changes with fresh eyes may also allow you to find things you didn’t notice before.</li>
 </ul>
 <p>Additional tip, if you don’t want others to look at your pull request yet because you are still working on reviewing it, you can change it to <a href="https://github.blog/2019-02-14-introducing-draft-pull-requests/">a draft pull request</a> so no one reviews it before you are ready. This can also be a handy tactic to use if you just want to ask for big picture feedback someone but want to make it clear that it is not anywhere near ready for merging to main.</p>
-<div id="in-summary" class="section level4" number="5.3.5.1">
-<h4><span class="header-section-number">5.3.5.1</span> In summary:</h4>
-<p><img src="resources/images/05-code-review-author_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfa97af8537_0_8.png" title="Great pull requests … provide plenty of context, have an explicit request for what kind of feedback is needed, point out questionable areas, are relatively small and focused, don't ask a reviewer for help too soon" alt="Great pull requests … provide plenty of context, have an explicit request for what kind of feedback is needed, point out questionable areas, are relatively small and focused, don't ask a reviewer for help too soon" width="100%" /></p>
+<div id="in-summary" class="section level4 hasAnchor" number="5.3.5.1">
+<h4><span class="header-section-number">5.3.5.1</span> In summary:<a href="engaging-in-code-review---as-an-author.html#in-summary" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><img src="05-code-review-author_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfa97af8537_0_8.png" alt="Great pull requests … provide plenty of context, have an explicit request for what kind of feedback is needed, point out questionable areas, are relatively small and focused, don't ask a reviewer for help too soon" width="100%" /></p>
 <p>Let’s revisit our scenario with Avi and Ruby and see how Ruby could better prepare her changes for review:</p>
-<p><img src="resources/images/05-code-review-author_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc3e8b194d_0_118.png" title="Ruby has filed a much smaller pull request with a better PR description: Background: In this previous PR we updated the heatmap-script.R file. But now the documentation in the README is out of date. This PR aims to update the README accordingly. Approach: I updated the README with information on the new arguments we added. This also required me to update the Usage section and recommendations there. Feedback needed: Can you look at the Usage section and try running the command and steps described there? I am concerned that this section is not clear enough but I am not sure how to add clarity. Please let me know if you have suggestions on this point.  She has then requested Avi to review this PR.  Avi responds back: Ruby this is great! I was able to dig into this and give you feedback at the places you asked. Let me know what you think of my ideas and comments! This code review situation has been very productive!" alt="Ruby has filed a much smaller pull request with a better PR description: Background: In this previous PR we updated the heatmap-script.R file. But now the documentation in the README is out of date. This PR aims to update the README accordingly. Approach: I updated the README with information on the new arguments we added. This also required me to update the Usage section and recommendations there. Feedback needed: Can you look at the Usage section and try running the command and steps described there? I am concerned that this section is not clear enough but I am not sure how to add clarity. Please let me know if you have suggestions on this point.  She has then requested Avi to review this PR.  Avi responds back: Ruby this is great! I was able to dig into this and give you feedback at the places you asked. Let me know what you think of my ideas and comments! This code review situation has been very productive!" width="100%" /></p>
+<p><img src="05-code-review-author_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc3e8b194d_0_118.png" alt="Ruby has filed a much smaller pull request with a better PR description: Background: In this previous PR we updated the heatmap-script.R file. But now the documentation in the README is out of date. This PR aims to update the README accordingly. Approach: I updated the README with information on the new arguments we added. This also required me to update the Usage section and recommendations there. Feedback needed: Can you look at the Usage section and try running the command and steps described there? I am concerned that this section is not clear enough but I am not sure how to add clarity. Please let me know if you have suggestions on this point.  She has then requested Avi to review this PR.  Avi responds back: Ruby this is great! I was able to dig into this and give you feedback at the places you asked. Let me know what you think of my ideas and comments! This code review situation has been very productive!" width="100%" /></p>
 <p>In this scenario Ruby was able to save Avi time in getting into the code review by being more specific about what kind of feedback she is looking for as well as links that explain the context behind these changes. Additionally, by supplying Avi with a smaller PR, Avi is less likely to be overwhelmed by Ruby’s request and be able to give her suggestions in a more timely manner.</p>
 </div>
 </div>
 </div>
-<div id="exercise-create-your-pull-request-description" class="section level2" number="5.4">
-<h2><span class="header-section-number">5.4</span> Exercise: Create your pull request description</h2>
+<div id="exercise-create-your-pull-request-description" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Exercise: Create your pull request description<a href="engaging-in-code-review---as-an-author.html#exercise-create-your-pull-request-description" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Add a <a href="https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository">pull request template</a> to your repository! This will help initiate consistent and clear communication around the pull requests in your repository.</p>
 <p>Pull request templates are a way to give yourself and other contributors prompts when starting a new pull request. See below for an example. The comments between <code>&lt;!--</code> and <code>--&gt;</code> are html comments that will not show up so you don’t need to delete them if you don’t want to. On the right side, it shows how this template looks when it’s rendered. You can see this at any time by clicking <code>Preview</code> – this is true in other places in GitHub.</p>
-<p><img src="resources/images/05-code-review-author_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfa97af8537_0_0.png" title="Pull request templates are a way to give yourself and other contributors prompts when starting a new pull request. For example, upon creating a pull request, this text will automatically appear in the text box for your pull request template. Now this helps you and others fill out the pull request more like a form and respond to the prompts. On the right side, it shows how this template looks when it's rendered. You can see this at any time by clicking Preview. " alt="Pull request templates are a way to give yourself and other contributors prompts when starting a new pull request. For example, upon creating a pull request, this text will automatically appear in the text box for your pull request template. Now this helps you and others fill out the pull request more like a form and respond to the prompts. On the right side, it shows how this template looks when it's rendered. You can see this at any time by clicking Preview. " width="100%" /></p>
-<div id="set-up-a-pull-request-template" class="section level4" number="5.4.0.1">
-<h4><span class="header-section-number">5.4.0.1</span> Set up a pull request template</h4>
+<p><img src="05-code-review-author_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfa97af8537_0_0.png" alt="Pull request templates are a way to give yourself and other contributors prompts when starting a new pull request. For example, upon creating a pull request, this text will automatically appear in the text box for your pull request template. Now this helps you and others fill out the pull request more like a form and respond to the prompts. On the right side, it shows how this template looks when it's rendered. You can see this at any time by clicking Preview. " width="100%" /></p>
+<div id="set-up-a-pull-request-template" class="section level4 hasAnchor" number="5.4.0.1">
+<h4><span class="header-section-number">5.4.0.1</span> Set up a pull request template<a href="engaging-in-code-review---as-an-author.html#set-up-a-pull-request-template" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ol style="list-style-type: decimal">
 <li>Create a new branch as we described in the previous chapter.</li>
 <li>In your local repository, create a folder called <code>.github</code></li>
@@ -365,21 +368,21 @@ div.csl-indent {
 <li>When you are ready, <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review">request a reviewer</a> by choosing someone underneath <code>Reviewer</code> on the right side!</li>
 </ol>
 </div>
-<div id="preparing-for-the-return-of-your-review" class="section level3" number="5.4.1">
-<h3><span class="header-section-number">5.4.1</span> Preparing for the return of your review</h3>
+<div id="preparing-for-the-return-of-your-review" class="section level3 hasAnchor" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Preparing for the return of your review<a href="engaging-in-code-review---as-an-author.html#preparing-for-the-return-of-your-review" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As you wait for your reviewer to get back to you, it can be helpful to remind yourself the purpose of code reviews get yourself in a positive mindset. You’ve given your reviewer information to help them help you and now is the time to wait.</p>
-<p><img src="resources/images/05-code-review-author_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g102298f211a_0_49.png" title="Main goals of an pull request author Set up your reviewer for success by erring toward overcommunicating Interpret reviews positively! Determine solutions collaboratively." alt="Main goals of an pull request author Set up your reviewer for success by erring toward overcommunicating Interpret reviews positively! Determine solutions collaboratively." width="100%" /></p>
+<p><img src="05-code-review-author_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g102298f211a_0_49.png" alt="Main goals of an pull request author Set up your reviewer for success by erring toward overcommunicating Interpret reviews positively! Determine solutions collaboratively." width="100%" /></p>
 <p>First of all, you should pat yourself on the back for engaging in code review. It does require more time and sometimes that can feel scary with looming deadlines, but kudos for being able to prioritize your commitment to creating increasingly reproducibility analyses!</p>
 <p>Remember that you are not your code and mistakes are all a part of the process! Putting your project out there can feel a tad vulnerable even. You may have felt the impulse to keep your code’s problems buried under a rug, but you pushed past that and are making your analyses transparent! Remember that hidden problems don’t get solved, but known problems are opportunities for reaching an even better end result than you imagined!</p>
-<p><img src="resources/images/05-code-review-author_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfa97af8537_0_86.png" title="Remember that you are not your code and mistakes are all a part of the process! The cartoon shows you with exclamation point and equal sign with a fake bit of code to illustrate you are not your code." alt="Remember that you are not your code and mistakes are all a part of the process! The cartoon shows you with exclamation point and equal sign with a fake bit of code to illustrate you are not your code." width="100%" /></p>
+<p><img src="05-code-review-author_files/figure-html/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfa97af8537_0_86.png" alt="Remember that you are not your code and mistakes are all a part of the process! The cartoon shows you with exclamation point and equal sign with a fake bit of code to illustrate you are not your code." width="100%" /></p>
 <p>When you receive a review back remember that you and the reviewer are on the same team and both want the best end result feasible for this project! They may suggest ideas that you love and can’t wait to implement. They also might suggest ideas you don’t agree with. Do your best to take all their comments as positive learning opportunities and look for ways to compromise and determine solutions collaboratively.</p>
-<div id="recommended-reading-about-code-review" class="section level4" number="5.4.1.1">
-<h4><span class="header-section-number">5.4.1.1</span> Recommended reading about code review</h4>
+<div id="recommended-reading-about-code-review" class="section level4 hasAnchor" number="5.4.1.1">
+<h4><span class="header-section-number">5.4.1.1</span> Recommended reading about code review<a href="engaging-in-code-review---as-an-author.html#recommended-reading-about-code-review" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
-<li><a href="https://www.atlassian.com/agile/software-development/code-reviews">Why code reviews matter (and actually save time!)</a> by <span class="citation">Radigan (<a href="#ref-Radigan2021" role="doc-biblioref">2021</a>)</span>.</li>
-<li><a href="https://www.pullrequest.com/blog/writing-a-great-pull-request-description/">Pull request descriptions</a> by <span class="citation">Bañuelos (<a href="#ref-Banuelos2020" role="doc-biblioref">2020</a>)</span>.</li>
-<li><a href="https://www.freecodecamp.org/news/a-zen-manifesto-for-effective-code-reviews-e30b5c95204a/">A zen manifesto for effective code reviews</a> by <span class="citation">Jean-Charles (<a href="#ref-Fabre2019" role="doc-biblioref">2019</a>)</span>.</li>
-<li><a href="https://smartbear.com/en/learn/code-review/best-practices-for-peer-code-review/">Best practices for Code Review</a> by <span class="citation">Smartbear Team (<a href="#ref-Smartbear2021" role="doc-biblioref">2021</a>)</span>.</li>
+<li><a href="https://www.atlassian.com/agile/software-development/code-reviews">Why code reviews matter (and actually save time!)</a> by <span class="citation">Radigan (<a href="#ref-Radigan2021">2021</a>)</span>.</li>
+<li><a href="https://www.pullrequest.com/blog/writing-a-great-pull-request-description/">Pull request descriptions</a> by <span class="citation">Bañuelos (<a href="#ref-Banuelos2020">2020</a>)</span>.</li>
+<li><a href="https://www.freecodecamp.org/news/a-zen-manifesto-for-effective-code-reviews-e30b5c95204a/">A zen manifesto for effective code reviews</a> by <span class="citation">Jean-Charles (<a href="#ref-Fabre2019">2019</a>)</span>.</li>
+<li><a href="https://smartbear.com/en/learn/code-review/best-practices-for-peer-code-review/">Best practices for Code Review</a> by <span class="citation">Smartbear Team (<a href="#ref-Smartbear2021">2021</a>)</span>.</li>
 </ul>
 <p><strong>If you have any feedback on this chapter, please <a href="https://forms.gle/j3cJZX5CmNtQp6QKA">fill out this form</a>, we’d love to hear your feedback!</strong></p>
 
@@ -387,7 +390,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Banuelos2020" class="csl-entry">
 Bañuelos, Gonzalo. 2020. <span>“Writing <span>A</span> <span>Great</span> <span>Pull</span> <span>Request</span> <span>Description</span>.”</span> <em>PullRequest</em>. <a href="https://www.pullrequest.com/blog/writing-a-great-pull-request-description/">https://www.pullrequest.com/blog/writing-a-great-pull-request-description/</a>.
@@ -440,42 +443,42 @@ Smartbear Team. 2021. <span>“Best <span>Practices</span> for <span>Code</span>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "section"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  }
 });
 });
 </script>
@@ -486,7 +489,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

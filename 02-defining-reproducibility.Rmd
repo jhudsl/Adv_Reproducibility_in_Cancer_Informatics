@@ -5,7 +5,7 @@ ottrpal::set_knitr_image_path()
 
 # Defining Reproducibility
 
-_If you've not previously read through the `defining reproducibility` chapter in our introductory course, we recommend you read through it here; otherwise feel free to skip the next chapter._
+_If you've not previously read through the `defining reproducibility` chapter in our introductory course, we recommend you read through it here; otherwise feel free to skip to the next chapter._
 
 
 ```{r, echo = FALSE, results='asis'}

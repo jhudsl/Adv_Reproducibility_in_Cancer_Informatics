@@ -26,7 +26,7 @@ jobs:
   url-check:
     name: Check URLs
     needs: set-up
-    if: ${{needs.set-up.outputs.toggle_url_check_periodically == 'yes'}}
+    if: ${{needs.set-up.outputs.toggle_url_check_periodically == 'true'}}
     runs-on: ubuntu-latest
     container:
       image: jhudsl/base_ottr:main
@@ -54,12 +54,17 @@ jobs:
       shell: bash
 
     - name: Run the check
-      uses: jhudsl/ottr-reports@main
+      uses: ottrproject/ottr-reports@main
       id: check_results
       continue-on-error: true
       with:
-        check_type: urls
-        error_min: 1
+        check_spelling: false
+        spelling_error_min: 1
+        check_urls: true
+        url_error_min: 1
+        check_quiz_form: false
+        quiz_error_min: 1
+        sort_dictionary: false
 
     - name: Declare file path and time
       id: check-report
@@ -79,13 +84,23 @@ jobs:
         echo ${{ steps.check-report.outputs.error_url }}
         echo ${{ steps.check-report.outputs.error_num }}
 
+      # Commit file
+    - name: Commit tocless bookdown files
+      if: ${{ steps.check-report.outputs.error_num >= 1 }}
+      env:
+        GH_PAT: ${{ secrets.GH_PAT }}
+      run: |
+        git add --force check_reports/url_checks.tsv
+        git commit -m 'Add spell check file' || echo "No changes to commit"
+        git push --set-upstream origin preview-spell-error || echo echo branch exists remotely
+
     - name: Find issues
       id: find-issue
       env:
         GH_PAT: ${{ secrets.GH_PAT }}
       run: |
         echo "$GITHUB_REPOSITORY"
-        curl -o find_issue.R https://raw.githubusercontent.com/jhudsl/ottr-reports/main/scripts/find_issue.R
+        curl -o find_issue.R https://raw.githubusercontent.com/ottrproject/ottr-reports/main/scripts/find_issue.R
         issue_exists=$(Rscript --vanilla find_issue.R --repo $GITHUB_REPOSITORY --git_pat $GH_PAT)
         echo URL issue exists: $issue_exists
         echo "issue_existence=$issue_exists" >> $GITHUB_OUTPUT

@@ -5,7 +5,7 @@
 
 ## Learning Objectives
 
-![](resources/images/04-data-handling_files/figure-docx//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gcfac54ca19_0_0.png){width=100%}
+![](04-data-handling_files/figure-docx//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gcfac54ca19_0_0.png){width=100%}
 
 The first part of any analysis should be getting all the data needed to run it. Data come in all kinds of formats and sizes so while we can't give specifics on how to share your data we can provide these guidelines:
 

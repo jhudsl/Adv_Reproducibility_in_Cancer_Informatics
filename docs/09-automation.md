@@ -5,14 +5,14 @@
 
 ## Learning Objectives
 
-![](resources/images/09-automation_files/figure-docx//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g104d8c58b62_46_4.png){width=100%}
+![](09-automation_files/figure-docx//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g104d8c58b62_46_4.png){width=100%}
 
 ***
 
 
 We've discussed that a reproducible analysis can be run by someone else and obtain the same result. But what if before you bug your colleague to use their time to re-run your analysis, you had a robot re-run your analysis? Robots don't get tired or have other deadlines to respond to and can be set up to re-run your analysis at any time. This is the basis of why automation is powerful tool for reproducibility.
 
-![](resources/images/09-automation_files/figure-docx//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g104d8c58b62_46_9.png){width=100%}
+![](09-automation_files/figure-docx//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_g104d8c58b62_46_9.png){width=100%}
 
 There are a lot of applications for GitHub Actions (see links at the end of this chapter) but in the context of our [R](https://github.com/jhudsl/reproducible-R-example) and [Python](https://github.com/jhudsl/reproducible-python-example) examples or for scientific notebooks in general, it can be useful to build a GitHub Actions that re-runs the notebook every time a pull request is opened.
 

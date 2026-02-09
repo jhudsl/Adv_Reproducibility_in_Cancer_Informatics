@@ -5,7 +5,7 @@
 
 ## Learning Objectives
 
-<img src="resources/images/08-modifying-docker-image_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfbc11e6ab0_0_149.png" title="Learning Objectives. This chapter will demonstrate how to: Modify an existing Docker image. Store a Docker image on dockerhub. Incorporate Docker image use into a project." alt="Learning Objectives. This chapter will demonstrate how to: Modify an existing Docker image. Store a Docker image on dockerhub. Incorporate Docker image use into a project." width="100%" />
+<img src="08-modifying-docker-image_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfbc11e6ab0_0_149.png" alt="Learning Objectives. This chapter will demonstrate how to: Modify an existing Docker image. Store a Docker image on dockerhub. Incorporate Docker image use into a project." width="100%" />
 
 ***
 
@@ -16,25 +16,25 @@ The docker image you are using from the last chapter was pre-made for you, but y
 Images can be on your own computer or on dockerhub.
 To see your list of images on your computer, you can go to Docker desktop. From here you will want to delete images and containers periodically because they do take up room on your computer.
 
-<img src="resources/images/08-modifying-docker-image_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc8849fa4d_0_17.png" title="A reminder of where to find your current local images. Open up Docker desktop. Click on ‘images’ on the left. This shows the images you have available on your computer. If you hover your mouse over one of these images, you will see a Run button appear. Click the Run button to start a container with this image." alt="A reminder of where to find your current local images. Open up Docker desktop. Click on ‘images’ on the left. This shows the images you have available on your computer. If you hover your mouse over one of these images, you will see a Run button appear. Click the Run button to start a container with this image." width="100%" />
+<img src="08-modifying-docker-image_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc8849fa4d_0_17.png" alt="A reminder of where to find your current local images. Open up Docker desktop. Click on ‘images’ on the left. This shows the images you have available on your computer. If you hover your mouse over one of these images, you will see a Run button appear. Click the Run button to start a container with this image." width="100%" />
 
 To see what images you have on your internet repository, you can log on to dockerhub.
 [Go here to login (or create a username if you have not yet)](https://hub.docker.com/).
 
-<img src="resources/images/08-modifying-docker-image_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc8849fa4d_0_38.png" title="The dockerhub login page." alt="The dockerhub login page." width="100%" />
+<img src="08-modifying-docker-image_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc8849fa4d_0_38.png" alt="The dockerhub login page." width="100%" />
 
 After you sign into dockerhub, click on the `Repositories` tab, so you can see the list of repositories you have stored online. At this point, you won’t have any if you just created your dockerhub account. To create a new repository, click the ‘Create Repository’ button.
 
-<img src="resources/images/08-modifying-docker-image_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc8849fa4d_0_10.png" title="In your dockerhub main page, you can see the list of repositories you have stored online. At this point, you won’t have any if you just created your dockerhub account. To create a new repository, click the ‘Create Repository’ button." alt="In your dockerhub main page, you can see the list of repositories you have stored online. At this point, you won’t have any if you just created your dockerhub account. To create a new repository, click the ‘Create Repository’ button." width="100%" />
+<img src="08-modifying-docker-image_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc8849fa4d_0_10.png" alt="In your dockerhub main page, you can see the list of repositories you have stored online. At this point, you won’t have any if you just created your dockerhub account. To create a new repository, click the ‘Create Repository’ button." width="100%" />
 
 Upon adding the new repository to dockerhub, you will need name it the same as whatever you are calling it locally. You can put a description and name and click create. On the right it shows how you can interact with this from your local command line.
 
-<img src="resources/images/08-modifying-docker-image_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc8849fa4d_0_48.png" title="Upon adding the new repository to dockerhub, you will need name it the same as whatever you are calling it locally. You can put a description and name and click create. On the right it shows how you can interact with this from your local command line." alt="Upon adding the new repository to dockerhub, you will need name it the same as whatever you are calling it locally. You can put a description and name and click create. On the right it shows how you can interact with this from your local command line." width="100%" />
+<img src="08-modifying-docker-image_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc8849fa4d_0_48.png" alt="Upon adding the new repository to dockerhub, you will need name it the same as whatever you are calling it locally. You can put a description and name and click create. On the right it shows how you can interact with this from your local command line." width="100%" />
 
 After you've created the image repository, you will be brought to the image repository page.
 It will tell you `Last pushed: never`. On the right it will tell you the command you will need in order to push the image to dockerhub.
 
-<img src="resources/images/08-modifying-docker-image_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc8849fa4d_0_56.png" title="After you've created the image repository, you will be brought to the image repository page. It will tell you Last pushed: never. On the right it will tell you the command you will need in order to push the image to dockerhub." alt="After you've created the image repository, you will be brought to the image repository page. It will tell you Last pushed: never. On the right it will tell you the command you will need in order to push the image to dockerhub." width="100%" />
+<img src="08-modifying-docker-image_files/figure-html//1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I_gfc8849fa4d_0_56.png" alt="After you've created the image repository, you will be brought to the image repository page. It will tell you Last pushed: never. On the right it will tell you the command you will need in order to push the image to dockerhub." width="100%" />
 
 Go to your [local command line](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955) and use the command specified on the right side of your repository page. You don't have to specify a tagname if you don't want to.  If you don't want to specify a tagname, leave off the `:tagname` if you like.
 
