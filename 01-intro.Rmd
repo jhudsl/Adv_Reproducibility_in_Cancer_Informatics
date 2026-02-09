@@ -56,4 +56,4 @@ To be a comprehensive tutorial for each of the tools shown.
 
 Each chapter has associated exercises that you are encourage to complete in order to get the full benefit of the course.
 
-This course is designed for busy professional learners -- who may have to pick up and put down the course as their schedule allows. In general, you are able to skip forward to chapters you find most useful to (one incidence where a prior chapter is required is noted).
+This course is designed for busy professional learners -- who may have to pick up and put down the course as their schedule allows. In general, you are able to skip forward to chapters you find most useful (one incidence where a prior chapter is required is noted).
