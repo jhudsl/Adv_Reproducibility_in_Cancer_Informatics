@@ -1,6 +1,6 @@
 ---
 title: "Advanced Reproducibility in Cancer Informatics"
-date: "October, 2025"
+date: "October, 2026"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
