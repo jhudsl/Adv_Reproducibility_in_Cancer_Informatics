@@ -3,6 +3,8 @@
 
 [![Render Bookdown and Coursera](https://github.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics/actions/workflows/render-all.yml/badge.svg)](https://github.com/jhudsl/Adv_Reproducibility_in_Cancer_Informatics/actions/workflows/render-all.yml/badge.svg)
 
+<a href="https://doi.org/10.5281/zenodo.23168487"><img src="https://zenodo.org/badge/425922984.svg" alt="DOI"></a>
+
 This course was created from [this GitHub template](https://github.com/jhudsl/OTTR_Template) and is the second part of the two part Reproducibility course. The first [part of the course is here](https://github.com/jhudsl/Reproducibility_in_Cancer_Informatics).
 
 You can see the rendered course material here: https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics
