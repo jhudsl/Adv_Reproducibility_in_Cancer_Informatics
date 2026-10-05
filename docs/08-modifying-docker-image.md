@@ -186,7 +186,7 @@ And lastly, make sure that whatever changes you make to your Dockerfile, that yo
 
 ### More about Docker next steps
 
-- [Dockerfile Tutorial by Example](https://takacsmark.com/dockerfile-tutorial-by-example-dockerfile-best-practices-2018/#lets-create-your-first-image).
+- [Dockerfile Tutorial by Example](https://12footsteps.medium.com/mastering-dockerfile-best-practices-a-complete-guide-to-container-excellence-2f82dce03de7).
 - [Dockerfile examples](https://linuxtechlab.com/learn-create-dockerfile-example/)
 
 ### A list of handy Docker commands:
